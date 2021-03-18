@@ -1,0 +1,284 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.22)  9 MAR 2021 17:05
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**box.tex
+(./box.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
+Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count175
+\U@D=\dimen135
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count176
+)
+Package babel Info: Making ` an active character on input line 2819.
+\c@footnote@add=\count177
+\c@footnote@ch=\count178
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen136
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen137
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count179
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count180
+\leftroot@=\count181
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count182
+\DOTSCASE@=\count183
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen138
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count184
+\c@MaxMatrixCols=\count185
+\dotsspace@=\muskip16
+\c@parentequation=\count186
+\dspbrk@lvl=\count187
+\tag@help=\toks17
+\row@=\count188
+\column@=\count189
+\maxfields@=\count190
+\andhelp@=\toks18
+\eqnshift@=\dimen139
+\alignsep@=\dimen140
+\tagshift@=\dimen141
+\tagwidth@=\dimen142
+\totwidth@=\dimen143
+\lineht@=\dimen144
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count191
+\float@exts=\toks21
+\float@box=\box47
+\@float@everytoks=\toks22
+\@floatcapt=\box48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count192
+\l__pdf_internal_box=\box49
+)
+(./box.aux)
+\openout1 = `box.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count193
+\scratchdimen=\dimen147
+\scratchbox=\box50
+\nofMPsegments=\count194
+\nofMParguments=\count195
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count196
+\MPscratchDim=\dimen148
+\MPnumerator=\count197
+\makeMPintoPDFobject=\count198
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+LaTeX Info: Redefining \cal on input line 497.
+LaTeX Info: Redefining \mit on input line 498.
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (13.07512pt too wide) in paragraph at lines 70--72
+\T1/cmr/m/n/10 Az együtt-ha-tók össze-ve-té-se alap-ján $\OML/cmm/m/it/10 a \OT
+1/cmr/m/n/10 = []$ \T1/cmr/m/n/10 és $\OML/cmm/m/it/10 b \OT1/cmr/m/n/10 = []\O
+ML/cmm/m/it/10 E$\T1/cmr/m/n/10 . Így a Schrödinger-
+ []
+
+<./figs/energiaszintek.pdf, id=14, 361.35pt x 289.08pt>
+File: ./figs/energiaszintek.pdf Graphic file (type pdf)
+<use ./figs/energiaszintek.pdf>
+Package pdftex.def Info: ./figs/energiaszintek.pdf  used on input line 88.
+(pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
+
+Overfull \hbox (16.34912pt too wide) in paragraph at lines 88--89
+[][] 
+ []
+
+[2] [3 <./figs/energiaszintek.pdf>]
+<./figs/energiaszintkozelites.pdf, id=46, 361.35pt x 289.08pt>
+File: ./figs/energiaszintkozelites.pdf Graphic file (type pdf)
+<use ./figs/energiaszintkozelites.pdf>
+Package pdftex.def Info: ./figs/energiaszintkozelites.pdf  used on input line 1
+46.
+(pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
+
+Overfull \hbox (16.34912pt too wide) in paragraph at lines 146--147
+[][] 
+ []
+
+[4]
+<./figs/infsquareenergia.pdf, id=50, 361.35pt x 289.08pt>
+File: ./figs/infsquareenergia.pdf Graphic file (type pdf)
+<use ./figs/infsquareenergia.pdf>
+Package pdftex.def Info: ./figs/infsquareenergia.pdf  used on input line 151.
+(pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
+
+Overfull \hbox (16.34912pt too wide) in paragraph at lines 151--152
+[][] 
+ []
+
+[5 <./figs/energiaszintkozelites.pdf>] [6 <./figs/infsquareenergia.pdf>]
+Overfull \hbox (72.92836pt too wide) in paragraph at lines 178--180
+\T1/cmr/m/n/10 Ahol $\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 
+x \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 E[]$\T1/cmr/m/n/10 , $\OML/cmm/m/it/1
+0 E[]$ \T1/cmr/m/n/10 pe-dig az 1 di-men-zi-ós prob-lé-ma, $[] \OMS/cmsy/m/n/10
+ ^^@
+ []
+
+
+Overfull \hbox (1.56631pt too wide) in paragraph at lines 192--193
+[]\T1/cmr/m/n/10 TODO: ÁB-RA AZ EGY-SZER FÜG-GŽ-LE-GES ESET ENER-GI-Á-I-RÓL, es
+et-
+ []
+
+[7] (./box.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3611 strings out of 482527
+ 53562 string characters out of 5948378
+ 305987 words of memory out of 5000000
+ 18658 multiletter control sequences out of 15000+600000
+ 537855 words of font info for 38 fonts, out of 8000000 for 9000
+ 395 hyphenation exceptions out of 8191
+ 30i,14n,31p,714b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600
+pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on box.pdf (7 pages, 322484 bytes).
+PDF statistics:
+ 263 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
