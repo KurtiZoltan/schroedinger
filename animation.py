@@ -14,8 +14,8 @@ timeSpeed = 0.8
 save = False
 
 def gauss(x):
-    #return np.exp(-1/2 * ((x - x0)/(d))**2 + 1j*k*x)
-    return x * (15 - x)
+    return np.exp(-1/2 * ((x - x0)/(d))**2 + 1j*k*x)
+    #return x * (L - x)
 
 test = d1schroedinger(gauss)
 
