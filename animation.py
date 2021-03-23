@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
-from schroedinger import d1schroedinger
+from schroedinger import *
 
 x0 = 5
 d = 1
@@ -25,7 +25,7 @@ line, = ax.plot([], [], lw=1)
 plt.grid()
 
 def animate(i):
-    x = np.linspace(0, test.L, 200)
+    x = test.x
     y = np.abs(test.timeEvolution(i/FPS * timeSpeed)) ** 2
     line.set_data(x, y)
     return line,

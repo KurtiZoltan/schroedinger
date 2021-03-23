@@ -2,7 +2,8 @@ import numpy as np
 from scipy import special, optimize, integrate
 
 class d1schroedinger:
-    def __init__(self, psi0 = None, F = 1, L = 15, numPoints = 200, x = None):
+    def __init__(self, psi0 = None, F = 1, L = 15, numPoints = 200, x = None, name = "1D: "):
+        self.__name = name
         self.__F = F
         self.__L = L
         self.__numPoints = numPoints
@@ -27,7 +28,7 @@ class d1schroedinger:
                 self.basisCoeff(n)
                 
                 eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
-                print(f"Sum of probabilities: {eWaveFunSum:f}")
+                print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
                 if eWaveFunSum > 0.9999:
                     break
                 n += 1
@@ -36,11 +37,27 @@ class d1schroedinger:
     def L(self):
         return self.__L
     
+    @property
+    def x(self):
+        return self.__x
+    
+    @property
+    def Es(self):
+        return np.copy(self.__Es)
+    
+    @property
+    def norms(self):
+        return np.copy(self.__norms)
+    
+    @property
+    def c0s(self):
+        return np.copy(self.__c0s)
+    
     def cacheBasisFun(self, n):
         if len(self.__cachedBasisFun) <= n:
             for i in range(len(self.__cachedBasisFun), n+1):
                 y = self.waveFun(self.__x, i)
-                print(f"{i:d}th basis function cached")
+                print(self.__name + f"{i:d}th basis function cached")
                 self.__cachedBasisFun = np.append(self.__cachedBasisFun, np.array(y, copy = False, ndmin = 2), axis = 0)
                 
     
@@ -49,7 +66,7 @@ class d1schroedinger:
             for i in range(len(self.__c0s), n+1):
                 c0 = self.scalarProd(lambda x: self.waveFun(x, i), self.psi0)
                 self.__c0s = np.append(self.__c0s, c0)
-                print(f"c_{i:d}={c0:f}")
+                print(self.__name + f"c_{i:d}={c0:f}")
     
     def getLength(self):
         return self.__L
@@ -115,7 +132,7 @@ class d1schroedinger:
                 for l in llist:
                     E = (optimize.root_scalar(f=self.charEq, args = (l), x0=Eguess, fprime=True)).root
                     Eguess = E * (l/(l+stepsize))**2
-                print(f"E_{i:d}={E:.2f}")
+                print(self.__name + f"E_{i:d}={E:.2f}")
                 self.__Es = np.append(self.__Es, E)
         return
     
@@ -127,7 +144,7 @@ class d1schroedinger:
             for i in range(len(self.__norms), n+1):
                 phin = lambda x: self.unormWaveFun(x, i)
                 norm = 1 / np.sqrt(np.abs(self.scalarProd(phin, phin)))
-                print(f"N_{i:d}={norm:.2f}")
+                print(self.__name + f"N_{i:d}={norm:.2f}")
                 self.__norms = np.append(self.__norms, norm)
         return
     
@@ -144,11 +161,118 @@ class d1schroedinger:
         return ret
 
 class d2schroedinger:
-    def __init__(psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15):
+    def __init__(self, psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15, name = "2D  : "):
+        self.__name = name
         self.__Fx = Fx
         self.__Fy = Fy
         self.__Lx = Lx
         self.__Ly = Ly
         
+        self.__d1x = d1schroedinger(F=Fx, L=Lx, name = "1D x: ")
+        self.__d1y = d1schroedinger(F=Fy, L=Ly, name = "1D y: ")
         
+        self.__Es = np.zeros((0))
+        self.__qNums = np.zeros((0, 2), dtype=int)
+        self.__cachedBasisFun = np.zeros((0, self.__d1y.x.shape[0], self.__d1x.x.shape[0]), dtype=complex)
+        self.__c0s = np.zeros((0), dtype=complex)
         
+        if psi0 != None:
+            self.__unormPsi0 = psi0
+            self.__psi0norm = 1 / np.sqrt(self.scalarProd(psi0, psi0))
+            
+            n = 0
+            while True:
+                self.eLevel(n)
+                self.cacheBasisFun(n)
+                self.basisCoeff(n)
+                
+                eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
+                print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
+                if eWaveFunSum > 0.99:
+                    break
+                n += 1
+    
+    @property
+    def x(self):
+        return self.__d1x.x
+        
+    @property
+    def y(self):
+        return self.__d1y.x
+    
+    @property
+    def Lx(self):
+        return self.__Lx
+    
+    @property
+    def Ly(self):
+        return self.__Ly
+    
+    def scalarProd(self, a, b):
+        real = integrate.dblquad(lambda y, x: np.real(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
+        imag = integrate.dblquad(lambda y, x: np.imag(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
+        return real + 1j * imag
+    
+    def eLevel(self, n):
+        if len(self.__Es) == 0:
+            self.__d1x.eLevel(0)
+            self.__d1y.eLevel(0)
+            Ex = self.__d1x.Es[0]
+            Ey = self.__d1y.Es[0]
+            self.__Es = np.append(self.__Es, Ex+Ey)
+            self.__qNums = np.append(self.__qNums, np.array([0, 0], dtype=int, ndmin=2), axis=0)
+        if len(self.__Es) <= n:
+            for i in range(len(self.__Es), n+1):
+                Eprev = self.__Es[i-1]
+                while self.__d1x.Es[-1] < Eprev:
+                    self.__d1x.eLevel(len(self.__d1x.Es))
+                while self.__d1y.Es[-1] < Eprev:
+                    self.__d1y.eLevel(len(self.__d1y.Es))
+                xEs = self.__d1x.Es
+                yEs = self.__d1y.Es
+                Emin = float("inf")
+                for indx, xE in zip(range(len(xEs)), xEs):
+                    for indy, yE in zip(range(len(yEs)), yEs):
+                        if Eprev < xE + yE:
+                            if xE + yE < Emin:
+                                Emin = xE + yE
+                                qNum = [indx, indy]
+                            break
+                self.__Es = np.append(self.__Es, Emin)
+                self.__qNums = np.append(self.__qNums, np.array(qNum, dtype=int, ndmin=2), axis=0)
+                print(self.__name + f"E_{i}={Emin:f}, quantum numbers {qNum}")
+    
+    def waveFun(self, x, y, n):
+        self.eLevel(n)
+        return self.__d1x.waveFun(x, self.__qNums[n, 0]) * self.__d1y.waveFun(y, self.__qNums[n, 1])
+    
+    def cacheBasisFun(self, n):
+        x = self.__d1x.x
+        y = self.__d1y.x
+        self.eLevel(n)
+        xn = self.__qNums[n, 0]
+        yn = self.__qNums[n, 1]
+        xfun = self.__d1x.waveFun(x, xn)
+        yfun = self.__d1y.waveFun(y, yn)
+        xfun, yfun = np.meshgrid(xfun, yfun)
+        basisFun = xfun * yfun
+        self.__cachedBasisFun = np.append(self.__cachedBasisFun, np.array(basisFun, ndmin=3), axis=0)
+    
+    def basisCoeff(self, n):
+        if len(self.__c0s) <= n:
+            for i in range(len(self.__c0s), n+1):
+                c0 = self.scalarProd(lambda x, y: self.waveFun(x, y, i), self.normPsi0)
+                self.__c0s = np.append(self.__c0s, c0)
+                print(self.__name + f"c_{i:d}={c0:f}")
+    
+    def normPsi0(self, x, y):
+        return self.__psi0norm * self.__unormPsi0(x, y)
+    
+    def timeEvolution(self, t, x = None, y = None):
+        if x != None and y != None:
+            pass
+        else:
+            ret = 0 * self.__cachedBasisFun[0]
+            for i in range(len(self.__cachedBasisFun)):
+                ret += (self.__c0s[i] * np.exp(-1j * self.__Es[i] * t)) * self.__cachedBasisFun[i]
+        return ret
