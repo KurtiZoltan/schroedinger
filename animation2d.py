@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import animation
 from schroedinger import *
-from classical import classicalPoint
+from classical import *
 
 Fx = 1
 Fy = 1

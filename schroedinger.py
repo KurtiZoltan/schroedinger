@@ -34,6 +34,10 @@ class d1schroedinger:
                 n += 1
     
     @property
+    def F(self):
+        return self.__F
+    
+    @property
     def L(self):
         return self.__L
     
@@ -191,6 +195,9 @@ class d2schroedinger:
                 if eWaveFunSum > 0.99:
                     break
                 n += 1
+    @property
+    def Es(self):
+        return np.copy(self.__Es)
     
     @property
     def x(self):
