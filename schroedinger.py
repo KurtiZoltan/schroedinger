@@ -208,6 +208,14 @@ class d2schroedinger:
     def Ly(self):
         return self.__Ly
     
+    @property
+    def Fx(self):
+        return self.__Fx
+    
+    @property
+    def Fy(self):
+        return self.__Fy
+    
     def scalarProd(self, a, b):
         real = integrate.dblquad(lambda y, x: np.real(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
         imag = integrate.dblquad(lambda y, x: np.imag(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
