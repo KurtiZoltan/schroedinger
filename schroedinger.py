@@ -45,6 +45,14 @@ class d1schroedinger:
     def x(self):
         return self.__x
     
+    @x.setter
+    def x(self, a):
+        self.__x = a
+        n = len(self.__cachedBasisFun) - 1
+        self.__cachedBasisFun = np.zeros((0, self.__numPoints), dtype=complex)
+        self.cacheBasisFun(n)
+        return a
+    
     @property
     def Es(self):
         return np.copy(self.__Es)
@@ -165,15 +173,15 @@ class d1schroedinger:
         return ret
 
 class d2schroedinger:
-    def __init__(self, psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15, name = "2D  : "):
+    def __init__(self, psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15, numPoints = 200, name = "2D  : "):
         self.__name = name
         self.__Fx = Fx
         self.__Fy = Fy
         self.__Lx = Lx
         self.__Ly = Ly
         
-        self.__d1x = d1schroedinger(F=Fx, L=Lx, name = "1D x: ")
-        self.__d1y = d1schroedinger(F=Fy, L=Ly, name = "1D y: ")
+        self.__d1x = d1schroedinger(F=Fx, L=Lx, numPoints=numPoints, name = "1D x: ")
+        self.__d1y = d1schroedinger(F=Fy, L=Ly, numPoints=numPoints, name = "1D y: ")
         
         self.__Es = np.zeros((0))
         self.__qNums = np.zeros((0, 2), dtype=int)
@@ -202,10 +210,26 @@ class d2schroedinger:
     @property
     def x(self):
         return self.__d1x.x
+    
+    @x.setter
+    def x(self, a):
+        self.__d1x.x = a
+        n = len(self.__cachedBasisFun) - 1
+        self.__cachedBasisFun = np.zeros((0, self.__d1y.x.shape[0], self.__d1x.x.shape[0]), dtype=complex) 
+        self.cacheBasisFun(n)
+        return a
         
     @property
     def y(self):
         return self.__d1y.x
+    
+    @y.setter
+    def y(self, a):
+        self.__d1y.x = a
+        n = len(self.__cachedBasisFun) - 1
+        self.__cachedBasisFun = np.zeros((0, self.__d1y.x.shape[0], self.__d1x.x.shape[0]), dtype=complex) 
+        self.cacheBasisFun(n)
+        return a
     
     @property
     def Lx(self):
@@ -222,6 +246,10 @@ class d2schroedinger:
     @property
     def Fy(self):
         return self.__Fy
+    
+    @property
+    def cachedBasisFun(self):
+        return np.copy(self.__cachedBasisFun) 
     
     def scalarProd(self, a, b):
         real = integrate.dblquad(lambda y, x: np.real(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
@@ -262,16 +290,18 @@ class d2schroedinger:
         return self.__d1x.waveFun(x, self.__qNums[n, 0]) * self.__d1y.waveFun(y, self.__qNums[n, 1])
     
     def cacheBasisFun(self, n):
-        x = self.__d1x.x
-        y = self.__d1y.x
-        self.eLevel(n)
-        xn = self.__qNums[n, 0]
-        yn = self.__qNums[n, 1]
-        xfun = self.__d1x.waveFun(x, xn)
-        yfun = self.__d1y.waveFun(y, yn)
-        xfun, yfun = np.meshgrid(xfun, yfun)
-        basisFun = xfun * yfun
-        self.__cachedBasisFun = np.append(self.__cachedBasisFun, np.array(basisFun, ndmin=3), axis=0)
+        if len(self.__cachedBasisFun) <= n:
+            for i in range(len(self.__cachedBasisFun), n+1):
+                x = self.__d1x.x
+                y = self.__d1y.x
+                self.eLevel(i)
+                xn = self.__qNums[i, 0]
+                yn = self.__qNums[i, 1]
+                xfun = self.__d1x.waveFun(x, xn)
+                yfun = self.__d1y.waveFun(y, yn)
+                xfun, yfun = np.meshgrid(xfun, yfun)
+                basisFun = xfun * yfun
+                self.__cachedBasisFun = np.append(self.__cachedBasisFun, np.array(basisFun, ndmin=3), axis=0)
     
     def basisCoeff(self, n):
         if len(self.__c0s) <= n:

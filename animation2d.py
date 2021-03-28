@@ -11,11 +11,9 @@ Ly = 15
 
 x0 = 5
 y0 = 3
-d = 1
+d = np.sqrt(2)
 kx = 0
 ky = 2
-
-max_energy = 20
 
 animTime = 30
 FPS = 30
@@ -25,7 +23,7 @@ name = 'messenger.mp4'
 save = False
 
 def gauss(x, y):
-    return np.exp(-1/2 * ((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))
+    return np.exp(-((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))
 
 test = d2schroedinger(gauss, Fx = Fx, Fy = Fy)
 point = classicalPoint(x0, y0, kx, ky, test.Lx, test.Ly, test.Fx, test.Fy)
@@ -37,7 +35,7 @@ plt.rcParams.update({
     "font.cursive": "Zapf Chancery",
     "font.monospace": ["Courier", "Computer Modern Typewriter"],
     "text.usetex": True,
-    "lines.linewidth": 0.8,
+    "lines.linewidth": 1,
     'figure.autolayout': True})
 
 x = test.x
@@ -64,17 +62,3 @@ if save:
     anim.save(name, fps=FPS)
 else:
     plt.show()
-
-t = np.linspace(0, 30, 100)
-x = np.zeros(t.shape)
-
-for i, currt in zip(range(len(t)), t):
-    state = lambda x, y: test.timeEvolution(currt, x, y)
-    xstate = lambda x, y: x * test.timeEvolution(currt, x, y)
-    temp = test.scalarProd(state, xstate)
-    x[i] = np.real(temp)
-    print(i, np.imag(temp))
-np.savetxt("t.txt", t)
-np.savetxt("x.txt", x)
-plt.plot(t, x)
-plt.show()
