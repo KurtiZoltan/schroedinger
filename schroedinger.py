@@ -285,7 +285,9 @@ class d2schroedinger:
     
     def timeEvolution(self, t, x = None, y = None):
         if x != None and y != None:
-            pass
+            ret = 0 * x
+            for i in range(len(self.__Es)):
+                ret += (self.__c0s[i] * np.exp(-1j * self.__Es[i] * t)) * self.waveFun(x, y, i)
         else:
             ret = 0 * self.__cachedBasisFun[0]
             for i in range(len(self.__cachedBasisFun)):

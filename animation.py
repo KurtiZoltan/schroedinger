@@ -19,6 +19,16 @@ def gauss(x):
 
 test = d1schroedinger(gauss)
 
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times", "Palatino", "New Century Schoolbook", "Bookman", "Computer Modern Roman"],
+    "font.sans-serif": ["Helvetica", "Avant Garde", "Computer Modern Sans serif"],
+    "font.cursive": "Zapf Chancery",
+    "font.monospace": ["Courier", "Computer Modern Typewriter"],
+    "text.usetex": True,
+    "lines.linewidth": 0.8,
+    'figure.autolayout': True})
+
 fig = plt.figure(figsize = [5, 4], dpi = 300)
 ax = plt.axes(xlim=(0, test.getLength()), ylim=(0, 1))
 line, = ax.plot([], [], lw=1)
@@ -36,3 +46,4 @@ if save:
     anim.save('pingpong.mp4', fps=FPS, extra_args=['-vcodec', 'libx264'])
 else:
     plt.show()
+    

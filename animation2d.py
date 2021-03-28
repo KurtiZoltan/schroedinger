@@ -21,7 +21,7 @@ animTime = 30
 FPS = 30
 timeSpeed = 1
 
-name = 'vertical_only_corrected.mp4'
+name = 'messenger.mp4'
 save = False
 
 def gauss(x, y):
@@ -29,6 +29,16 @@ def gauss(x, y):
 
 test = d2schroedinger(gauss, Fx = Fx, Fy = Fy)
 point = classicalPoint(x0, y0, kx, ky, test.Lx, test.Ly, test.Fx, test.Fy)
+
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times", "Palatino", "New Century Schoolbook", "Bookman", "Computer Modern Roman"],
+    "font.sans-serif": ["Helvetica", "Avant Garde", "Computer Modern Sans serif"],
+    "font.cursive": "Zapf Chancery",
+    "font.monospace": ["Courier", "Computer Modern Typewriter"],
+    "text.usetex": True,
+    "lines.linewidth": 0.8,
+    'figure.autolayout': True})
 
 x = test.x
 y = test.y
@@ -44,7 +54,8 @@ def animate(i):
     point.step(time)
     im.set_array(data)
     ball.set_data(point.x, point.y)
-    #print(i, 'frames out of', FPS * animTime)
+    if save:
+        print(i, 'frames out of', FPS * animTime)
     return [im, ball]
 
 anim = animation.FuncAnimation(fig, animate, frames=animTime*FPS, interval=1000 / FPS, blit=True)
@@ -53,3 +64,17 @@ if save:
     anim.save(name, fps=FPS)
 else:
     plt.show()
+
+t = np.linspace(0, 30, 100)
+x = np.zeros(t.shape)
+
+for i, currt in zip(range(len(t)), t):
+    state = lambda x, y: test.timeEvolution(currt, x, y)
+    xstate = lambda x, y: x * test.timeEvolution(currt, x, y)
+    temp = test.scalarProd(state, xstate)
+    x[i] = np.real(temp)
+    print(i, np.imag(temp))
+np.savetxt("t.txt", t)
+np.savetxt("x.txt", x)
+plt.plot(t, x)
+plt.show()
