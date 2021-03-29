@@ -1,0 +1,25 @@
+$x \rightarrow \infty$ aszimptotikus alak:
+	\begin{equation}
+		\Ai{-x} = \frac{1}{\sqrt{\pi}x^{1/4}}\cos\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right)
+	\end{equation}
+	\begin{equation}
+		\Bi{-x} = -\frac{1}{\sqrt{\pi}x^{1/4}}\sin\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right)
+	\end{equation}
+	\begin{equation}
+		\Ti{-x} = -\cot\left( \frac{2}{3}x^{3/2} - \frac{\pi}{4} \right) + \mathcal{O}\left(x^{-5/4}\right)
+	\end{equation}
+	
+	Ezzel a közelítéssel \aref{box_energiaszintek_egyenlet}. egyenlet alakja:
+	\begin{equation}
+		\cot\left(\frac{2}{3}\left(b-aL\right)^{3/2} - \frac{\pi}{4}\right) = \cot\left(\frac{2}{3}b^{3/2} - \frac{\pi}{4}\right)
+	\end{equation}
+	, azaz
+	\begin{equation}
+		\frac{2}{3}b^{3/2} - \frac{2}{3}\left(b-aL\right)^{3/2} = n\pi
+	\end{equation}
+	. Az $a$ és $b$ behelyettesítésével az egyenlet
+	\begin{equation}
+		\frac{2\sqrt{2m}}{3F\hbar}\left(E^{3/2} - \left(E - FL\right)^{3/2}\right) = n\pi
+	\end{equation}
+	Ez megegyezik a szemiklasszikus kvantálással kapott eredménnyel, ami azt jelenti, hogy a szemiklasszikus közelítés jól működik nagy energiáknál, hibája $\mathcal{O}\left(E^{-5/4}\right)$ nagyságrendű.
+
