@@ -1,6 +1,6 @@
-import matplotlib.pyplot as plt
 import numpy as np
 from scipy import special, optimize
+from plot import *
 
 def char_eq(E, L):
     ai1, ai1p, bi1, bi1p = special.airy(-E)
@@ -64,16 +64,6 @@ def compare(n, l0, l1, appr):
     return
 
 plt.figure(figsize=[5, 4])
-plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["Times", "Palatino", "New Century Schoolbook", "Bookman", "Computer Modern Roman"],
-    "font.sans-serif": ["Helvetica", "Avant Garde", "Computer Modern Sans serif"],
-    "font.cursive": "Zapf Chancery",
-    "font.monospace": ["Courier", "Computer Modern Typewriter"],
-    "text.usetex": True,
-    "lines.linewidth": 0.8,
-    'figure.autolayout': True})
-
 for i in range(1, 20):
     band(i, 0.5, 5)
 plt.xlim((0.5, 5))
@@ -83,7 +73,7 @@ plt.ylabel("$\\sqrt[3]{\\frac{2m}{\\hbar^2F^2}}E$")
 plt.grid()
 plt.tight_layout()
 plt.savefig("figs/energiaszintek.pdf")
-#plt.show()
+plt.show()
 
 plt.figure(figsize=[5, 4])
 for i in range(1, 9):
@@ -96,7 +86,7 @@ plt.grid()
 plt.tight_layout()
 plt.legend(("Egzakt energia", "Szemiklasszikus közelítés"))
 plt.savefig("figs/energiaszintkozelites.pdf")
-#plt.show()
+plt.show()
 
 plt.figure(figsize=[5, 4])
 for i in range(1, 20):
@@ -109,4 +99,4 @@ plt.grid()
 plt.tight_layout()
 plt.legend(("Egzakt energia", "Végtelen potenciálgödör"))
 plt.savefig("figs/infsquareenergia.pdf")
-#plt.show()
+plt.show()

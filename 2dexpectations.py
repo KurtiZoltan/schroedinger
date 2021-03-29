@@ -1,17 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from matplotlib import animation
 from schroedinger import *
-
-plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["Times", "Palatino", "New Century Schoolbook", "Bookman", "Computer Modern Roman"],
-    "font.sans-serif": ["Helvetica", "Avant Garde", "Computer Modern Sans serif"],
-    "font.cursive": "Zapf Chancery",
-    "font.monospace": ["Courier", "Computer Modern Typewriter"],
-    "text.usetex": True,
-    "lines.linewidth": 1,
-    'figure.autolayout': True})
+from plot import *
 
 Fx = 1
 Fy = 1

@@ -1,8 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from matplotlib import animation
 from schroedinger import *
 from classical import *
+from plot import *
 
 Fx = 1
 Fy = 1
@@ -27,16 +27,6 @@ def gauss(x, y):
 
 test = d2schroedinger(gauss, Fx = Fx, Fy = Fy)
 point = classicalPoint(x0, y0, kx, ky, test.Lx, test.Ly, test.Fx, test.Fy)
-
-plt.rcParams.update({
-    "font.family": "serif",
-    "font.serif": ["Times", "Palatino", "New Century Schoolbook", "Bookman", "Computer Modern Roman"],
-    "font.sans-serif": ["Helvetica", "Avant Garde", "Computer Modern Sans serif"],
-    "font.cursive": "Zapf Chancery",
-    "font.monospace": ["Courier", "Computer Modern Typewriter"],
-    "text.usetex": True,
-    "lines.linewidth": 1,
-    'figure.autolayout': True})
 
 x = test.x
 y = test.y
