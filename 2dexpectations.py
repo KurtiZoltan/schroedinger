@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import animation
+from numba import *
 from schroedinger import *
 from plot import *
 

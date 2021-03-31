@@ -1,16 +1,17 @@
 import numpy as np
 from scipy import special, optimize, integrate
+from numba import njit
+import pickle
+import os.path
+from os import path
 
 class d1schroedinger:
-    def __init__(self, psi0 = None, F = 1, L = 15, numPoints = 200, x = None, name = "1D: "):
+    def __init__(self, psi0 = None, F = 1.0, L = 15.0, numPoints = 200, name = "1D: "):
         self.__name = name
         self.__F = F
         self.__L = L
         self.__numPoints = numPoints
-        if x == None:
-            self.__x = np.linspace(0, L, numPoints)
-        else:
-            self.__x = x
+        self.__x = np.linspace(0, L, numPoints)
         
         self.__Es = np.zeros((0))
         self.__norms = np.zeros((0))
@@ -28,7 +29,7 @@ class d1schroedinger:
                 self.basisCoeff(n)
                 
                 eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
-                print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
+                print(self.__name + "Sum of probabilities: " + str(eWaveFunSum))
                 if eWaveFunSum > 0.9999:
                     break
                 n += 1
@@ -174,6 +175,15 @@ class d1schroedinger:
 
 class d2schroedinger:
     def __init__(self, psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15, numPoints = 200, name = "2D  : "):
+        id = hash((psi0, Fx, Fy, Lx, Ly, numPoints))
+        filename = str(id) + ".2dcache"
+        directory = "cache/"
+        
+        if path.isfile(directory + filename):
+            with open(directory + filename) as infile:
+                
+            break
+        
         self.__name = name
         self.__Fx = Fx
         self.__Fy = Fy
@@ -203,6 +213,9 @@ class d2schroedinger:
                 if eWaveFunSum > 0.99:
                     break
                 n += 1
+        with open(directory + filename) as outfile:
+            pickle.dump(self, outfile)
+        
     @property
     def Es(self):
         return np.copy(self.__Es)

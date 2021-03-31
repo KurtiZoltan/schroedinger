@@ -4,15 +4,26 @@ from schroedinger import *
 from classical import *
 from plot import *
 
+'''
 Fx = 1
 Fy = 1
 Lx = 10
 Ly = 15
-
 x0 = 5
 y0 = 3
 d = np.sqrt(2)
 kx = 0
+ky = 2
+'''
+
+Fx = 0.00001
+Fy = 1
+Lx = 40
+Ly = 10
+x0 = 3
+y0 = 5
+d = 2
+kx = 1
 ky = 2
 
 animTime = 30
@@ -25,7 +36,7 @@ save = False
 def gauss(x, y):
     return np.exp(-((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))
 
-test = d2schroedinger(gauss, Fx = Fx, Fy = Fy)
+test = d2schroedinger(gauss, Lx=Lx, Ly=Ly, Fx = Fx, Fy = Fy)
 point = classicalPoint(x0, y0, kx, ky, test.Lx, test.Ly, test.Fx, test.Fy)
 
 x = test.x
