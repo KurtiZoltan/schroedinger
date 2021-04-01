@@ -4,7 +4,7 @@ from schroedinger import *
 from classical import *
 from plot import *
 
-'''
+
 Fx = 1
 Fy = 1
 Lx = 10
@@ -14,8 +14,8 @@ y0 = 3
 d = np.sqrt(2)
 kx = 0
 ky = 2
-'''
 
+'''
 Fx = 0.00001
 Fy = 1
 Lx = 40
@@ -25,7 +25,7 @@ y0 = 5
 d = 2
 kx = 1
 ky = 2
-
+'''
 animTime = 30
 FPS = 30
 timeSpeed = 1

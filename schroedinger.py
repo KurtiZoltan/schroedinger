@@ -175,28 +175,33 @@ class d1schroedinger:
 
 class d2schroedinger:
     def __init__(self, psi0 = None, Fx = 0.00001, Fy = 0.00001, Lx = 10, Ly = 15, numPoints = 200, name = "2D  : "):
-        id = hash((psi0, Fx, Fy, Lx, Ly, numPoints))
-        filename = str(id) + ".2dcache"
+        x = np.linspace(-10, 10, 100)
+        y = np.linspace(-10, 10, 100)
+        x, y = np.meshgrid(x, y)
+        if psi0 != None:
+            res = x * y**2 * psi0(x, y)
+        else:
+            res = np.zeros((0))
+        filename =  (str(np.sum(np.abs(res))) + str(Fx) + str(Fy) + str(Lx) + str(Ly) + str(numPoints) + name + ".2dcache").replace(" ", "")
         directory = "cache/"
-        
         if path.isfile(directory + filename):
-            with open(directory + filename) as infile:
-                
-            break
-        
-        self.__name = name
-        self.__Fx = Fx
-        self.__Fy = Fy
-        self.__Lx = Lx
-        self.__Ly = Ly
-        
-        self.__d1x = d1schroedinger(F=Fx, L=Lx, numPoints=numPoints, name = "1D x: ")
-        self.__d1y = d1schroedinger(F=Fy, L=Ly, numPoints=numPoints, name = "1D y: ")
-        
-        self.__Es = np.zeros((0))
-        self.__qNums = np.zeros((0, 2), dtype=int)
-        self.__cachedBasisFun = np.zeros((0, self.__d1y.x.shape[0], self.__d1x.x.shape[0]), dtype=complex)
-        self.__c0s = np.zeros((0), dtype=complex)
+            with open(directory + filename, "rb") as infile:
+                self = pickle.load(infile)
+                print("loaded")
+        else:
+            self.__name = name
+            self.__Fx = Fx
+            self.__Fy = Fy
+            self.__Lx = Lx
+            self.__Ly = Ly
+            
+            self.__d1x = d1schroedinger(F=Fx, L=Lx, numPoints=numPoints, name = "1D x: ")
+            self.__d1y = d1schroedinger(F=Fy, L=Ly, numPoints=numPoints, name = "1D y: ")
+            
+            self.__Es = np.zeros((0))
+            self.__qNums = np.zeros((0, 2), dtype=int)
+            self.__cachedBasisFun = np.zeros((0, self.__d1y.x.shape[0], self.__d1x.x.shape[0]), dtype=complex)
+            self.__c0s = np.zeros((0), dtype=complex)
         
         if psi0 != None:
             self.__unormPsi0 = psi0
@@ -210,11 +215,11 @@ class d2schroedinger:
                 
                 eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
                 print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
-                if eWaveFunSum > 0.99:
+                if eWaveFunSum > 0.1:
                     break
                 n += 1
-        with open(directory + filename) as outfile:
-            pickle.dump(self, outfile)
+        with open(directory + filename, "wb") as outfile:
+            pickle.dump(self, outfile, -1)
         
     @property
     def Es(self):
