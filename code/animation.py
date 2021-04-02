@@ -11,7 +11,7 @@ animTime = 120
 FPS = 30
 timeSpeed = 0.8
 
-save = False
+save = True
 
 def gauss(x):
     return np.exp(-1/2 * ((x - x0)/(d))**2 + 1j*k*x)
@@ -33,7 +33,7 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, frames=animTime*FPS, interval=1000 / FPS, blit=True)
 
 if save:
-    anim.save('pingpong.mp4', fps=FPS, extra_args=['-vcodec', 'libx264'])
+    anim.save("../videos/" + "1dball.mp4", fps=FPS, extra_args=['-vcodec', 'libx264'])
 else:
     plt.show()
     

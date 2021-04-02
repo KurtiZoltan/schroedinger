@@ -183,7 +183,7 @@ class d2schroedinger:
         else:
             res = np.zeros((0))
         filename =  (str(np.sum(np.abs(res))) + str(Fx) + str(Fy) + str(Lx) + str(Ly) + str(numPoints) + name + ".2dcache").replace(" ", "")
-        directory = "cache/"
+        directory = "../cache/"
         if path.isfile(directory + filename):
             with open(directory + filename, "rb") as infile:
                 self = pickle.load(infile)

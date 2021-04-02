@@ -31,7 +31,7 @@ FPS = 30
 timeSpeed = 1
 
 name = 'messenger.mp4'
-save = False
+save = True
 
 def gauss(x, y):
     return np.exp(-((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))
@@ -60,6 +60,6 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, frames=animTime*FPS, interval=1000 / FPS, blit=True)
 
 if save:
-    anim.save(name, fps=FPS)
+    anim.save("../videos/" + name, fps=FPS)
 else:
     plt.show()
