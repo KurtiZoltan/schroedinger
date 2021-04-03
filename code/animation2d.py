@@ -5,15 +5,15 @@ from classical import *
 from plot import *
 
 
-Fx = 1
+Fx = 0.0001
 Fy = 1
-Lx = 10
-Ly = 15
+Lx = 30
+Ly = 10
 x0 = 5
 y0 = 3
 d = np.sqrt(2)
 kx = 0
-ky = 2
+ky = 3
 
 '''
 Fx = 0.00001
@@ -31,7 +31,7 @@ FPS = 30
 timeSpeed = 1
 
 name = 'messenger.mp4'
-save = True
+save = False
 
 def gauss(x, y):
     return np.exp(-((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))

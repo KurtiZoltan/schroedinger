@@ -66,6 +66,15 @@ class d1schroedinger:
     def c0s(self):
         return np.copy(self.__c0s)
     
+    def saveTofile(self, filename):
+        with open(filename, "wb") as outFile:
+            data = [self.__name, self.__F, self.__L, self.__numPoints, self.__x, self.__Es, self.__norms, self.__cachedBasisFun, self.__c0s]
+            pickle.dump(data, outFile, -1)
+    
+    def loadFromFile(self, filename):
+        with open(filename, "rb") as inFile:
+            self.__name, self.__F, self.__L, self.__numPoints, self.__x, self.__Es, self.__norms, self.__cachedBasisFun, self.__c0s = pickle.load(inFile)
+    
     def cacheBasisFun(self, n):
         if len(self.__cachedBasisFun) <= n:
             for i in range(len(self.__cachedBasisFun), n+1):
@@ -186,8 +195,7 @@ class d2schroedinger:
         directory = "../cache/"
         if path.isfile(directory + filename):
             with open(directory + filename, "rb") as infile:
-                self = pickle.load(infile)
-                print("loaded")
+                self.loadFromFile(directory + filename)
         else:
             self.__name = name
             self.__Fx = Fx
@@ -215,11 +223,10 @@ class d2schroedinger:
                 
                 eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
                 print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
-                if eWaveFunSum > 0.1:
+                if eWaveFunSum > 0.99:
                     break
                 n += 1
-        with open(directory + filename, "wb") as outfile:
-            pickle.dump(self, outfile, -1)
+        self.saveToFile(directory + filename)
         
     @property
     def Es(self):
@@ -267,7 +274,22 @@ class d2schroedinger:
     
     @property
     def cachedBasisFun(self):
-        return np.copy(self.__cachedBasisFun) 
+        return np.copy(self.__cachedBasisFun)
+    
+    def saveToFile(self, filename):
+        with open(filename, "wb") as outFile:
+            data = [self.__name, self.__Fx, self.__Fy, self.__Lx, self.__Ly, self.__Es, self.__qNums, self.__cachedBasisFun, self.__c0s]
+            pickle.dump(data, outFile, -1)
+            self.__d1x.saveTofile(filename + ".d1x")
+            self.__d1y.saveTofile(filename + ".d1y")
+    
+    def loadFromFile(self, filename):
+        with open(filename, "rb") as inFile:
+            self.__name, self.__Fx, self.__Fy, self.__Lx, self.__Ly, self.__Es, self.__qNums, self.__cachedBasisFun, self.__c0s = pickle.load(inFile)
+            self.__d1x = d1schroedinger()
+            self.__d1x.loadFromFile(filename + ".d1x")
+            self.__d1y = d1schroedinger()
+            self.__d1y.loadFromFile(filename + ".d1y")
     
     def scalarProd(self, a, b):
         real = integrate.dblquad(lambda y, x: np.real(np.conjugate(a(x, y)) * b(x, y)), 0, self.__Lx, lambda x: 0, lambda x: self.__Ly)[0]
