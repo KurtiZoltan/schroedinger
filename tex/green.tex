@@ -17,31 +17,51 @@ A Green-függvény név indokolt, és ennek a segítségével fogom meghatározn
 A $\Bra{x}\left(\op{H} - E\right) \Ket{x^\prime}$ maggal vett konvolúció a $\op{H} - E$ operátor hatása. Ezért
 \begin{equation}
     \left(\op{H}_x - E\right) G\left(x, y; E\right) = \delta\left(x - y\right)
-    \label{green:deltaeq}
 \end{equation}
 ami a differenciálegyenletek elméletéből ismert Green-függvény definíciója. Ebben a konkrét esetben
 \begin{equation}
     \left( -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + Fx - E \right) G\left(x, y; E\right) = \delta\left(x - y\right)
+	\label{green:deltaeq}
 \end{equation}
 ami azt jelenti, hogy az $x < y$ tartományban
 \begin{equation}
     G\left(x, y; E\right) = C_1 \Ai{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + C_2 \Bi{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
+    \label{green:xy}
 \end{equation}
 illetve az $x > y$ tartományban
 \begin{equation}
     G\left(x, y; E\right) = C_3 \Ai{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + C_4 \Bi{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
+    \label{green:yx}
 \end{equation}
-, ahol a $C$ együtthatók függhetnek $y$ és $E$ értékétől. A $C$ együtthatók meghatározásához a doboz eredeti határfeltételeit $x = 0$ és $x = L$ pontban, valamint az $x = y$ pontban \aref{green:deltaeq}. egyenlet $y$ körüli integrálásából kapot feltételeket kell felhasználni. 
-
-
-
-
-
-
-
-
-
-
+, ahol a $C$ együtthatók függhetnek $y$ és $E$ értékétől. A $C$ együtthatók meghatározásához a doboz eredeti határfeltételeit $x = 0$ és $x = L$ pontban, valamint az $x = y$ pontban \aref{green:deltaeq}. egyenlet $y$ körüli integrálásából kapot feltételeket kell felhasználni. A doboz falára vonatkozó határfeltételek:
+\begin{equation}
+	\left. G\left(x,y;E\right)\right\rvert_{x = 0} = 0
+\end{equation}
+\begin{equation}
+	\left. G\left(x,y;E\right)\right\rvert_{x = L} = 0
+\end{equation}
+\Aref{green:deltaeq}. egyenlet $\int_{y-\epsilon}^{y+\epsilon}\mathrm{d}x^\prime \int_{y}^{x^\prime} \mathrm{d}x$ szerinti integrálja az $\epsilon \to 0^+$ határesetben: 
+\begin{equation}
+	\lim_{\epsilon \to 0^+}\left.G\left(x,y;E \right)\right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 0
+\end{equation}
+A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \right\rvert_{x=y-\epsilon}^{x=y+\epsilon}$, ami a határesetben $0$. Az $\left(Fx - E\right)G\left(x,y;E\right)$ integrálja is $0$ a határesetben, mert az erdeti függvény is folytonos, így az integrálja is. \Aref{green:deltaeq}. egyenlet $x$ szerinti integrálja $y$ körüli $\epsilon$ sugarú környezetében az $\epsilon \to 0^+$ határesetben:
+\begin{equation}
+	\lim_{\epsilon \to 0^+}\left.\frac{\partial}{\partial x}G\left(x,y;E \right)\right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = -\frac{2m}{\hbar^2}
+\end{equation}
+Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ a határesetben. A bal oldalon az előzőhöz hasonló módon csak a derivált integrálja marad meg. \Aref{green:xy}. és \aref{green:yx}. egyenlet behelyettesítése meghatározza a $C$ együtthatókra vonatkozó egyenleteket:
+\begin{equation}
+	C_2 = C_1 \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
+\end{equation}
+\begin{equation}
+	C_4 = C_3 \Ti{\sqrt[3]{\frac{2m}{\hbar^2F^2}}\left(FL - E\right)}
+\end{equation}
+\begin{equation}
+	C_3 = C_1 \frac{\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}y - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}E}}{\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}y - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + \Ti{\sqrt[3]{\frac{2m}{\hbar^2F^2}}\left(FL - E\right)}}
+\end{equation}
+TODO: $b$ lecserélése $bE$-re az előző részekben.
+\begin{equation}
+	C_1 = \frac{}{}
+\end{equation}
 
 
 
