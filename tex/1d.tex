@@ -1,17 +1,17 @@
 A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz $V(x) = Fx$.
 	Az egyenlethez tartozó határfeltételek, ha a doboz hossza $L$:
 	\begin{equation}
-		\psi \big\rvert_0 = \psi \big \rvert_L = 0
+		\phi \big\rvert_0 = \phi \big \rvert_L = 0
 	\end{equation}
 	A megoldandó időfüggetlen Schrödinger-egyenlet:
 	\begin{equation}
-		-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + Fx\psi = E\psi
+		-\frac{\hbar^2}{2m}\frac{d^2\phi}{dx^2} + Fx\phi = E\phi
 	\end{equation}
 	\begin{equation}
-		\frac{d^2\psi}{dx^2} - \frac{2mFx}{\hbar^2}\psi = -\frac{2mE}{\hbar^2}\psi
+		\frac{d^2\phi}{dx^2} - \frac{2mFx}{\hbar^2}\phi = -\frac{2mE}{\hbar^2}\phi
 	\end{equation}
 	\begin{equation}
-		\frac{d^2\psi}{dx^2} - \left(\frac{2mF}{\hbar^2}x - \frac{2mE}{\hbar^2}\right)\psi = 0
+		\frac{d^2\phi}{dx^2} - \left(\frac{2mF}{\hbar^2}x - \frac{2mE}{\hbar^2}\right)\phi = 0
 	\end{equation}
 	Az Airy egyenlet ilyen alakra hozható a változó affin lineáris transzformációjával:
 	\begin{equation}
@@ -23,10 +23,10 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 	\end{equation}
 	Az együtthatók összevetése alapján $a = \sqrt[3]{\frac{2mF}{\hbar^2}}$ és $b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}E$. Így a Schrödinger-gyenlet megoldása:
 	\begin{equation}
-		\psi(x) = y(x^\prime) = y\left(\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right)
+		\phi(x) = y(x^\prime) = y\left(\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right)
 	\end{equation}
 	, ahol $y(x) = \alpha \Ai{x} + \beta \Bi{x}$.
-	A $\psi \big\rvert_0 = 0$ feltételből következik, hogy $\psi \propto \Bi{-b}\Ai{ax-b} - \Ai{-b}\Bi{ax-b}$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
+	A $\phi \big\rvert_0 = 0$ feltételből következik, hogy $\phi \propto \Bi{-b}\Ai{ax-b} - \Ai{-b}\Bi{ax-b}$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
 	\begin{equation}
 		\Bi{-b}\Ai{aL-b} - \Ai{-b}\Bi{aL-b} = 0
 	\end{equation}
