@@ -23,6 +23,7 @@ ami a differenciálegyenletek elméletéből ismert Green-függvény definíció
     \left( -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + Fx - E \right) G\left(x, y; E\right) = \delta\left(x - y\right)
 	\label{green:deltaeq}
 \end{equation}
+\subsection{Egzakt Green-függvény}
 ami azt jelenti, hogy az $x < y$ tartományban
 \begin{equation}
     G\left(x, y; E\right) = C_1 \Ai{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + C_2 \Bi{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
@@ -50,19 +51,25 @@ A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \ri
 \end{equation}
 Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ a határesetben. A bal oldalon az előzőhöz hasonló módon csak a derivált integrálja marad meg. \Aref{green:xy}. és \aref{green:yx}. egyenlet behelyettesítése meghatározza a $C$ együtthatókra vonatkozó egyenleteket:
 \begin{equation}
-	C_2 = C_1 \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
+	\frac{C_2}{C_1} = \Ti{-bE}
+	\label{green:Cbegin}
 \end{equation}
 \begin{equation}
-	C_4 = C_3 \Ti{\sqrt[3]{\frac{2m}{\hbar^2F^2}}\left(FL - E\right)}
+	\frac{C_4}{C_3} = \Ti{b\left(FL - E\right)}
 \end{equation}
 \begin{equation}
-	C_3 = C_1 \frac{\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}y - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}E}}{\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}y - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + \Ti{\sqrt[3]{\frac{2m}{\hbar^2F^2}}\left(FL - E\right)}}
+	\frac{C_3}{C_1} = \frac{\Ti{ay - bE} + \Ti{-bE}}{\Ti{ay - bE} + \Ti{b\left(FL - E\right)}}
 \end{equation}
 TODO: $b$ lecserélése $bE$-re az előző részekben.
 \begin{equation}
-	C_1 = \frac{}{}
+	C_1 = -\frac{2m}{a\hbar^2}\frac{1}{\left( \left(\frac{C_3}{C_1}-1\right)\Aip{ay - bE} + \left(\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}\right) \Bip{ay - bE} \right)}
+	\label{green:Cend}
 \end{equation}
-
+\begin{equation}
+	C_1 = -\frac{a^2}{F}\frac{1}{\left( \left(\frac{C_3}{C_1}-1\right)\Aip{ay - bE} + \left(\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}\right) \Bip{ay - bE} \right)}
+\end{equation}
+\Aref{green:Cbegin}-\ref{green:Cend}, \ref{green:xy}. és \aref{green:yx}. egyenletek explicit, analitikus módon előállítják a $G\left( x, y; E \right)$ Green-függvényt.
+\subsection{Green-függvény perturbáció számítással}
 
 
 
