@@ -51,11 +51,11 @@ A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \ri
 \end{equation}
 Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ a határesetben. A bal oldalon az előzőhöz hasonló módon csak a derivált integrálja marad meg. \Aref{green:xy}. és \aref{green:yx}. egyenlet behelyettesítése meghatározza a $C$ együtthatókra vonatkozó egyenleteket:
 \begin{equation}
-	\frac{C_2}{C_1} = \Ti{-bE}
+	\frac{C_2}{C_1} = -\Ti{-bE}
 	\label{green:Cbegin}
 \end{equation}
 \begin{equation}
-	\frac{C_4}{C_3} = \Ti{b\left(FL - E\right)}
+	\frac{C_4}{C_3} = -\Ti{b\left(FL - E\right)}
 \end{equation}
 \begin{equation}
 	\frac{C_3}{C_1} = \frac{\Ti{ay - bE} + \Ti{-bE}}{\Ti{ay - bE} + \Ti{b\left(FL - E\right)}}
@@ -70,7 +70,29 @@ TODO: $b$ lecserélése $bE$-re az előző részekben.
 \end{equation}
 \Aref{green:Cbegin}-\ref{green:Cend}, \ref{green:xy}. és \aref{green:yx}. egyenletek explicit, analitikus módon előállítják a $G\left( x, y; E \right)$ Green-függvényt.
 \subsection{Green-függvény perturbáció számítással}
-
+A perturbációszámításhoz a Hamilton operátort két részre bontom fel:
+\begin{equation}
+	\op{H} = \op{H}_0 + \op{V}
+\end{equation}
+A $\op{H}_0$ operátorhoz tartozó rezolvens $\op{G}_0\left(E\right)$. $\op{H}$ és $\op{H}_0$ kifejezhetőek a rezolvenseikkel. Ha a kifejezéseket behelyettesítjük a fenti egyenletbe, implicit egyenletet kapunk $op{G}\left(E\right)$-re nézve, melyet fel lehet használni perturbációszámításra. Az egyenletet balról $\op{G}_0^{-1}\left(E\right)$-vel, jobbról $\op{G}^{-1}\left(E\right)$-vel szorzunk.
+\begin{equation}
+	\op{G}^{-1}\left(E\right) + E = \op{G}_0^{-1}\left(E\right) + E + \op{V}
+\end{equation}
+\begin{equation}
+	\op{G}\left(E\right) = \op{G}_0\left(E\right) - \op{G}_0\left(E\right)\op{V}\op{G}\left(E\right)
+	\label{green:pertmaster}
+\end{equation}
+Az alábbi módon definiálva $\op{G}_n\left(E\right)$ operátort, \aref{green:pertmaster}. egyenlethez hasonló rekurziós összefüggés áll fent:
+\begin{equation}
+	\op{G}_n\left(E\right) = \op{G}_0\left(E\right)\sum_{k=0}^n\left(-\op{V}\op{G}_0\left(E\right)\right)^k
+\end{equation}
+\begin{equation}
+	\op{G}_{n+1}\left(E\right) = \op{G}_0\left(E\right) - \op{G}_0\left(E\right)\op{V}\op{G}_n\left(E\right)
+\end{equation}
+Ha $\norm{\op{V}\op{G}_0\left(E\right)} < 1$ akkor a $\op{G}_n$ sorozat konvergál, és kielégíti \aref{green:pertmaster}. egyenletet. Ezért konvergencia esetén:
+\begin{equation}
+	\op{G}\left(E\right) = \op{G}_0\left(E\right)\sum_{n=0}^\infty\left(-\op{V}\op{G}_0\left(E\right)\right)^n
+\end{equation}
 
 
 

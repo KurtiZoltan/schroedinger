@@ -19,7 +19,6 @@ def gauss(x):
 
 test = d1schroedinger(gauss, F = 0.1)
 
-'''
 fig = plt.figure(figsize = [5, 4], dpi = 300)
 ax = plt.axes(xlim=(0, test.getLength()), ylim=(0, 1))
 line, = ax.plot([], [], lw=1)
@@ -37,4 +36,3 @@ if save:
     anim.save("../videos/" + "1dball.mp4", fps=FPS, extra_args=['-vcodec', 'libx264'])
 else:
     plt.show()
-'''

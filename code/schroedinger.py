@@ -72,8 +72,8 @@ class d1schroedinger:
         ai2, ai2p, bi2, bi2p = special.airy((self.__F * self.__L - E) / F3sqrt**2)
         ai3, ai3p, bi3, bi3p = special.airy(x * F3sqrt - E / F3sqrt**2)
         ai4, ai4p, bi4, bi4p = special.airy(y * F3sqrt - E / F3sqrt**2)
-        c2c1 = ai1 / bi1
-        c4c3 = ai2 / bi2
+        c2c1 = -ai1 / bi1
+        c4c3 = -ai2 / bi2
         c3c1 = (ai4 / bi4 + c2c1) / (ai4 / bi4 + c4c3)
         c1 = -1 / F3sqrt / ((c3c1 - 1) * ai4p + (c4c3 * c3c1 - c2c1) * bi4p)
         c2 = c2c1 * c1
