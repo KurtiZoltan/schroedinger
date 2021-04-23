@@ -5,6 +5,8 @@ import pickle
 import os.path
 from os import path
 
+from plot import * 
+
 class d1schroedinger:
     def __init__(self, psi0 = None, F = 1.0, L = 15.0, numPoints = 200, name = "1D: "):
         self.__name = name
@@ -66,6 +68,13 @@ class d1schroedinger:
     def c0s(self):
         return np.copy(self.__c0s)
     
+    def G0(self, x, y, E):
+        k = np.sqrt(E)
+        prefactor = -1 / k / np.sin(k * self.__L)
+        G1 = np.sin(k*x) * np.sin(k*(y-self.__L)) * (x < y)
+        G2 = np.sin(k*y) * np.sin(k*(x-self.__L)) * (1 - (x < y))
+        return prefactor * (G1 + G2)
+    
     def G(self, x, y, E):
         F3sqrt = np.power(self.__F, 1/3)
         ai1, ai1p, bi1, bi1p = special.airy(-E / F3sqrt**2)
@@ -75,7 +84,11 @@ class d1schroedinger:
         c2c1 = -ai1 / bi1
         c4c3 = -ai2 / bi2
         c3c1 = (ai4 / bi4 + c2c1) / (ai4 / bi4 + c4c3)
+        #c3c1 = (c2c1 * (ai4 / bi4 / c2c1 + 1)) / (c4c3 * (ai4 / bi4 / c4c3 + 1))
         c1 = -1 / F3sqrt / ((c3c1 - 1) * ai4p + (c4c3 * c3c1 - c2c1) * bi4p)
+        #plt.imshow(np.abs(ai4 / bi4 / c4c3 + 1))
+        #plt.colorbar()
+        #plt.show()
         c2 = c2c1 * c1
         c3 = c3c1 * c1
         c4 = c4c3 * c3
