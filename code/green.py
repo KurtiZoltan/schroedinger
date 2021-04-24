@@ -7,7 +7,7 @@ from plot import *
 test = d1schroedinger(F = 0.1)
 
 n = 5
-E = 1+0.2j
+E = 1+2j
 '''
 x = np.linspace(0, test.L, 1000)
 y = np.linspace(0, test.L, n)
@@ -17,6 +17,7 @@ for curry in y[1:-1]:
 plt.grid()
 plt.show()
 '''
+
 x = np.linspace(0, test.L, 1000)
 y = np.linspace(0, test.L, 1000)
 x, y = np.meshgrid(x, y)

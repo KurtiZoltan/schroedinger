@@ -83,10 +83,12 @@ class d1schroedinger:
         ai4, ai4p, bi4, bi4p = special.airy(y * F3sqrt - E / F3sqrt**2)
         c2c1 = -ai1 / bi1
         c4c3 = -ai2 / bi2
+        #c3c1 = (ai4 * bi1 - ai1 * bi4) / (ai4 * bi2 - ai2 * bi4) / bi1 * bi2
+        #c3c1 = y * F3sqrt * (ai1p * bi1 - ai1 * bi1p) / bi1**2 / (ai4 / bi4 + c4c3)
         c3c1 = (ai4 / bi4 + c2c1) / (ai4 / bi4 + c4c3)
         #c3c1 = (c2c1 * (ai4 / bi4 / c2c1 + 1)) / (c4c3 * (ai4 / bi4 / c4c3 + 1))
         c1 = -1 / F3sqrt / ((c3c1 - 1) * ai4p + (c4c3 * c3c1 - c2c1) * bi4p)
-        #plt.imshow(np.abs(ai4 / bi4 / c4c3 + 1))
+        #plt.imshow(np.abs(c3c1))
         #plt.colorbar()
         #plt.show()
         c2 = c2c1 * c1
@@ -94,6 +96,7 @@ class d1schroedinger:
         c4 = c4c3 * c3
         G1 = (c1 * ai3 + c2 * bi3) * (x < y)
         G2 = (c3 * ai3 + c4 * bi3) * (1 - (x < y))
+        #print((ai1p * bi1 - ai1 * bi1p) / ai1p * bi1)
         return G1 + G2
     
     def saveTofile(self, filename):
