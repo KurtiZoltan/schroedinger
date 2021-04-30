@@ -1,0 +1,10 @@
+\select@language {magyar} \contentsline {section}{\numberline {1}Schrödinger}{1}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Kvantumos közelítése}{2}%
+\select@language {magyar} \contentsline {section}{\numberline {3}Szemiklasszikus}{3}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Momentumok}{5}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Plafon érintés 1D}{5}%
+\select@language {magyar} \contentsline {section}{\numberline {6}3D doboz, ferde tér}{6}%
+\select@language {magyar} \contentsline {section}{\numberline {7}Green függvény}{6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1}Egzakt Green-függvény}{7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2}Green-függvény perturbáció számítással}{8}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Videó gyártás leírása}{9}%

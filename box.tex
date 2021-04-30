@@ -1,4 +1,10 @@
-\documentclass[a4paper,titlepage]{article}
+\documentclass[pdftex,12pt,a4paper]{article}
+\pdfpagewidth 8.5in
+\pdfpageheight 11.6in
+\linespread{1.3}
+\usepackage{anysize}
+\marginsize{3.5cm}{2.5cm}{2.5cm}{2.5cm}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[magyar]{babel}
@@ -15,38 +21,25 @@
 \newcommand{\op}[1]{\hat{#1}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
+\frenchspacing
 \begin{document}
-\section{Leírás}
-	Kvantummechanikai iskolapélda a homogén térbe helyezett egydimenziós
-	részecske. Ezt három dimenzióra kiterjesztve és két fal közé zárva
-	keressük az energia sajátállapotokat. Annyi előrelátható, hogy a nyílt
-	vagy félig nyílt esetekben használható, reguláris Airy függvény itt nem
-	elegendő a megoldáshoz, ennyiben túlmegyünk a tankönyvi feladaton. Az
-	aszimptotikus függvényalakok segítségével előállítjuk a magasan
-	gerjesztett állapotok energiáit és hullámfüggvényeit, s ezeket
-	összehasonlítjuk a közvetlenül a Bohr--Sommerfeld-módszerrel kapott
-	eredménnyel. Numerikusan szemléltetjük fizikailag érdekes kezdőállapotok
-	időfejlődését. Vizsgáljuk a rezolvenst és az állapotsűrűséget, továbbá a
-	sokrészecske rendszerekre való általánosítás lehetőségét.
-	
-	Egydimenziós, $m$ tömegű, lineáris $F x$  potenciálban mozgó kvantumos részecskét zárjunk $L$ hosszú, merev falú dobozba (ekvivalens a padló és mennyezet között függőlegesen pattogó kvantum labdával).
-	A stacionárius Schrödinger-egyenletből kiindulva, a határfeltételek figyelembe vételével, írjuk fel az energia sajátértékeket meghatározó szekuláris egyenletet, melyet oldjunk meg numerikusan. Ábrázoljuk az alacsonyabb nívókat a doboz méretének változtatása mellett, és szemléltessük grafikusan a stacionárius hullámfüggvényeket.  A szekuláris egyenletben fellépő függvények aszimptotikáinak ismeretében a magasabb nívókra próbáljunk egyszerűbb implicit formulát adni. Végezzük el a szemiklasszikus kvantálást is, hasonlítsuk össze az előző közelítő eredménnyel, és numerikusan néhány, az egzakt egyenletből kapott nívóval.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\addtolength{\marginparwidth}{50pt}
 
-	További kérdések:  (a) Számítsuk ki a nívókat expliciten, kicsiny $L$-ek mellett. (b) Mely paraméterek mellett esik egybe $F L$ éppen az alapállapoti energiával?  (Ilyenkor a klasszikus labda éppen eléri a mennyezetet.)
-	(c) Mutassuk meg, hogy e határesetnél kisebb $L$ belméret mellett minden nívó
-	$F L$ fölé esik.
-	(d) Írjuk fel a szemiklasszikus stacionárius hullámfüggvényeket, s grafikusan hasonlítsuk össze őket az egzaktakkal -- mikor jó a közelítés?
-	(e) Írjuk fel a kicsiny L melletti hullámfüggvényeket expliciten, ezeket szintén hasonlítsuk össze a valódiakkal.
-	
-	-Miért nem Rodnik osztályba tartozik
-	
-	-20-as képlet lépcsőfüggvény
-	
-	-klasszikus út
-	
-	-fx, fy = 0 külön tárgyalás
-	
-	-program leírása
+\pagenumbering{roman}
+\input{tex/cimlap.tex}
+\input{tex/abstract.tex}
+\newpage
+%\phantomsection
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+\pagenumbering{arabic}
+%\phantomsection
 \section{Schrödinger}
 	\input{tex/1d.tex}
 \section{Kvantumos közelítése}

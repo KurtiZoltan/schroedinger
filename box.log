@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.16)  24 APR 2021 11:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.16)  30 APR 2021 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
 \c@section=\count168
@@ -23,7 +23,17 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/anysize/anysize.sty
+Package: anysize 1994/08/13 setting margin sizes
+
+document style option `anysize' loaded
+Michael Salzenberg, Thomas Esser, Dirk Hillbrecht
+Version 1.0, Aug 13, 1994
+\@Leftmargin=\dimen135
+\@Rightmargin=\dimen136
+\@Topmargin=\dimen137
+\@Bottommargin=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
@@ -43,7 +53,7 @@ Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count175
-\U@D=\dimen135
+\U@D=\dimen139
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -64,11 +74,11 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen136
+\ex@=\dimen140
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
+\pmbraise@=\dimen141
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -85,7 +95,7 @@ LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box45
 \strutbox@=\box46
-\big@size=\dimen138
+\big@size=\dimen142
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count184
@@ -98,12 +108,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \column@=\count189
 \maxfields@=\count190
 \andhelp@=\toks18
-\eqnshift@=\dimen139
-\alignsep@=\dimen140
-\tagshift@=\dimen141
-\tagwidth@=\dimen142
-\totwidth@=\dimen143
-\lineht@=\dimen144
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
 \@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
@@ -140,8 +150,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen145
-\Gin@req@width=\dimen146
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
 )
 (/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
@@ -152,30 +162,30 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./box.aux)
 \openout1 = `box.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count193
-\scratchdimen=\dimen147
+\scratchdimen=\dimen151
 \scratchbox=\box50
 \nofMPsegments=\count194
 \nofMParguments=\count195
 \everyMPshowfont=\toks24
 \MPscratchCnt=\count196
-\MPscratchDim=\dimen148
+\MPscratchDim=\dimen152
 \MPnumerator=\count197
 \makeMPintoPDFobject=\count198
 \everyMPtoPDFconversion=\toks25
@@ -191,107 +201,115 @@ e
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
-) (./tex/1d.tex
+) (./tex/cimlap.tex
+<./figs/elte_cimer_color.pdf, id=1, 399.44432pt x 399.44833pt>
+File: ./figs/elte_cimer_color.pdf Graphic file (type pdf)
+<use ./figs/elte_cimer_color.pdf>
+Package pdftex.def Info: ./figs/elte_cimer_color.pdf  used on input line 18.
+(pdftex.def)             Requested size: 199.72166pt x 199.72368pt.
+
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (13.07512pt too wide) in paragraph at lines 23--25
-\T1/cmr/m/n/10 Az együtt-ha-tók össze-ve-té-se alap-ján $\OML/cmm/m/it/10 a \OT
-1/cmr/m/n/10 = []$ \T1/cmr/m/n/10 és $\OML/cmm/m/it/10 b \OT1/cmr/m/n/10 = []\O
-ML/cmm/m/it/10 E$\T1/cmr/m/n/10 . Így a Schrödinger-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figs/elte_cimer_color.pd
+f>]) (./tex/abstract.tex
+Overfull \hbox (2.97212pt too wide) in paragraph at lines 14--16
+\T1/cmr/m/n/10.95 zet kö-zött füg-g®-le-ge-sen pat-to-gó kvan-tum lab-dá-val). 
+A sta-ci-o-ná-ri-us Schrödinger-
  []
 
-<./figs/energiaszintek.pdf, id=14, 361.35pt x 289.08pt>
+) [2] (./box.toc)
+\tf@toc=\write3
+\openout3 = `box.toc'.
+
+ [3] (./box.lof)
+\tf@lof=\write4
+\openout4 = `box.lof'.
+
+ (./box.lot)
+\tf@lot=\write5
+\openout5 = `box.lot'.
+
+ [4] (./tex/1d.tex
+<./figs/energiaszintek.pdf, id=39, 361.35pt x 289.08pt>
 File: ./figs/energiaszintek.pdf Graphic file (type pdf)
 <use ./figs/energiaszintek.pdf>
 Package pdftex.def Info: ./figs/energiaszintek.pdf  used on input line 41.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
-
-Overfull \hbox (16.34912pt too wide) in paragraph at lines 41--42
-[][] 
- []
-
-[2]) (./tex/quantumApprox.tex [3 <./figs/energiaszintek.pdf>])
+ [1])
+(./tex/quantumApprox.tex [2 <./figs/energiaszintek.pdf>])
 (./tex/semiclassical.tex
-<./figs/energiaszintkozelites.pdf, id=46, 361.35pt x 289.08pt>
+<./figs/energiaszintkozelites.pdf, id=76, 361.35pt x 289.08pt>
 File: ./figs/energiaszintkozelites.pdf Graphic file (type pdf)
 <use ./figs/energiaszintkozelites.pdf>
 Package pdftex.def Info: ./figs/energiaszintkozelites.pdf  used on input line 2
 4.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
-
-Overfull \hbox (16.34912pt too wide) in paragraph at lines 24--25
-[][] 
- []
-
-[4]
-<./figs/infsquareenergia.pdf, id=50, 361.35pt x 289.08pt>
+ [3]
+<./figs/infsquareenergia.pdf, id=81, 361.35pt x 289.08pt>
 File: ./figs/infsquareenergia.pdf Graphic file (type pdf)
 <use ./figs/infsquareenergia.pdf>
 Package pdftex.def Info: ./figs/infsquareenergia.pdf  used on input line 29.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
-
-Overfull \hbox (16.34912pt too wide) in paragraph at lines 29--30
-[][] 
+ [4 <./figs/energiaszintkozelites.pdf>])
+(./tex/momentum.tex) (./tex/3dbox.tex [5 <./figs/infsquareenergia.pdf>]
+Overfull \hbox (54.054pt too wide) in paragraph at lines 4--6
+\T1/cmr/m/n/12 Ahol $\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 
+x \OMS/cmsy/m/n/12 ^^@ []\OML/cmm/m/it/12 E[]$\T1/cmr/m/n/12 , $\OML/cmm/m/it/1
+2 E[]$ \T1/cmr/m/n/12 pe-dig az 1 di-men-zi-ós prob-lé-ma, $[] [] \OMS/cmsy/m/n
+/12 ^^@
  []
 
-[5 <./figs/energiaszintkozelites.pdf>]) (./tex/momentum.tex) (./tex/3dbox.tex
-[6 <./figs/infsquareenergia.pdf>]
-Overfull \hbox (74.63666pt too wide) in paragraph at lines 4--6
-\T1/cmr/m/n/10 Ahol $\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 
-x \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 E[]$\T1/cmr/m/n/10 , $\OML/cmm/m/it/1
-0 E[]$ \T1/cmr/m/n/10 pe-dig az 1 di-men-zi-ós prob-lé-ma, $[] [] \OMS/cmsy/m/n
-/10 ^^@
+) (./tex/green.tex [6]
+Overfull \hbox (38.963pt too wide) in paragraph at lines 47--49
+\T1/cmr/m/n/12 A jobb ol-dal in-teg-rál-ja $[][]$, ami a ha-tár-eset-ben $\OT1/
+cmr/m/n/12 0$\T1/cmr/m/n/12 . Az $[] \OML/cmm/m/it/12 G []$
  []
 
-
-Overfull \hbox (1.56631pt too wide) in paragraph at lines 18--19
-[]\T1/cmr/m/n/10 TODO: ÁB-RA AZ EGY-SZER FÜG-GŽ-LE-GES ESET ENER-GI-Á-I-RÓL, es
-et-
+[7]
+Overfull \hbox (2.76025pt too wide) in paragraph at lines 70--72
+\T1/cmr/m/n/12 A 7.13[]-7.16[], 7.7[]. és a 7.8[]. egyen-le-tek exp-li-cit, ana
+-li-ti-kus mó-don el®-ál-lít-ják a $\OML/cmm/m/it/12 G []$
  []
 
-) (./tex/green.tex [7]
-Overfull \hbox (55.27975pt too wide) in paragraph at lines 47--49
-\T1/cmr/m/n/10 A jobb ol-dal in-teg-rál-ja $[][]$, ami a ha-tár-eset-ben $\OT1/
-cmr/m/n/10 0$\T1/cmr/m/n/10 . Az $[] \OML/cmm/m/it/10 G []$
- []
-
-[8]
-Overfull \hbox (3.48279pt too wide) in paragraph at lines 70--72
-\T1/cmr/m/n/10 A 42[]-45[], 36[]. és a 37[]. egyen-le-tek exp-li-cit, ana-li-ti
--kus mó-don el®-ál-lít-ják a $\OML/cmm/m/it/10 G []$
- []
-
-) [9] (./box.aux) ) 
+[8]) [9] (./box.aux) ) 
 Here is how much of TeX's memory you used:
- 3677 strings out of 482486
- 54394 string characters out of 5947363
- 309253 words of memory out of 5000000
- 18706 multiletter control sequences out of 15000+600000
- 539395 words of font info for 40 fonts, out of 8000000 for 9000
+ 3760 strings out of 482486
+ 55555 string characters out of 5947363
+ 307658 words of memory out of 5000000
+ 18754 multiletter control sequences out of 15000+600000
+ 548114 words of font info for 60 fonts, out of 8000000 for 9000
  417 hyphenation exceptions out of 8191
- 30i,13n,31p,734b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx1200.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecrm1000.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on box.pdf (9 pages, 343936 bytes).
+ 30i,13n,31p,734b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1440.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecbx1200.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1095.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1095.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/
+jknappen/ec/ecbx1728.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm1200.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecrm1728.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecsl1728.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx2074.600pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/lj
+four/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on box.pdf (13 pages, 512321 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 580 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
