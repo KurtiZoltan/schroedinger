@@ -13,6 +13,13 @@ width = 1000
 n = 15
 N = 50
 
+#Emin = 0.1
+#Emax = 2
+#Eimagmax = 1.1
+#width = 1000
+#n = 15
+#N = 50
+
 Ereal = np.linspace(Emin, Emax, width)
 height = int(Eimagmax / (Emax - Emin) * width)
 Eimag = np.linspace(0, Eimagmax, height)#lol
