@@ -1,4 +1,4 @@
-A reolvens operátor definíciója
+A rezolvens operátor definíciója
 \begin{equation}
     \op{G}\left( E \right) = \frac{1}{\op{H} - E}
 \end{equation}
@@ -23,7 +23,7 @@ ami a differenciálegyenletek elméletéből ismert Green-függvény definíció
     \left( -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + Fx - E \right) G\left(x, y; E\right) = \delta\left(x - y\right)
 	\label{green:deltaeq}
 \end{equation}
-\subsection{Egzakt Green-függvény}
+\subsubsection{Egzakt Green-függvény}
 ami azt jelenti, hogy az $x < y$ tartományban
 \begin{equation}
     G\left(x, y; E\right) = C_1 \Ai{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} + C_2 \Bi{\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E}
@@ -55,10 +55,10 @@ Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = 
 	\label{green:Cbegin}
 \end{equation}
 \begin{equation}
-	\frac{C_4}{C_3} = -\Ti{b\left(FL - E\right)}
+	\frac{C_4}{C_3} = -\Ti{aL - bE}
 \end{equation}
 \begin{equation}
-	\frac{C_3}{C_1} = \frac{\Ti{ay - bE} + \Ti{-bE}}{\Ti{ay - bE} + \Ti{b\left(FL - E\right)}}
+	\frac{C_3}{C_1} = \frac{\Ti{ay - bE} + \Ti{-bE}}{\Ti{ay - bE} + \Ti{aL - bE}}
 \end{equation}
 TODO: $b$ lecserélése $bE$-re az előző részekben.
 \begin{equation}
@@ -69,7 +69,28 @@ TODO: $b$ lecserélése $bE$-re az előző részekben.
 	C_1 = -\frac{a^2}{F}\frac{1}{\left( \left(\frac{C_3}{C_1}-1\right)\Aip{ay - bE} + \left(\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}\right) \Bip{ay - bE} \right)}
 \end{equation}
 \Aref{green:Cbegin}-\ref{green:Cend}, \ref{green:xy}. és \aref{green:yx}. egyenletek explicit, analitikus módon előállítják a $G\left( x, y; E \right)$ Green-függvényt.
-\subsection{Green-függvény perturbáció számítással}
+
+A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
+\begin{equation}
+	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
+	\label{green:greensum}
+\end{equation}
+Így ha $E$ kielégíti \aref{box_energiaszintek_egyenlet}. egyenletet, akkor a rezolvensnek és ezért a Green-függénynek is pólusa kell hogy legyen. Ezt a $C_1$ szingularitásán lehet a leg könnyebben belátni. Ha $C_1$ szinguláris, az összes többi $C$ együttható is, és így a Green-függvény is. \Aref{box_energiaszintek_egyenlet}. egyenlet szerint a $\frac{C_3}{C_1}$ számlálójának és nevezőének ,ásodik tagjai egyenlőek. Első tagjuk bármely $E$ esetén egyenlő, így  hányadosuk $1$, valamint \aref{box_energiaszintek_egyenlet}. egyenlet esetén $\frac{C_2}{C_1} = \frac{C_4}{C_3}$. Ezeknek a következtében mind $\frac{C_3}{C_1} - 1$, mind $\frac{C_4}{C_3}\frac{C_3}{C_1} - frac{C_2}{C_1}$ $0$-val egyenlő, így a $C_1$-re vonatkozó kifejezés nevezője $0$. Ezek a $\frac{1}{E_n - E}$ típusú pólusok \aref{green:greensum}. egyenletből.
+
+Egy érdekes matematikai eredmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztem \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E_k-E$-vel és a megfelelő normálási faktorral, ami Airy függvények szorzatának $0$ és $L$ közötti integrálj, valamint $E_k$-t \aref{box_energiaszintek_egyenlet}. transzcendens egyenlet határozza meg. A Green-függvényre vonatkozó differenciálegyenlet nélkül az összeg elvégzése reménytelennek látszana.
+
+\begin{equation}
+	\rho\left(E\right) = \frac{1}{\pi}\lim_{\epsilon \to 0^+} \mathrm{Im}\mathrm{Tr}\op{G}\left(E + i\epsilon\right)
+\end{equation}
+\begin{figure}[H]
+	\includegraphics[scale=1]{./figs/dosfromgreen.pdf}
+	\caption{Állapotsűrűség a Green-függvényből}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[scale=1]{./figs/numberofstatesfromgreen.pdf}
+	\caption{Állapotok száma a Green-függvényből}
+\end{figure}
+\subsubsection{Green-függvény perturbáció számítással}
 A perturbációszámításhoz a Hamilton operátort két részre bontom fel:
 \begin{equation}
 	\op{H} = \op{H}_0 + \op{V}
@@ -102,8 +123,11 @@ A perturbbálatlan operátornak a lineáris potenciál nélküli dobozba zárt r
 	\end{cases}
 \end{equation}
 , ahol $k = \frac{\sqrt{2mE}}{\hbar}$.
-TODO: V=Fx => V = Fx - FL/2 gyorsabb és gyakoribb konvergeciáért
-TODO: plot konvergencia tartomány
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./figs/convergence2.pdf}
+	\caption[Rövid cím]{Konvergenciája a két különbző perturbáló potnciálnak.}
+\end{figure}
 
 
 

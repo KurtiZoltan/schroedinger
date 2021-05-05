@@ -12,6 +12,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{braket}
+\usepackage[unicode,pdftex]{hyperref}
+%\usepackage{hyperref}
 
 \newcommand{\Ai}[1]{\mathrm{Ai}\left(#1\right)}
 \newcommand{\Bi}[1]{\mathrm{Bi}\left(#1\right)}
@@ -21,6 +23,18 @@
 \newcommand{\op}[1]{\hat{#1}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\hypersetup{	
+	pdftitle={Schrödinger macskája dobozban: falak közé zárt részecske kvantumállapotai homogén külső térben},
+	pdfsubject={Kvantum mechanika lineáris potenciálban falak között.},
+	pdfauthor={Kürti Zoltán}}
+
 \frenchspacing
 \begin{document}
 \numberwithin{equation}{section}
@@ -28,26 +42,39 @@
 \numberwithin{table}{section}
 \addtolength{\marginparwidth}{50pt}
 
+\pdfbookmark[1]{Címlap}{cim}
 \pagenumbering{roman}
 \input{tex/cimlap.tex}
 \input{tex/abstract.tex}
 \newpage
-%\phantomsection
+\phantomsection
+\pdfbookmark[1]{Tartalomjegyzék}{tartalom}
 \tableofcontents
 \newpage
 \listoffigures
 \listoftables
 \newpage
 \pagenumbering{arabic}
-%\phantomsection
-\section{Schrödinger}
+\phantomsection
+
+\section{Bevezetés}
+	\input{tex/bevezetes.tex}
+\section{Egy dimenziós eset}
 	\input{tex/1d.tex}
-\section{Kvantumos közelítése}
-	\input{tex/quantumApprox.tex}
-\section{Szemiklasszikus}
-	\input{tex/semiclassical.tex}
-\section{Momentumok}
-	\input{tex/momentum.tex}
+	\subsection{Kvantumos közelítése}
+		\input{tex/quantumApprox.tex}
+	\subsection{Szemiklasszikus közelítés}
+		\input{tex/semiclassical.tex}
+	\subsection{Green függvény}
+		\input{tex/green.tex}
+\section{Kiterjesztés több dimenzióra}
+	\input{tex/3dbox.tex}
+\section{Numerikus számítások}
+	\subsection{Momentumok időfejlődése}
+		\input{tex/momentums.tex}
+	\subsection{Hullámfüggvény időfejlődése}
+		\subsubsection{1D}
+		\subsubsection{2D}
 	
 \section{Plafon érintés 1D}
 	Azokat a parmaétereket keresem, ahol az alapállapot $E = FL$:
@@ -62,18 +89,6 @@
 	\begin{equation}
 		-a_1 = \sqrt[3]{\frac{2mF}{\hbar^2}}L \approx 2.338
 	\end{equation}
-
-
-
-\section{3D doboz, ferde tér}
-    \input{tex/3dbox.tex}
-    
-\section{Green függvény}
-	\input{tex/green.tex}
-    
-\section{Videó gyártás leírása}
-    
-    
     
 \end{document}
 

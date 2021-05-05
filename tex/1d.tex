@@ -17,22 +17,22 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 	\begin{equation}
 		\frac{d^2y}{dx^{\prime 2}} - x^\prime y = 0
 	\end{equation}
-	$x^\prime = ax - b$, azaz $\frac{d}{dx} = a\frac{d}{dx^\prime}$:
+	$x^\prime = ax - bE$, azaz $\frac{d}{dx} = a\frac{d}{dx^\prime}$:
 	\begin{equation}
-		\frac{d^2y}{dx^2} - \left(a^3x - a^2b\right)y = 0
+		\frac{d^2y}{dx^2} - \left(a^3x - a^2bE\right)y = 0
 	\end{equation}
-	Az együtthatók összevetése alapján $a = \sqrt[3]{\frac{2mF}{\hbar^2}}$ és $b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}E$. Így a Schrödinger-gyenlet megoldása:
+	Az együtthatók összevetése alapján $a = \sqrt[3]{\frac{2mF}{\hbar^2}}$ és $b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}$. Így a Schrödinger-gyenlet megoldása:
 	\begin{equation}
 		\phi(x) = y(x^\prime) = y\left(\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right)
 	\end{equation}
 	, ahol $y(x) = \alpha \Ai{x} + \beta \Bi{x}$.
-	A $\phi \big\rvert_0 = 0$ feltételből következik, hogy $\phi \propto \Bi{-b}\Ai{ax-b} - \Ai{-b}\Bi{ax-b}$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
+	A $\phi \big\rvert_0 = 0$ feltételből következik, hogy $\phi \propto \Bi{-bE}\Ai{ax-bE} - \Ai{-bE}\Bi{ax-bE}$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
 	\begin{equation}
-		\Bi{-b}\Ai{aL-b} - \Ai{-b}\Bi{aL-b} = 0
+		\Bi{-bE}\Ai{aL-bE} - \Ai{-bE}\Bi{aL-bE} = 0
 	\end{equation}
 	\begin{equation}
 		\label{box_energiaszintek_egyenlet}
-		\Ti{aL-b} - \Ti{-b} = 0
+		\Ti{aL-bE} - \Ti{-bE} = 0
 	\end{equation}
 	\begin{equation}
 		\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}E} = 0
