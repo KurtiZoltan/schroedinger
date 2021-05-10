@@ -25,10 +25,10 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 	\begin{equation}
 		\phi(x) = y(x^\prime) = y\left(\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right)
 	\end{equation}
-	, ahol $y(x) = \alpha \Ai{x} + \beta \Bi{x}$.
-	A $\phi \big\rvert_0 = 0$ feltételből következik, hogy $\phi \propto \Bi{-bE}\Ai{ax-bE} - \Ai{-bE}\Bi{ax-bE}$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
+	, ahol $y(x) = \alpha \Ai\left(x\right) + \beta \Bi\left(x\right)$.
+	A $\phi \big\rvert_0 = 0$ feltételből következik, hogy $\phi \propto \Bi\left(-bE\right)\Ai\left(ax-bE\right) - \Ai\left(-bE\right)\Bi\left(ax-bE\right)$. A második határfeltétel pedig meghatározza a lehetséges energiákat. A feltétel:
 	\begin{equation}
-		\Bi{-bE}\Ai{aL-bE} - \Ai{-bE}\Bi{aL-bE} = 0
+		\Bi\left(-bE\right)\Ai\left(aL-bE\right) - \Ai\left(-bE\right)\Bi\left(aL-bE\right) = 0
 	\end{equation}
 	\begin{equation}
 		\label{box_energiaszintek_egyenlet}
@@ -42,7 +42,7 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 		\caption{Energiaszintek $L$ függvényében}
 		\label{box_energiaszintek_abra}
 	\end{figure}
-	Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai{ax-b}$, mert a $Bi(x)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai{- \sqrt[3]{\frac{2m}{\hbar^2F^2}}E} = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja.
+	Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai\left(ax-b\right)$, mert a $\Bi\left(x\right)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai\left(- \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right) = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja.
     
     TODO: link 1D videóról
 

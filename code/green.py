@@ -7,7 +7,7 @@ from plot import *
 test = d1schroedinger(F = 0.1)
 
 n = 5
-E = 1+2j
+E = 3+1j
 '''
 x = np.linspace(0, test.L, 1000)
 y = np.linspace(0, test.L, n)
@@ -21,9 +21,13 @@ plt.show()
 x = np.linspace(0, test.L, 1000)
 y = np.linspace(0, test.L, 1000)
 x, y = np.meshgrid(x, y)
+Galt = test.Galt(x, y, E)
 G = test.G(x, y, E)
 
 plt.imshow(np.abs(G), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
+plt.colorbar()
+plt.show()
+plt.imshow(np.abs(Galt), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
 plt.colorbar()
 plt.show()
 '''
