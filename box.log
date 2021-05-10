@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.16)  10 MAY 2021 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.16)  11 MAY 2021 01:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -491,7 +491,7 @@ LaTeX Info: Redefining \nameref on input line 40.
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 ) (./tex/cimlap.tex
-<./figs/elte_cimer_color.pdf, id=36, 399.44432pt x 399.44833pt>
+<./figs/elte_cimer_color.pdf, id=40, 399.44432pt x 399.44833pt>
 File: ./figs/elte_cimer_color.pdf Graphic file (type pdf)
 <use ./figs/elte_cimer_color.pdf>
 Package pdftex.def Info: ./figs/elte_cimer_color.pdf  used on input line 18.
@@ -529,20 +529,20 @@ Overfull \hbox (66.10776pt too wide) in paragraph at lines 27--30
 12 / [] [] [] [] ^^@
  []
 
-<./figs/energiaszintek.pdf, id=79, 361.35pt x 289.08pt>
+<./figs/energiaszintek.pdf, id=83, 361.35pt x 289.08pt>
 File: ./figs/energiaszintek.pdf Graphic file (type pdf)
 <use ./figs/energiaszintek.pdf>
 Package pdftex.def Info: ./figs/energiaszintek.pdf  used on input line 41.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
 [1]) (./tex/quantumApprox.tex [2 <./figs/energiaszintek.pdf>])
 (./tex/semiclassical.tex [3]
-<./figs/energiaszintkozelites.pdf, id=149, 361.35pt x 289.08pt>
+<./figs/energiaszintkozelites.pdf, id=153, 361.35pt x 289.08pt>
 File: ./figs/energiaszintkozelites.pdf Graphic file (type pdf)
 <use ./figs/energiaszintkozelites.pdf>
 Package pdftex.def Info: ./figs/energiaszintkozelites.pdf  used on input line 2
 4.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
-<./figs/infsquareenergia.pdf, id=150, 361.35pt x 289.08pt>
+<./figs/infsquareenergia.pdf, id=154, 361.35pt x 289.08pt>
 File: ./figs/infsquareenergia.pdf Graphic file (type pdf)
 <use ./figs/infsquareenergia.pdf>
 Package pdftex.def Info: ./figs/infsquareenergia.pdf  used on input line 29.
@@ -556,76 +556,57 @@ cmr/m/n/12 0$\T1/cmr/m/n/12 . Az $[] \OML/cmm/m/it/12 G []$
 
 [6]
 
-LaTeX Warning: Reference `green:Cbegin' on page 7 undefined on input line 71.
-
-
-LaTeX Warning: Reference `green:Cend' on page 7 undefined on input line 71.
-
-
 LaTeX Warning: Command \textasciiacute invalid in math mode on input line 71.
 
 
 LaTeX Warning: Command \textasciiacute invalid in math mode on input line 71.
 
 Missing character: There is no ´ in font cmr12!
-
-LaTeX Warning: Reference `green:greensum' on page 7 undefined on input line 85.
-
-
 [7]
 
-LaTeX Warning: Reference `green:greensum' on page 8 undefined on input line 87.
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 90.
 
 
-<./figs/dosfromgreen.pdf, id=232, 462.52798pt x 346.89601pt>
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 94.
+
+<./figs/dosfromgreen.pdf, id=238, 462.52798pt x 346.89601pt>
 File: ./figs/dosfromgreen.pdf Graphic file (type pdf)
 <use ./figs/dosfromgreen.pdf>
-Package pdftex.def Info: ./figs/dosfromgreen.pdf  used on input line 93.
+Package pdftex.def Info: ./figs/dosfromgreen.pdf  used on input line 112.
 (pdftex.def)             Requested size: 462.52684pt x 346.89516pt.
 
-Overfull \hbox (35.73549pt too wide) in paragraph at lines 93--94
+Overfull \hbox (35.73549pt too wide) in paragraph at lines 112--113
 [][] 
  []
 
-<./figs/numberofstatesfromgreen.pdf, id=233, 462.52798pt x 346.89601pt>
+<./figs/numberofstatesfromgreen.pdf, id=241, 462.52798pt x 346.89601pt>
 File: ./figs/numberofstatesfromgreen.pdf Graphic file (type pdf)
 <use ./figs/numberofstatesfromgreen.pdf>
 Package pdftex.def Info: ./figs/numberofstatesfromgreen.pdf  used on input line
- 97.
+ 117.
 (pdftex.def)             Requested size: 462.52684pt x 346.89516pt.
 
-Overfull \hbox (35.73549pt too wide) in paragraph at lines 97--98
+Overfull \hbox (35.73549pt too wide) in paragraph at lines 117--118
 [][] 
  []
 
-[8] [9 <./figs/dosfromgreen.pdf>]
-
-LaTeX Warning: Reference `green:pertmaster' on page 10 undefined on input line 
-113.
-
-[10 <./figs/numberofstatesfromgreen.pdf>]
+[8] [9 <./figs/dosfromgreen.pdf>] [10 <./figs/numberofstatesfromgreen.pdf>]
 
 LaTeX Warning: Reference `green:pertmaster' on page 11 undefined on input line 
-120.
+133.
 
 
-LaTeX Warning: Reference `green:Cbegin' on page 11 undefined on input line 124.
+LaTeX Warning: Reference `green:pertmaster' on page 11 undefined on input line 
+140.
 
-
-
-LaTeX Warning: Reference `green:Cend' on page 11 undefined on input line 124.
-
-<./figs/convergence2.pdf, id=267, 462.52798pt x 346.89601pt>
-File: ./figs/convergence2.pdf Graphic file (type pdf)
-<use ./figs/convergence2.pdf>
-Package pdftex.def Info: ./figs/convergence2.pdf  used on input line 135.
-(pdftex.def)             Requested size: 462.52684pt x 346.89516pt.
-
-Overfull \hbox (35.73549pt too wide) in paragraph at lines 135--136
- [][] 
- []
-
-[11]) (./tex/3dbox.tex
+<./figs/convergence3.pdf, id=283, 362.7954pt x 398.2077pt>
+File: ./figs/convergence3.pdf Graphic file (type pdf)
+<use ./figs/convergence3.pdf>
+Package pdftex.def Info: ./figs/convergence3.pdf  used on input line 155.
+(pdftex.def)             Requested size: 362.79451pt x 398.20673pt.
+[11]) (./tex/3dbox.tex [12 <./figs/convergence3.pdf>]
 Overfull \hbox (65.75871pt too wide) in paragraph at lines 4--6
 \T1/cmr/m/n/12 Ahol $\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 
 x \OMS/cmsy/m/n/12 ^^@ []\OML/cmm/m/it/12 E[]$\T1/cmr/m/n/12 , $\OML/cmm/m/it/1
@@ -633,8 +614,8 @@ x \OMS/cmsy/m/n/12 ^^@ []\OML/cmm/m/it/12 E[]$\T1/cmr/m/n/12 , $\OML/cmm/m/it/1
 12 ^^@
  []
 
-[12 <./figs/convergence2.pdf>]) (./tex/momentums.tex
-<./figs/expectations.pdf, id=297, 462.52798pt x 346.89601pt>
+) (./tex/momentums.tex
+<./figs/expectations.pdf, id=319, 462.52798pt x 346.89601pt>
 File: ./figs/expectations.pdf Graphic file (type pdf)
 <use ./figs/expectations.pdf>
 Package pdftex.def Info: ./figs/expectations.pdf  used on input line 2.
@@ -658,7 +639,7 @@ Package rerunfilecheck Warning: File `box.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `box.out':
-(rerunfilecheck)             Before: 2228806072AD189CE6D1C70C3D7AFC28;1107
+(rerunfilecheck)             Before: BB9AE36EAD97C721F0359742126A4449;1391
 (rerunfilecheck)             After:  7E24E19392B438C7068EDC004D456F1C;2442.
 
 LaTeX Warning: There were undefined references.
@@ -669,13 +650,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 11783 strings out of 482486
- 171149 string characters out of 5947363
- 435870 words of memory out of 5000000
- 26533 multiletter control sequences out of 15000+600000
+ 11789 strings out of 482486
+ 171234 string characters out of 5947363
+ 440113 words of memory out of 5000000
+ 26538 multiletter control sequences out of 15000+600000
  548451 words of font info for 61 fonts, out of 8000000 for 9000
  417 hyphenation exceptions out of 8191
- 39i,12n,40p,948b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,40p,948b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600
 pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.60
 0pk> </home/kurti/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.6
@@ -699,10 +680,10 @@ c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on box.pdf (19 pages, 601219 bytes).
+Output written on box.pdf (19 pages, 627167 bytes).
 PDF statistics:
- 789 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 813 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

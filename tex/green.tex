@@ -73,10 +73,28 @@ TODO: $b$ lecserélése $bE$-re az előző részekben.
 	C_1 = \frac{a^2}{F}\frac{\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)}{\left(\Ti\left(-bE\right)-\Ti\left(aL-bE\right)\right)\left(\Bi\left(-bE\right)\Aip\left(-bE\right)-\Ai\left(-bE\right)\Bip\left(-bE\right)\right)}.
 \end{equation}
 Az algebrai átalakításokon túl fel kellett használni, hogy $\Ai\left(ay-bE\right)\Bip\left(ay-bE\right)-\Bi\left(y-bE\right)\Aip\left(ay-bE\right)$ $y$-tól független konstans tehát $y=0$ helyettesíthető bele. Ez onnan látható, hogy $y$ szerinti deriváltja $0$,
+\begin{dmath}
+	\left(\Ai\left(ay-bE\right)\Bip\left(ay-bE\right)-\Bi\left(ay-bE\right)\Aip\left(ay-bE\right)\right)^\prime = a\Ai^\prime\left(ay-bE\right)\Bi^\prime\left(ay-bE\right) + a\Ai\left(ay-bE\right)\Bi^{\prime\prime}\left(ay-bE\right) - a\Bi^\prime\left(ay-bE\right)\Ai^\prime\left(ay-bE\right) - a\Bi\left(ay-bE\right)\Ai^{\prime\prime}\left(ay-bE\right) = a\Ai\left(ay-bE\right)\left(ay-bE\right)\Bi\left(ay-bE\right) - a\Bi\left(ay-bE\right)\left(ay-bE\right)\Ai\left(ay-bE\right) = 0.
+\end{dmath}
+Ez után már az $x$-$y$ szimmetriája jól látható a Green-függvénynek.
 \begin{equation}
-	\left(\Ai\left(ay-bE\right)\Bip\left(ay-bE\right)-\Bi\left(ay-bE\right)\Aip\left(ay-bE\right)\right)^\prime = 
+	C_0 = \frac{a^2}{F}\frac{1}{\left(\Ti\left(-bE\right)-\Ti\left(aL-bE\right)\right)\left(\Bi\left(-bE\right)\Aip\left(-bE\right)-\Ai\left(-bE\right)\Bip\left(-bE\right)\right)}
 \end{equation}
-  
+bevezetésével a Green függvény egyszerűbb alakra hozható,
+\begin{equation}
+	G_0\left(x,y;E\right) = C_0\times
+	\begin{cases}
+		\begin{split}
+			\left(\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)\right)\times\\
+			\left(\Ai\left(ax-bE\right)-\Ti\left(-bE\right)\Bi\left(ax-bE\right)\right)
+		\end{split} & x\leq y\\
+		\begin{split}
+			\left(\Ai\left(ay-bE\right)-\Ti\left(-bE\right)\Bi\left(ay-bE\right)\right)\times\;\;\;\;\;\;\;\;\\
+			\left(\Ai\left(ax-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ax-bE\right)\right)
+		\end{split}& x>y\\
+	\end{cases}
+\end{equation} 
+
 A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
 \begin{equation}
 	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
@@ -88,14 +106,16 @@ Egy érdekes matematikai eredmény, hogy a Green-függvényre vonatkozó differe
 
 \begin{equation}
 	\rho\left(E\right) = \frac{1}{\pi}\lim_{\epsilon \to 0^+} \mathrm{Im}\mathrm{Tr}\op{G}\left(E + i\epsilon\right)
+	\label{green:densityeq}
 \end{equation}
 \begin{figure}[H]
 	\includegraphics[scale=1]{./figs/dosfromgreen.pdf}
-	\caption{Állapotsűrűség a Green-függvényből}
+	\caption[Állapotsűrűség]{\Aref{green:densityeq}. képlet alapján számolt állapotsűrűség. A kék függvényt $\epsilon = 10^{-3}/b$, a narancssárga görbét pedig $\epsilon = 10^{-2}/b$ helyettesítéssel kaptuk. Látható, hogy $\epsilon$ csökkentésével a tüskék egyre keskenyebbek, és egyre magasabbak lesznek.}
+	\label{green:állapotsűrség}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[scale=1]{./figs/numberofstatesfromgreen.pdf}
-	\caption{Állapotok száma a Green-függvényből}
+	\caption[Állapotok száma]{\Aref{green:állapotsűrség}. ábrán bemutatott függvények integrálja látható ezen az ábrán. Mind a két függvény ugrása közelítőleg $1$, ami at jelenti, hogy \aref{green:állapotsűrség}. ábrán látható tüskék alatti terület jó közelítéssel $1$. Az $\epsilon$ csökkentése a lépcsőfüggvényhez közelíti az integrált függvényt, ami egyezik az elvárásokkal.}
 \end{figure}
 \subsubsection{Green-függvény perturbáció számítással}
 A perturbációszámításhoz a Hamilton operátort két részre bontom fel:
@@ -132,8 +152,8 @@ A perturbbálatlan operátornak a lineáris potenciál nélküli dobozba zárt r
 , ahol $k = \frac{\sqrt{2mE}}{\hbar}$.
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=1]{./figs/convergence2.pdf}
-	\caption[Rövid cím]{Konvergenciája a két különbző perturbáló potnciálnak.}
+	\includegraphics[scale=1]{./figs/convergence3.pdf}
+	\caption[Green-függvény perturbációs sorának konvergenciája]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik, a norma harmadolásához szükséges lépések számát megadva. A piros körökön kívüli tartomány a ?? formula által garantált konvergencia tartományát jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
 \end{figure}
 
 

@@ -1,4 +1,4 @@
-A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz $V(x) = Fx$.
+A probléma egy 1D dobozba zárt résecske homogén erőtérben. $F(x)=-F$, azaz $V(x) = Fx$.
 	Az egyenlethez tartozó határfeltételek, ha a doboz hossza $L$:
 	\begin{equation}
 		\phi \big\rvert_0 = \phi \big \rvert_L = 0
@@ -21,7 +21,7 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 	\begin{equation}
 		\frac{d^2y}{dx^2} - \left(a^3x - a^2bE\right)y = 0
 	\end{equation}
-	Az együtthatók összevetése alapján $a = \sqrt[3]{\frac{2mF}{\hbar^2}}$ és $b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}$. Így a Schrödinger-gyenlet megoldása:
+	Az együtthatók összevetése alapján $a = \sqrt[3]{\frac{2mF}{\hbar^2}}$ és $b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}$. Így a Schrödinger-egyenlet megoldása:
 	\begin{equation}
 		\phi(x) = y(x^\prime) = y\left(\sqrt[3]{\frac{2mF}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right)
 	\end{equation}
@@ -39,7 +39,7 @@ A probléma egy 1D doboba zárt résecske homogén erőtérben. $F(x)=-F$, azaz 
 	\end{equation}
 	\begin{figure}[H]
 		\includegraphics[scale=1]{./figs/energiaszintek.pdf}
-		\caption{Energiaszintek $L$ függvényében}
+		\caption[Egzakt energiaszintek]{Egzakt energia szintek, $bE$ és $aL$ közötti relációval ábrázolva. Az ába jobb alsó sarkán látható, hogy $E \ll FL$ esetén az energiaszintek $L$-től függetlenek lesznek, mivel a félvégtelen tér beli homogén tér energiaszintjeit közelítik.}
 		\label{box_energiaszintek_abra}
 	\end{figure}
 	Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai\left(ax-b\right)$, mert a $\Bi\left(x\right)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai\left(- \sqrt[3]{\frac{2m}{\hbar^2F^2}}E\right) = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja.

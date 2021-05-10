@@ -5,7 +5,7 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {2.3}Green függvény}{5}{subsection.2.3}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.3.1}Egzakt Green-függvény}{6}{subsubsection.2.3.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.3.2}Green-függvény perturbáció számítással}{10}{subsubsection.2.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {3}Kiterjesztés több dimenzióra}{12}{section.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3}Kiterjesztés több dimenzióra}{13}{section.3}%
 \select@language {magyar} \contentsline {section}{\numberline {4}Numerikus számítások}{14}{section.4}%
 \select@language {magyar} \contentsline {subsection}{\numberline {4.1}Momentumok időfejlődése}{14}{subsection.4.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {4.2}Hullámfüggvény időfejlődése}{14}{subsection.4.2}%
