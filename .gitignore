@@ -7,3 +7,5 @@ cache/*
 *.lot
 *.out
 *.toc
+*.bbl
+*.blg

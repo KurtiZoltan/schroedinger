@@ -28,8 +28,14 @@ N2 = np.zeros((0))
 for i in range(len(E)):
     N1 = np.append(N1, np.sum(rho1[0:i]) * (E[1] - E[0]))
     N2 = np.append(N2, np.sum(rho2[0:i]) * (E[1] - E[0]))
+test.eLevel(15)
+elevels = test.Es
+y = np.zeros(E.shape)
+for i, currentx in zip(range(len(E)), E):
+    y[i] = np.sum(elevels < currentx)
 plt.plot(E, N1)
 plt.plot(E, N2)
+plt.plot(E, y, alpha=0.6)
 plt.grid()
 plt.savefig("../figs/numberofstatesfromgreen.pdf")
 plt.show()

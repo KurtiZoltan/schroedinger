@@ -1,22 +1,61 @@
-A rendszer egy téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = const$. A potenciál így $V(x, y, z) = -\boldsymbol{F}_xx-\boldsymbol{F}_yy-\boldsymbol{F}_zz$. Mivel az a potenciál lineáris $x$ $y$ és $z$-ben, a Schrödinger egyenlet szeparálható.
-    \begin{equation}
-        \psi_{klm}\left(x, y, z\right) = \phi_k \left( x^\prime \right)\phi_l\left(y^\prime\right)\phi_m\left(z^\prime\right)
-    \end{equation}
-    Ahol $x^\prime = \sqrt[3]{\frac{2m\boldsymbol{F}_x}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E_k$, $E_k$ pedig az 1 dimenziós probléma, $\Ti{\sqrt[3]{\frac{2m\boldsymbol{F}_x}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E} = 0$, $k$. $\phi_k \left( x^\prime \right)$ az 1D-s rész TODO:REFERENCIA hullámfüggvénye. $y^\prime$, $z^\prime$, valamint $E_l$ és $E_m$ hasonlóan vannak definiálva a hozzájuk tartozó 1 dimenziós probléma alapján. A 3D-s hullámfüggvényhez tartozó energia az 1D-s megoldásokhoz tartozó energiák összege.
-    \begin{equation}
-        E = E_k + E_l + E_m
-    \end{equation}
-    Amennyiben valamelyik irányú komponense $\boldsymbol{F}$-nek 0, abban az esetben a hozzá tartozó 1D-s pprobléma a híres végtelen mély potenciálgödör, ahol
-    \begin{equation}
-        \phi_n = \sqrt{\frac{2}{L}}\sin\left(\frac{nx\pi}{L}\right)
-    \end{equation}
-    valamint
-    \begin{equation}
-        E_n = \frac{\hbar^2n^2}{2mL^2}
-    \end{equation}
-    
-    TODO: ÁBRA AZ EGYSZER FÜGGŐLEGES ESET ENERGIÁIRÓL, esetleg szintén L függvényében.
-    
-    TODO: ábra 2D -quantum chaos in billiards-
-    
-    TODO: 2D (3D?) videó link időfelődésről
+A rendszer egy téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = \text{const}$. A potenciál így $V(x, y, z) = -\boldsymbol{F}_xx-\boldsymbol{F}_yy-\boldsymbol{F}_zz$. A rendszer időfüggő Schrödinger-egyenlete
+\begin{equation}
+	i\hbar\frac{\partial \psi(x, y, z, t)}{\partial t} = -\frac{\hbar^2}{2m} \Laplace \psi(x, y, z, t) + V(x, y, z)\psi(x, y, z, t).
+	\label{3dbox:3dscheq}
+\end{equation}
+Az egyenlet kezdőfeltétele egy kezdeti állapot $t_0$-ban, $\psi(x, y, z, t_0) = \psi_0(x, y, z)$, az egyenlet határfeltételei pedig a hullámfüggvény határokon való eltűnése, $0=\left.\psi\right|_{x=0}=\left.\psi\right|_{x=L_x}=\left.\psi\right|_{y=0}=\left.\psi\right|_{y=L_y}=\left.\psi\right|_{z=0}=\left.\psi\right|_{z=L_z}$. Mivel ez a potenciál lineáris $x$, $y$ és $z$-ben, a Schrödinger-egyenlet szeparálható a
+\begin{equation}
+	\psi_{klm}(x, y, z, t) = e^{-\frac{iE_{klm}t}{\hbar}}\psi^{(x)}_k(x)\psi^{(y)}_l(y)\psi^{(z)}_m(z)
+	\label{3dox:3dansatz}
+\end{equation}
+próbafüggvénnyel. A $\psi^{(i)}_n$ ($i=x, y, z$) függvényekre így az egy dimenziós stacionárius Schrödinger-egyenlet vonatkozik. A $\psi^{(x)}$-re vonatkozó egyenlet 
+\begin{equation}
+	-\frac{\hbar^2}{2m}\frac{d^2\psi^{(x)}_k(x)}{dx^2} + \boldsymbol{F}_xx\psi^{(x)}_k(x) = E^{(x)}_k\psi^{(x)}_k(x),
+\end{equation}
+a határfeltételek $0=\left.\psi^{(x)}_k\right|_{x=0}=\left.\psi^{(x)}_k\right|_{x=L_x}$. $\psi^{(y)}_l$ és $\psi^{(z)}_m$-re vonatkozó egyenletek hasonlóak. Az $E_{klm}$ energia a három egy dimenziós stacionárius Schrödinger-egyenlet sajátenergiáinak összege,
+\begin{equation}
+	E_{klm} = E^{(x)}_k+E^{(y)}_l+E^{(z)}_m.
+\end{equation}
+\Aeqref{3dbox:3dscheq} egyenlet általános megoldása \aeqref{3dox:3dansatz} próbafüggvények kezdőfeltételhez illesztett lineáris kombinációja,
+\begin{equation}
+	\psi(x,y,z,t) = \sum_{klm}C_{klm}\psi_{klm}(x,y,z,t).
+\end{equation}
+$C_{klm}$ együtthatók meghatározásához a szokásos hely reprezentáció beli skalárszorzást kell használni,
+\begin{equation}
+	C_{klm} = \frac{1}{N_{klm}}\int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,\psi_{klm}(x, y, z, t=0)^*\psi_0(x, y, z)
+	\label{3dbox:ceq}
+\end{equation}
+\begin{equation}
+	N_{klm} = \int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,|\psi_{klm}(x,y,z,t=0)|^2.
+	\label{3dbox:3norm}
+\end{equation}
+\Aeqref{3dbox:ceq} egyenlet nem egyszerűsíthető tovább általános $\psi_0$ esetén, viszont \aeqref{3dbox:3norm} igen. Mivel $\psi_{klm}$ szorzat alakú, nem kell a tripla integrált elvégezni, hanem csak három egyszeres integrál szorzatát kell kiszámítani. Ez numerikus számításokban jelentős.
+\begin{equation}
+	N_{klm} = N^{(x)}_kN^{(y)}_lN^{(z)}_m,
+\end{equation}
+ahol az egyes $N$ tagok az egy dimenziós sajátfüggvények normájaként vannak definiálva.
+\begin{equation}
+	N^{(x)}_k = \int_0^{L_x}dx\,\left|\psi^{(x)}_k(x)\right|^2,
+\end{equation}
+$N^{(y)}_l$-re és $N^{(z)}_m$-re hasonló képletek vonatkoznak. 
+
+
+
+%    Ahol $x^\prime = \sqrt[3]{\frac{2m\boldsymbol{F}_x}{\hbar^2}}x - \sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E_k$, $E_k$ pedig az 1 dimenziós probléma, $\Ti{\sqrt[3]{\frac{2m\boldsymbol{F}_x}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2\boldsymbol{F}_x^2}}E} = 0$, $k$. $\phi_k \left( x^\prime \right)$ az 1D-s rész TODO:REFERENCIA hullámfüggvénye. $y^\prime$, $z^\prime$, valamint $E_l$ és $E_m$ hasonlóan vannak definiálva a hozzájuk tartozó 1 dimenziós probléma alapján. A 3D-s hullámfüggvényhez tartozó energia az 1D-s megoldásokhoz tartozó energiák összege.
+%    \begin{equation}
+%        E = E_k + E_l + E_m
+%    \end{equation}
+%    Amennyiben valamelyik irányú komponense $\boldsymbol{F}$-nek 0, abban az esetben a hozzá tartozó 1D-s pprobléma a híres végtelen mély potenciálgödör, ahol
+%    \begin{equation}
+%        \phi_n = \sqrt{\frac{2}{L}}\sin\left(\frac{nx\pi}{L}\right)
+%    \end{equation}
+%    valamint
+%    \begin{equation}
+%        E_n = \frac{\hbar^2n^2}{2mL^2}
+%    \end{equation}
+%    
+%    TODO: ÁBRA AZ EGYSZER FÜGGŐLEGES ESET ENERGIÁIRÓL, esetleg szintén L függvényében.
+%    
+%    TODO: ábra 2D -quantum chaos in billiards-
+%    
+%    TODO: 2D (3D?) videó link időfelődésről

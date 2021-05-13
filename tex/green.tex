@@ -82,7 +82,7 @@ Ez után már az $x$-$y$ szimmetriája jól látható a Green-függvénynek.
 \end{equation}
 bevezetésével a Green függvény egyszerűbb alakra hozható,
 \begin{equation}
-	G_0\left(x,y;E\right) = C_0\times
+	G\left(x,y;E\right) = C_0\times
 	\begin{cases}
 		\begin{split}
 			\left(\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)\right)\times\\
@@ -100,7 +100,7 @@ A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
 	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
 	\label{green:greensum}
 \end{equation}
-Így ha $E$ kielégíti \aref{box_energiaszintek_egyenlet}. egyenletet, akkor a rezolvensnek és ezért a Green-függénynek is pólusa kell hogy legyen. Ezt a $C_1$ szingularitásán lehet a leg könnyebben belátni. Ha $C_1$ szinguláris, az összes többi $C$ együttható is, és így a Green-függvény is. \Aref{box_energiaszintek_egyenlet}. egyenlet szerint a $\frac{C_3}{C_1}$ számlálójának és nevezőének ,ásodik tagjai egyenlőek. Első tagjuk bármely $E$ esetén egyenlő, így  hányadosuk $1$, valamint \aref{box_energiaszintek_egyenlet}. egyenlet esetén $\frac{C_2}{C_1} = \frac{C_4}{C_3}$. Ezeknek a következtében mind $\frac{C_3}{C_1} - 1$, mind $\frac{C_4}{C_3}\frac{C_3}{C_1} - frac{C_2}{C_1}$ $0$-val egyenlő, így a $C_1$-re vonatkozó kifejezés nevezője $0$. Ezek a $\frac{1}{E_n - E}$ típusú pólusok \aref{green:greensum}. egyenletből.
+Így ha $E$ kielégíti \aref{box_energiaszintek_egyenlet}. egyenletet, akkor a rezolvensnek és ezért a Green-függénynek is pólusa kell hogy legyen. Ezt a $C_1$ szingularitásán lehet a leg könnyebben belátni. Ha $C_1$ szinguláris, az összes többi $C$ együttható is, és így a Green-függvény is. \Aref{box_energiaszintek_egyenlet}. egyenlet szerint a $\frac{C_3}{C_1}$ számlálójának és nevezőének ,ásodik tagjai egyenlőek. Első tagjuk bármely $E$ esetén egyenlő, így  hányadosuk $1$, valamint \aref{box_energiaszintek_egyenlet}. egyenlet esetén $\frac{C_2}{C_1} = \frac{C_4}{C_3}$. Ezeknek a következtében mind $\frac{C_3}{C_1} - 1$, mind $\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}$ $0$-val egyenlő, így a $C_1$-re vonatkozó kifejezés nevezője $0$. Ezek a $\frac{1}{E_n - E}$ típusú pólusok \aref{green:greensum}. egyenletből.
 
 Egy érdekes matematikai eredmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztem \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E_k-E$-vel és a megfelelő normálási faktorral, ami Airy függvények szorzatának $0$ és $L$ közötti integrálj, valamint $E_k$-t \aref{box_energiaszintek_egyenlet}. transzcendens egyenlet határozza meg. A Green-függvényre vonatkozó differenciálegyenlet nélkül az összeg elvégzése reménytelennek látszana.
 

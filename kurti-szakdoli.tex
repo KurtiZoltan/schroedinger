@@ -23,6 +23,10 @@
 \newcommand{\Ti}[0]{\mathrm{Ti}}
 \newcommand{\op}[1]{\hat{#1}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+
+\newcommand{\aeqref}[1]{\az{\eqref{#1}}}
+\newcommand{\Aeqref}[1]{\Az{\eqref{#1}}}
 
 \hypersetup{
     colorlinks,
@@ -60,16 +64,23 @@
 
 \section{Bevezetés}
 	\input{tex/bevezetes.tex}
-\section{Egy dimenziós eset}
-	\input{tex/1d.tex}
-	\subsection{Kvantumos közelítése}
-		\input{tex/quantumApprox.tex}
-	\subsection{Szemiklasszikus közelítés}
-		\input{tex/semiclassical.tex}
-	\subsection{Green függvény}
-		\input{tex/green.tex}
-\section{Kiterjesztés több dimenzióra}
-	\input{tex/3dbox.tex}
+\section{A dobozba zárt részecske Schrödinger-egyenlete}
+	\subsection{Három dimenzióban}
+		\input{tex/3dbox.tex}
+	\subsection{Egy dimenzióban}
+			\input{tex/1d.tex}
+		\subsubsection{$F=0$ eset}
+			\input{tex/free.tex}
+		\subsubsection{Airy függvények}
+			\input{tex/airy.tex}
+		\subsubsection{Véges $F$ eset}
+			\input{tex/vegesf.tex}
+		\subsubsection{Kvantumos közelítése}
+			\input{tex/quantumApprox.tex}
+		\subsubsection{Szemiklasszikus közelítés}
+			\input{tex/semiclassical.tex}
+\section{Homogén tér Green-függvénye}
+	\input{tex/green.tex}
 \section{Numerikus számítások}
 	\subsection{Momentumok időfejlődése}
 		\input{tex/momentums.tex}
@@ -77,7 +88,6 @@
 		\subsubsection{1D}
 		\subsubsection{2D}
 	
-\section{Plafon érintés 1D}
 	Azokat a parmaétereket keresem, ahol az alapállapot $E = FL$:
 	\begin{equation}
 		\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} = 0
@@ -90,7 +100,12 @@
 	\begin{equation}
 		-a_1 = \sqrt[3]{\frac{2mF}{\hbar^2}}L \approx 2.338
 	\end{equation}
-    
+	
+    \newpage
+	\phantomsection
+	\bibliographystyle{abeld}
+	\addcontentsline{toc}{section}{Hivatkozások}
+    \bibliography{tex/ref}
 \end{document}
 
 

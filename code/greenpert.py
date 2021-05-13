@@ -6,10 +6,10 @@ from plot import *
 
 test = d1schroedinger(F=0.1)
 
-E = 3+0.5j
+E = 1.4+0.9j
 n = 100
 
-N = 1000
+N = 200
 x = np.linspace(0, test.L, N)
 y = np.linspace(0, test.L, N)
 x, y = np.meshgrid(x, y, indexing="ij")
@@ -29,8 +29,8 @@ for i in range(n):
     Gprev2 = G2
     G1 = G01 - G1 @ VG01
     G2 = G02 - G2 @ VG02
-    if i % 33 == 0:
-        plt.imshow(np.abs(G1 - Gprev1), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
+    if i % 20 == 0:
+        plt.imshow(np.abs(G2 - Gprev2), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
         plt.colorbar()
         plt.title(str(i))
         plt.show()
