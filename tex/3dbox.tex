@@ -1,16 +1,16 @@
-A rendszer egy téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = \text{const}$. A potenciál így $V(x, y, z) = -\boldsymbol{F}_xx-\boldsymbol{F}_yy-\boldsymbol{F}_zz$. A rendszer időfüggő Schrödinger-egyenlete
+A rendszer egy téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = \text{const}$. A potenciál így $V(x, y, z) = -F_xx-F_yy-F_zz$. A rendszer időfüggő Schrödinger-egyenlete
 \begin{equation}
 	i\hbar\frac{\partial \psi(x, y, z, t)}{\partial t} = -\frac{\hbar^2}{2m} \Laplace \psi(x, y, z, t) + V(x, y, z)\psi(x, y, z, t).
 	\label{3dbox:3dscheq}
 \end{equation}
 Az egyenlet kezdőfeltétele egy kezdeti állapot $t_0$-ban, $\psi(x, y, z, t_0) = \psi_0(x, y, z)$, az egyenlet határfeltételei pedig a hullámfüggvény határokon való eltűnése, $0=\left.\psi\right|_{x=0}=\left.\psi\right|_{x=L_x}=\left.\psi\right|_{y=0}=\left.\psi\right|_{y=L_y}=\left.\psi\right|_{z=0}=\left.\psi\right|_{z=L_z}$. Mivel ez a potenciál lineáris $x$, $y$ és $z$-ben, a Schrödinger-egyenlet szeparálható a
 \begin{equation}
-	\psi_{klm}(x, y, z, t) = e^{-\frac{iE_{klm}t}{\hbar}}\psi^{(x)}_k(x)\psi^{(y)}_l(y)\psi^{(z)}_m(z)
+	\psi_{klm}(x, y, z, t) = e^{-\frac{iE_{klm}}{\hbar}t}\psi^{(x)}_k(x)\psi^{(y)}_l(y)\psi^{(z)}_m(z)
 	\label{3dox:3dansatz}
 \end{equation}
 próbafüggvénnyel. A $\psi^{(i)}_n$ ($i=x, y, z$) függvényekre így az egy dimenziós stacionárius Schrödinger-egyenlet vonatkozik. A $\psi^{(x)}$-re vonatkozó egyenlet 
 \begin{equation}
-	-\frac{\hbar^2}{2m}\frac{d^2\psi^{(x)}_k(x)}{dx^2} + \boldsymbol{F}_xx\psi^{(x)}_k(x) = E^{(x)}_k\psi^{(x)}_k(x),
+	-\frac{\hbar^2}{2m}\frac{d^2\psi^{(x)}_k(x)}{dx^2} + F_xx\psi^{(x)}_k(x) = E^{(x)}_k\psi^{(x)}_k(x),
 	\label{3dbox:1deq}
 \end{equation}
 a határfeltételek $0=\left.\psi^{(x)}_k\right|_{x=0}=\left.\psi^{(x)}_k\right|_{x=L_x}$. $\psi^{(y)}_l$ és $\psi^{(z)}_m$-re vonatkozó egyenletek hasonlóak. Az $E_{klm}$ energia a három egy dimenziós stacionárius Schrödinger-egyenlet sajátenergiáinak összege,
@@ -23,7 +23,7 @@ a határfeltételek $0=\left.\psi^{(x)}_k\right|_{x=0}=\left.\psi^{(x)}_k\right|
 \end{equation}
 $C_{klm}$ együtthatók meghatározásához a szokásos hely reprezentáció beli skalárszorzást kell használni,
 \begin{equation}
-	C_{klm} = \frac{1}{N_{klm}}\int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,\psi_{klm}(x, y, z, t=0)^*\psi_0(x, y, z)
+	C_{klm} = \frac{1}{N_{klm}}\int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,\psi_{klm}(x, y, z, t=0)^*\psi_0(x, y, z),
 	\label{3dbox:ceq}
 \end{equation}
 \begin{equation}

@@ -16,7 +16,7 @@ Ezt az egyenletet összevetve \eqref{3dbox:1deq} egyenlettel $a$ és $b$ érték
 \begin{equation}
 	b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}.
 \end{equation}
-Az egy dimenziós időfüggetlen Schrödinger egyenlet megoldása
+Az egy dimenziós időfüggetlen Schrödinger-egyenlet megoldása
 \begin{equation}
 	\psi(x) = c_1\Ai(ax-bE)+c_2\Bi(ax-bE),
 \end{equation}
@@ -38,7 +38,15 @@ Felhasználva a $\Ti(x)$ függvényt, az egyenlet kompakt és jól közelíthet�
 	\caption[Egzakt energiaszintek]{Egzakt energia szintek, $bE$ és $aL$ közötti relációval ábrázolva. Az ába jobb alsó sarkán látható, hogy $E \ll FL$ esetén az energiaszintek $L$-től függetlenek lesznek, mivel a félvégtelen tér beli homogén tér energiaszintjeit közelítik.}
 	\label{box_energiaszintek_abra}
 \end{figure}
-Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai\left(ax-b\right)$, mert a $\Bi\left(x\right)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai(-bE) = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja, később a Szemiklasszikus közelítés tárgyalása közben az aszimptotikus .
+Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai\left(ax-b\right)$, mert a $\Bi\left(x\right)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai(-bE) = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja, később a Szemiklasszikus közelítés vizsgálata során részletesebben tárgyaljuk.
+
+\begin{equation}
+	\psi_k(x) = \Bi(-bE_k)\Ai(ax-bE_k) - \Ai(-bE_k)\Bi(ax-bE_k)
+\end{equation}
+sajátállapotokhoz tartozó normálás analitikusan meghatározható. Mivel $\psi_k$ sajátállapotok valós értékűek, $\left|\psi_k(x)\right|^2 = \psi_k(x)^2$, így \aeqref{airy:normintegral} egyenlet közvetlenül alkalmazható,
+\begin{equation}
+	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_0^L = 
+\end{equation}
 	
 	
 %A probléma egy 1D dobozba zárt résecske homogén erőtérben. $F(x)=-F$, azaz $V(x) = Fx$.

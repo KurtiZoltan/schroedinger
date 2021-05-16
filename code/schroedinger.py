@@ -199,10 +199,14 @@ class d1schroedinger:
         '''
         n goes from 0
         '''
+        F3sqrt = np.power(self.F, 1/3)
         if len(self.__norms) <= n:
             for i in range(len(self.__norms), n+1):
-                phin = lambda x: self.unormWaveFun(x, i)
-                norm = 1 / np.sqrt(np.abs(self.scalarProd(phin, phin)))
+                self.eLevel(i)
+                ai1, ai1p, bi1, bi1p = special.airy(-self.Es[i] / F3sqrt**2)
+                ai2, ai2p, bi2, bi2p = special.airy(self.L * F3sqrt - self.Es[i] / F3sqrt**2)
+                intsquared = 1 / F3sqrt * (1 / np.pi**2 - (bi1*ai2p - ai1*bi2p * (self.Es[i] - self.L * self.F > -10))**2)
+                norm = 1 / np.sqrt(intsquared)
                 print(self.__name + f"N_{i:d}={norm:.2f}")
                 self.__norms = np.append(self.__norms, norm)
         return

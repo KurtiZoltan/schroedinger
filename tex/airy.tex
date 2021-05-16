@@ -63,6 +63,17 @@ $x \to \infty$ aszimptotikus alak:
 	\Bi(x) = \frac{1}{ \sqrt{\pi}x^{1/4}}e^{ \frac{2}{3}x^{\frac{3}{2}}}+\mathcal{O}\left(x^{-5/4}\right)
 \end{equation}
 
+Az állapotok normájának kiszámításához szükség van az Airy-függvények szorzatának integráljára. \cite{Albright_1977} (A.16) szerint
+\begin{equation}
+	\int y^2\;dx = xy^2 - {y^\prime}^2,
+	\label{airy:normintegral}
+\end{equation}
+ahol $y$ az Airy egyenlet tetszőleges megoldása.
+
+A Green-függvény meghatározása közben felmerül a Wronski-determinánsa az Airy-függvényeknek, ez \cite{NIST:DLMF} (9.2.7) szerint
+\begin{equation}
+	\mathcal{W} \{ \Ai(x), \Bi(x) \} = \Ai(x)\Bip(x) - \Bi(x)\Aip(x) = \frac{1}{\pi}
+\end{equation}
 
 
 
