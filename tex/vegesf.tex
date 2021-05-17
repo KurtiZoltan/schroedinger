@@ -34,6 +34,7 @@ Felhasználva a $\Ti(x)$ függvényt, az egyenlet kompakt és jól közelíthet�
 	\Ti(aL-bE) - \Ti(-bE) = 0.
 \end{equation}
 \begin{figure}[H]
+	\centering
 	\includegraphics[scale=1]{./figs/energiaszintek.pdf}
 	\caption[Egzakt energiaszintek]{Egzakt energia szintek, $bE$ és $aL$ közötti relációval ábrázolva. Az ába jobb alsó sarkán látható, hogy $E \ll FL$ esetén az energiaszintek $L$-től függetlenek lesznek, mivel a félvégtelen tér beli homogén tér energiaszintjeit közelítik.}
 	\label{box_energiaszintek_abra}
@@ -44,10 +45,16 @@ Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető kon
 	\psi_k(x) = \Bi(-bE_k)\Ai(ax-bE_k) - \Ai(-bE_k)\Bi(ax-bE_k)
 \end{equation}
 sajátállapotokhoz tartozó normálás analitikusan meghatározható. Mivel $\psi_k$ sajátállapotok valós értékűek, $\left|\psi_k(x)\right|^2 = \psi_k(x)^2$, így \aeqref{airy:normintegral} egyenlet közvetlenül alkalmazható,
-\begin{equation}
-	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_0^L = 
-\end{equation}
-	
+\begin{dmath}
+	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_{x=0}^{x=L} = \frac{1}{a}\left(\frac{1}{\pi^2}-\left(\Bi(-bE)\Aip(aL-bE)-\Ai(-bE)\Bip(aL-bE)\right)^2\right).
+\end{dmath}
+A $\psi_k$-t tartalmazó tagok kiesnek a határokon, mert a határfeltételeknek megfelelően $\psi_k=0$ $x=0$ és $x=L$-ben. A maradék tag $x=0$-beli értéke $\frac{1}{\pi^2}$ az Airy-függvények Wronski-determinánsa \eqref{airy:wronski} miatt. \Aref{vegesf:eigenstates}. ábra az első néhány sajátállapotot szemlélteti,  $1$-re normálva az $N_k$ együtthatók segítségével.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./figs/allapotok.pdf}
+	\caption[sajátállapotok]{Az első $4$ energia sajátállapot $aL=8$ hosszúságú doboz esetén, $1$-re normálva, azaz $\frac{1}{\sqrt{N_n}}\psi_n(x)$ függvényeket ábrázolja. ($n=0,1,2,3$)}
+	\label{vegesf:eigenstates}
+\end{figure}
 	
 %A probléma egy 1D dobozba zárt résecske homogén erőtérben. $F(x)=-F$, azaz $V(x) = Fx$.
 %	Az egyenlethez tartozó határfeltételek, ha a doboz hossza $L$:

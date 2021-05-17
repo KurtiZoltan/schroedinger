@@ -1,8 +1,6 @@
 import numpy as np
 from scipy import special, optimize, integrate
-from numba import njit
 import pickle
-import os.path
 from os import path
 
 from plot import * 

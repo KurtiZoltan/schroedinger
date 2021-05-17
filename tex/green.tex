@@ -1,6 +1,6 @@
 A rezolvens operátor definíciója
 \begin{equation}
-    \op{G}\left( E \right) = \frac{1}{\op{H} - E}
+    \op{G}\left( E \right) = \left(E-\op{H}\right)^{-1} = \frac{1}{E-\op{H}}
 \end{equation}
 és ezen operátorhoz tartozó két változós függvény a Green-függény.
 \begin{equation}
@@ -8,17 +8,17 @@ A rezolvens operátor definíciója
 \end{equation}
 A Green-függvény név indokolt, és ennek a segítségével fogom meghatározni a Green-függvényeket konkrét esetben. A teljességi reláció beszúrásával látható, hogy a kvantummechanikai Green-függény megegyezik a differenciálegyenletek elméletéből ismert Green-függvénnyel.
 \begin{equation}
-    \left(\op{H} - E\right) \op{G}\left( E \right) = \op{I}
+    \left(E-\op{H}\right)\op{G}\left( E \right) = \op{I},
 \end{equation}
-
+azaz
 \begin{equation}
-    \int \mathrm{d}x^\prime \Bra{x}\left(\op{H} - E\right) \Ket{x^\prime}\Bra{x^\prime} \op{G}\left( E \right)\Ket{y} = \Bra{x}\op{I}\Ket{y} = \delta \left(x - y\right)
+    \int dx^\prime \Bra{x}\left(\op{H} - E\right) \Ket{x^\prime}\Bra{x^\prime} \op{G}\left( E \right)\Ket{y} = \Bra{x}\op{I}\Ket{y} = \delta \left(x - y\right).
 \end{equation} 
-A $\Bra{x}\left(\op{H} - E\right) \Ket{x^\prime}$ maggal vett konvolúció a $\op{H} - E$ operátor hatása. Ezért
+A $\Bra{x}\left(\op{H} - E\right) \Ket{x^\prime}$ maggal vett konvolúció a $\op{H} - E$ operátor hatása, ezért
 \begin{equation}
-    \left(\op{H}_x - E\right) G\left(x, y; E\right) = \delta\left(x - y\right)
+    \left(\op{H}_x - E\right) G\left(x, y; E\right) = \delta\left(x - y\right),
 \end{equation}
-ami a differenciálegyenletek elméletéből ismert Green-függvény definíciója. Ebben a konkrét esetben
+amely a differenciálegyenletek elméletéből ismert Green-függvény definíciója. Ebben a konkrét esetben
 \begin{equation}
     \left( -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + Fx - E \right) G\left(x, y; E\right) = \delta\left(x - y\right)
 	\label{green:deltaeq}
