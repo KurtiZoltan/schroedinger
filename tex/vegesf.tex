@@ -46,7 +46,7 @@ Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető kon
 \end{equation}
 sajátállapotokhoz tartozó normálás analitikusan meghatározható. Mivel $\psi_k$ sajátállapotok valós értékűek, $\left|\psi_k(x)\right|^2 = \psi_k(x)^2$, így \aeqref{airy:normintegral} egyenlet közvetlenül alkalmazható,
 \begin{dmath}
-	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_{x=0}^{x=L} = \frac{1}{a}\left(\frac{1}{\pi^2}-\left(\Bi(-bE)\Aip(aL-bE)-\Ai(-bE)\Bip(aL-bE)\right)^2\right).
+	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE_k}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_{x=0}^{x=L} = \frac{1}{a\pi^2}-\frac{1}{a}\Bigl(\Bi(-bE)\Aip(aL-bE)-\Ai(-bE)\Bip(aL-bE)\Bigr)^2.
 \end{dmath}
 A $\psi_k$-t tartalmazó tagok kiesnek a határokon, mert a határfeltételeknek megfelelően $\psi_k=0$ $x=0$ és $x=L$-ben. A maradék tag $x=0$-beli értéke $\frac{1}{\pi^2}$ az Airy-függvények Wronski-determinánsa \eqref{airy:wronski} miatt. \Aref{vegesf:eigenstates}. ábra az első néhány sajátállapotot szemlélteti,  $1$-re normálva az $N_k$ együtthatók segítségével.
 \begin{figure}[H]

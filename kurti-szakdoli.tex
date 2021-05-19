@@ -16,11 +16,11 @@
 %\usepackage{hyperref}
 \usepackage{breqn}
 
-\newcommand{\Ai}[0]{\mathrm{Ai}}
-\newcommand{\Bi}[0]{\mathrm{Bi}}
-\newcommand{\Aip}[0]{\mathrm{Ai}^\prime}
-\newcommand{\Bip}[0]{\mathrm{Bi}^\prime}
-\newcommand{\Ti}[0]{\mathrm{Ti}}
+\DeclareMathOperator{\Ai}{Ai}
+\DeclareMathOperator{\Bi}{Bi}
+\DeclareMathOperator{\Aip}{Ai^\prime}
+\DeclareMathOperator{\Bip}{Bi^\prime}
+\DeclareMathOperator{\Ti}{Ti}
 \newcommand{\op}[1]{\hat{#1}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
@@ -65,6 +65,7 @@
 \section{Bevezetés}
 	\input{tex/bevezetes.tex}
 \section{A dobozba zárt részecske homogén térben}
+	\input
 	\subsection{Három dimenzióban}
 		\input{tex/3dbox.tex}
 	\subsection{Egy dimenzióban}
@@ -75,35 +76,40 @@
 			\input{tex/airy.tex}
 		\subsubsection{Véges $F$ eset}
 			\input{tex/vegesf.tex}
-		\subsubsection{Szabad részecske gyorsuló koordinátarendszerben}
-			\input{tex/accelerating.tex}
+		\subsubsection{Falak nélküli eset}
+			\input{tex/nowall.tex}
 \section{Szemiklasszikus közelítés}
 	\input{tex/semiclassical.tex}
-	\subsection{Összehasonlítás az egzakt eredménnyel}
-		\input{tex/quantumApprox.tex}
+	\subsection{Szemiklasszikus energiaszintek}
+		\input
+		\subsubsection{Összehasonlítás az egzakt eredménnyel}
+			\input{tex/quantumApprox.tex}
 	\subsection{Airy függvények aszimptotikája}
 		\input
 \section{Homogén tér Green-függvénye}
 	\input{tex/green.tex}
+\appendix
+\section{Szabad részecske gyorsuló koordinátarendszerben}
+	\input{tex/accelerating.tex}
 \section{Numerikus számítások}
 	\subsection{Momentumok időfejlődése}
 		\input{tex/momentums.tex}
 	\subsection{Hullámfüggvény időfejlődése}
 		\subsubsection{1D}
 		\subsubsection{2D}
-	
-	Azokat a parmaétereket keresem, ahol az alapállapot $E = FL$:
-	\begin{equation}
-		\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} = 0
-	\end{equation}
-	, azaz
-	\begin{equation}
-		\Ai{-\sqrt[3]{\frac{2mF}{\hbar^2}}L} = 0
-	\end{equation}
-	. Az első gyöke az Airy függvénynek megadja azt az esetet, amikor az alapállapot energiája $FL$, és nem pedig valamelyik gerjesztett állapoté.
-	\begin{equation}
-		-a_1 = \sqrt[3]{\frac{2mF}{\hbar^2}}L \approx 2.338
-	\end{equation}
+
+%	Azokat a parmaétereket keresem, ahol az alapállapot $E = FL$:
+%	\begin{equation}
+%		\Ti{\sqrt[3]{\frac{2mF}{\hbar^2}}L - \sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} - \Ti{-\sqrt[3]{\frac{2m}{\hbar^2F^2}}FL} = 0
+%	\end{equation}
+%	, azaz
+%	\begin{equation}
+%		\Ai{-\sqrt[3]{\frac{2mF}{\hbar^2}}L} = 0
+%	\end{equation}
+%	. Az első gyöke az Airy függvénynek megadja azt az esetet, amikor az alapállapot energiája $FL$, és nem pedig valamelyik gerjesztett állapoté.
+%	\begin{equation}
+%		-a_1 = \sqrt[3]{\frac{2mF}{\hbar^2}}L \approx 2.338
+%	\end{equation}
 	
     \newpage
 	\phantomsection

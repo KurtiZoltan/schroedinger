@@ -5,7 +5,7 @@ Az Airy egyenlet
 \end{equation}
 ennek az egyenletnek a megfelelő kezdőfeltételekhez illesztett megoldásai az úgynevezett Airy-függvények, $\Ai(x)$ és $\Bi(x)$.
 
-Az Airy-függvények szorosan kapcsolódnak a Bessel-függvényekhez. Ez elentős mind az aszimptotikus alakjuk meghatározásához, mind a függvények numerikus kiértékeléséhez. A megoldást
+Az Airy-függvények szorosan kapcsolódnak a Bessel-függvényekhez. Ez jelentős mind az aszimptotikus alakjuk meghatározásához, mind a függvények numerikus kiértékeléséhez. A megoldást
 \begin{equation}
 	y(x) = x^{\frac{1}{2}}v\left(\frac{2}{3}x^{\frac{3}{2}}\right)
 \end{equation}
@@ -74,7 +74,11 @@ Az állapotok normájának kiszámításához szükség van az Airy-függvények
 	\int y^2\;dx = xy^2 - {y^\prime}^2,
 	\label{airy:normintegral}
 \end{equation}
-ahol $y$ az Airy egyenlet tetszőleges megoldása.
+ahol $y$ az Airy egyenlet tetszőleges megoldása. Ezen egyenlet segítségével tetszőleges kötött állapot normája meghatározható, azonban az esetleges szórási állapottok normálásához a Dirac-delta függvénnyel kapcsolatos relációra lesz szükség \cite{Vallee:2010:AFA} (3.108),
+\begin{equation}
+	\frac{1}{\alpha^2}\int_{-\infty}^\infty\Ai\left(\frac{x+a}{\alpha}\right)\Ai\left(\frac{x+b}{\alpha}\right)\,dx=\delta(a-b)
+	\label{airy:delta}
+\end{equation}
 
 A Green-függvény meghatározása közben felmerül a Wronski-determinánsa az Airy-függvényeknek, ez \cite{NIST:DLMF} (9.2.7) szerint
 \begin{equation}
