@@ -10,8 +10,8 @@ def semiclassical(E):
     n1mask = E < L*F
     return n1 * n1mask + n2 * (1-n1mask)
 
-test = d1schroedinger(F = 1)
-test.eLevel(15)
+test = d1schroedinger(F = 1, L=8)
+test.eLevel(8)
 elevels = test.Es
 x = np.linspace(0, elevels[-1], 10000)
 y = np.zeros(x.shape)
