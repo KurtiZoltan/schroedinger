@@ -1,10 +1,11 @@
+\label{nowall}
 Falak hiányában a Schrödinger-egyenlet továbbra is \eqref{3dbox:1deq}, azonban a határfeltételek különböznek. A fizikai kép az, hogy $V(x)=Fx$ potenciál esetén az $x\to\infty$-ből nem jönnek részecskék, és nem is tartózkodnak ott. Ezek problémás állapotok lennének, végtelen energiával rendelkeznének. Tehát a szórásállapotokra vonatkozó feltétel, hogy
 \begin{equation}
 	\lim_{x\to\infty}\psi(x) = 0.
-	\label{nowall:oundary}
+	\label{nowall:boundary}
 \end{equation}
 Mivel itt folytonos spektrumról van szó, az eddigi normálás helyett az állapotokat Dirac-deltára kell normálni. Ebben a feladatban az energia és energia sajátállapot között egy az egyhez megfeleltetés van, ellenben a jól ismert szabad részecske esetével. Ennek oka, hogy itt $x\to\infty$-ből nem jönnek részecskék. Ennek következtében az a sajátállapotokat $\Ket{E}$ egyértelmen jelöli.
-\Aeqref{nowall:oundary} feltétel azt jelenti, hogy az Airy-függvények közül a $\Bi(ax-bE)$ nem szerepel a lineáris kominációban, a megoldás tisztán az $\Ai(ax-bE)$ függvény lesz,
+\Aeqref{nowall:boundary} feltétel azt jelenti, hogy az Airy-függvények közül a $\Bi(ax-bE)$ nem szerepel a lineáris kominációban, a megoldás tisztán az $\Ai(ax-bE)$ függvény lesz,
 \begin{equation}
 	\Braket{x|E}=N\Ai(ax-bE).
 \end{equation}
@@ -15,6 +16,7 @@ A szórásállapotokra vonatkozó normálási feltétel
 Ez alapján $N$ meghatározható \eqref{airy:delta} azonosság felhasználásával,
 \begin{dmath}
 	\delta(E-E^\prime)=N^2\int_{-\infty}^\infty\Ai(ax-bE)\Ai(ax-bE^\prime)\,dx=N^2\frac{1}{ab}\delta(E-E^\prime).
+	\label{nowall:orthog}
 \end{dmath}
 Ez alapján $N=\sqrt{ab}=\sqrt[3]{\frac{2m}{\hbar^2\sqrt{F}}}$, és
 \begin{equation}
@@ -23,4 +25,19 @@ Ez alapján $N=\sqrt{ab}=\sqrt[3]{\frac{2m}{\hbar^2\sqrt{F}}}$, és
 A teljességi reláció is leellenőrizhető \aeqref{airy:delta} egyenlet alapján,
 \begin{dmath}
 	\int_{-\infty}^\infty dE\,\Ket{E}\Bra{E}=ab\int_{-\infty}^\infty dE\int_{-\infty}^\infty dx\int_{-\infty}^\infty dy\,\Ai(ax-bE)\Ai(ay-bE)\Ket{x}\Bra{y}=\int_{-\infty}^\infty dx\int_{-\infty}^\infty dy\,\delta(x-y)\Ket{x}\Bra{y}=\op{I}.
+	\label{nowall:comleteness}
 \end{dmath}
+\Aeqref{nowall:orthog} egyenlet a $\op{H}$ operátor hermitikusságából következik, hiszen a hermitikus operátorok sajátállapotai ortogonálisak egymásra. \Aeqref{nowall:comleteness} teljességi reláció is arra utal, hogy az összes fizikai sajátállapotot megtaláltuk a csupán $\Ai(x)$ függvényt tartalmazó állapotok keresésével. Ha hiányozna valamely fizikai állapot, akkor nem lehetne a megtalált sajátfüggvények lineáris kombinációjaként tetszőleges hullámfüggvényt előállítani, és így a teljességi reláció nem teljesülne.
+
+Érdemes a fizikai intuícióval összevetni az Airy-függvény Fourier-transzformáltját.
+\begin{equation}
+	\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dp\,\Ai(x)
+\end{equation}
+
+
+
+
+
+
+
+
