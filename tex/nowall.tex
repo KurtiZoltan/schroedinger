@@ -29,12 +29,22 @@ A teljességi reláció is leellenőrizhető \aeqref{airy:delta} egyenlet alapj�
 \end{dmath}
 \Aeqref{nowall:orthog} egyenlet a $\op{H}$ operátor hermitikusságából következik, hiszen a hermitikus operátorok sajátállapotai ortogonálisak egymásra. \Aeqref{nowall:comleteness} teljességi reláció is arra utal, hogy az összes fizikai sajátállapotot megtaláltuk a csupán $\Ai(x)$ függvényt tartalmazó állapotok keresésével. Ha hiányozna valamely fizikai állapot, akkor nem lehetne a megtalált sajátfüggvények lineáris kombinációjaként tetszőleges hullámfüggvényt előállítani, és így a teljességi reláció nem teljesülne.
 
-Érdemes a fizikai intuícióval összevetni az Airy-függvény Fourier-transzformáltját.
+Érdemes a fizikai intuícióval összevetni az Airy-függvény Fourier-transzformáltját. Az Airy-függény Fourier transzformáltja
 \begin{equation}
-	\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dp\,\Ai(x)
+	\int_{-\infty}^\infty\Ai(x)e^{-ikx}\,dx=e^{ik^3/3}.
 \end{equation}
-
-
+Ez azt jelenti, hogy az impulzus térben a hullámfüggvény
+\begin{equation}
+	\psi_E(p)=\frac{1}{\sqrt{2\pi F\hbar}}\exp\left(i\left(\frac{1}{3}\left(\frac{p}{a\hbar}\right)^3-\frac{pE}{F\hbar}\right)\right),
+\end{equation}
+\begin{equation}
+	\rvert\psi_E(p)\lvert^2=\frac{1}{2\pi F\hbar}.
+\end{equation}
+Az impulzus hullámfüggvény amplitúdója nem függ az impulzustól! Ez nem meglepő, mert a klasszikus esetben az impulzus időfejlődése 
+\begin{equation}
+	p(t)=-Ft+p_0,
+\end{equation}
+tehát minden részecske egy kis $dp$ tartományban $dp/F$ időt tölt, adott impulzushoz tartozó részecskesűrűség értéke független az impulzustól. Ennek a klasszikus fizika beli megállapításnak a megfelelője, hogy $\lvert\psi_E(p)\rvert^2$ $p$-től független.
 
 
 

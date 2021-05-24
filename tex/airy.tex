@@ -1,3 +1,4 @@
+\label{airy}
 Az Airy egyenlet
 \begin{equation}
 	\frac{d^2y}{dx^2} - xy = 0,
@@ -52,22 +53,27 @@ ahol $J_\nu(x)$ a Bessel-függvények.
 \end{equation}
 függvényt.
 
-$x \to \infty$ aszimptotikus alak:
+Az $x \to \infty$ aszimptotikus alakok megkaphatóak a Bessel-függvények aszimptotikus alakjából: 
 \begin{equation}
-	\Ai\left(-x\right) = \frac{1}{\sqrt{\pi}x^{1/4}}\cos\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right)
+	\Ai\left(-x\right) = \frac{1}{\sqrt{\pi}x^{1/4}}\cos\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right),
+	\label{airy:ai-approx}
 \end{equation}
 \begin{equation}
-	\Bi\left(-x\right) = -\frac{1}{\sqrt{\pi}x^{1/4}}\sin\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right)
+	\Bi\left(-x\right) = -\frac{1}{\sqrt{\pi}x^{1/4}}\sin\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right),
+	\label{airy:bi-approx}
 \end{equation}
 \begin{equation}
-	\Ti\left(-x\right) = -\cot\left( \frac{2}{3}x^{3/2} - \frac{\pi}{4} \right) + \mathcal{O}\left(x^{-5/4}\right)
+	\Ai(x) = \frac{1}{2\sqrt{\pi}x^{1/4}}e^{-\frac{2}{3}x^{\frac{3}{2}}}+\mathcal{O}\left(x^{-5/4}\right),
+	\label{airy:ai+approx}
+\end{equation}
+\begin{equation}
+	\Bi(x) = \frac{1}{ \sqrt{\pi}x^{1/4}}e^{ \frac{2}{3}x^{\frac{3}{2}}}+\mathcal{O}\left(x^{-5/4}\right).
+	\label{airy:bi+approx}
+\end{equation}
+A $\Ti(x)$ definíciójába behelyettesítve \eqref{airy:ai-approx} és \eqref{airy:bi-approx} egyenleteket,
+\begin{equation}
+	\Ti\left(-x\right) = -\cot\left( \frac{2}{3}x^{3/2} - \frac{\pi}{4} \right) + \mathcal{O}\left(x^{-5/4}\right).
 	\label{airy:tiapprox}
-\end{equation}
-\begin{equation}
-	\Ai(x) = \frac{1}{2\sqrt{\pi}x^{1/4}}e^{-\frac{2}{3}x^{\frac{3}{2}}}+\mathcal{O}\left(x^{-5/4}\right)
-\end{equation}
-\begin{equation}
-	\Bi(x) = \frac{1}{ \sqrt{\pi}x^{1/4}}e^{ \frac{2}{3}x^{\frac{3}{2}}}+\mathcal{O}\left(x^{-5/4}\right)
 \end{equation}
 
 Az állapotok normájának kiszámításához szükség van az Airy-függvények szorzatának integráljára. \cite{Albright_1977} (A.16) szerint

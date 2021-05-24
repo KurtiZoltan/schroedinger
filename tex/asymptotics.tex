@@ -10,9 +10,10 @@ a klasszikus mechanikából ismert energia megmaradás szerint. Átrendezve
 \end{equation}
 A hullámfüggvény fázisának meghatározása a de Broglie hullámhossz, $p=\hbar k$, és a klasszikus impulzus alapján történik. Abban az esetben, ha az amplitúdó ami közelítőleg megkapható az előző egyenletből, kicsit változik a de Broglie hullámhossz alatt,
 \begin{equation}
-	\psi(x)\propto\exp\left(i\int_{x_0}^xk\left(x^\prime\right)\,dx^\prime\right).
+	\psi(x)\propto\exp\left(\pm i\int_{x_0}^xk\left(x^\prime\right)\,dx^\prime\right),
+	\label{asymtotics:phase}
 \end{equation}
-A klasszikus energia megmaradás meghatározza az impulzust, ami alapján a de Broglie hullámszám
+Attól függően, hogy a részecske $+x$ vagy $-x$ irányban halad. A klasszikus energia megmaradás meghatározza az impulzust, ami alapján a de Broglie hullámszám
 \begin{equation}
 	k=\frac{\sqrt{2mF}}{\hbar}\sqrt{-x}.
 \end{equation}
@@ -20,12 +21,19 @@ A $k$ integrálja könnyen kiszámítható,
 \begin{equation}
 	\int \frac{\sqrt{2mF}}{\hbar}\sqrt{-x}\,dx=\frac{2}{3}\left(-ax\right)^{3/2}.
 \end{equation}
-Az amplitúdóra és hullámhosszra vonatkozó feltételeket összekombinálva
+A részecskeáram klasszikusan mindenhol $0$, ebben a potenciálban minden részecske visszaesik. Ez a feltétel ekvivalens azzal a feltétellel, hogy $\psi$ valós, azaz \aeqref{asymtotics:phase} egyenletnek csak bizonyos kombinációi léphetnek fel. Ezt írja le az exponenciális függvény helyettesítése a szinusz függvénnyel, és a $\phi_0$ fázistolás,
 \begin{equation}
-	\psi(x)\propto\Ai(ax)\propto\frac{1}{\sqrt[4]{-ax}}\sin\left(\frac{2}{3}\left(-ax\right)^{3/2}\right).
+	\psi(x)\propto\Ai(ax)\approx\frac{1}{\sqrt[4]{-ax}}\sin\left(\frac{2}{3}\left(-ax\right)^{3/2}+\phi_0\right).
 \end{equation}
+Ez az egyenlet kombinálja a fázisra és az amplitúdóra vonatkozó feltételeket, és egyezik \aeqref{airy:ai-approx} és \aeqref{airy:bi-approx} aszimptotikus alakokkal.
 
-
-
+Pozitív $x$ esetén a kinetikus energia negatív lenne, ami formálisan képzetes de Broglie hullámhossznak felel meg. Ezen formális összefüggés alapján az aszimptotikus alak polinomiális részét leszámítva az aszimptotikus alakok
+\begin{equation}
+	\Ai(x)\approx\exp\left(-\frac{2}{3}x^{3/2}\right),
+\end{equation}
+\begin{equation}
+	\Bi(x)\approx\exp\left(\frac{2}{3}x^{3/2}\right).
+\end{equation}
+A polinomiális részt leszámítva ez egyezik \aeqref{airy:ai+approx} és \aeqref{airy:bi+approx} egyenletekkel.
 
 
