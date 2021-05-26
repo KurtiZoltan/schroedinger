@@ -28,12 +28,14 @@ amely azt jelenti, hogy az $x < y$ tartományban, illetve $y < x$ tartományban 
 \begin{equation}
 	\lim_{\epsilon \to 0^+}\left.\frac{\partial}{\partial x}G\left(x,y;E \right)\right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = \frac{2m}{\hbar^2}.
 \end{equation}
-Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ az előírt határesetben. Mivel $G(x,y;E)$-ről feltesszük, hogy folytonos, a bal oldal integrálja is folytonos, leszámítva esetleg a deriváltakat tartalmazó tagokat. A határeset elvégzése közben a deriváltakat nem tartalmazó tagok kiestek. \Aref{green:deltaeq}. egyenlet $\int_{y-\epsilon}^{y+\epsilon}dx^\prime \int_{y-\epsilon}^{x^\prime} \,dx$ integrálja az $\epsilon \to 0^+$ határesetben
+Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ az előírt határesetben. Mivel $G(x,y;E)$-ről feltesszük, hogy folytonos, a bal oldal integrálja is folytonos, leszámítva a deriváltakat tartalmazó tagokat. A határeset elvégzése közben a deriváltakat nem tartalmazó tagok így kiesnek. \Aref{green:deltaeq}. egyenlet $\int_{y-\epsilon}^{y+\epsilon}dx^\prime \int_{y-\epsilon}^{x^\prime} \,dx$ integrálja az $\epsilon \to 0^+$ határesetben
 \begin{equation}
 	\lim_{\epsilon \to 0^+}\left.G\left(x,y;E \right)\right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 0
 	\label{green:continuity}
 \end{equation}
-folytonossági feltételt adja. A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \right\rvert_{x=y-\epsilon}^{x=y+\epsilon}$, ami a határesetben $0$. Az $\left(Fx - E\right)G\left(x,y;E\right)$ integrálja is $0$ a határesetben, mert az előző feltételben kapott integrál Dirac-deltát nem tartalmazott, így az integrál már folytonos lesz.
+folytonossági feltételt adja. A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \right\rvert_{x=y-\epsilon}^{x=y+\epsilon}$, ami a határesetben $0$. Az $\left(Fx - E\right)G\left(x,y;E\right)$ integrálja is $0$ a határesetben, az előző integrálhoz hasonló módon.
+
+
 %\Aref{green:xy}. és \aref{green:yx}. egyenlet behelyettesítése meghatározza a $C$ együtthatókra vonatkozó egyenleteket:
 %\begin{equation}
 %	\frac{C_2}{C_1} = -\Ti\left(-bE\right)
@@ -57,17 +59,17 @@ Valós energiákra $G(x,y;E)=G(y,x;E)^*$. Ezt a szimmetria tulajdonságot fel le
 \begin{equation}
 	v = ay-bE
 \end{equation}
-jelöléseket. A fent leírt három kritériumot teljesítő ansatz 
+jelöléseket. A fent leírt három kritériumot és szimmetria tulajdonságot teljesítő ansatz a
 \begin{equation}
 	G\left(x,y;E\right) = C_0(E)\times
 	\begin{cases}
 		\begin{split}
-			\left(\Ai(aL-bE)\Bi(v)-\Bi(aL-bE)\Ai(v)\right)\times\\
-			\left(\Ai(bE)\Bi(u)-\Bi(-bE)\Ai(u)\right)
+			\Bigl(\Ti(aL-bE)\Bi(v)-\Ai(v)\Bigr)\times\\
+			\Bigl(\Ti(bE)\Bi(u)-\Ai(u)\Bigr)
 		\end{split}& x \leq y\\
 		\begin{split}
-			\left(\Ai(aL-bE)\Bi(u)-\Bi(aL-bE)\Ai(u)\right)\times\\
-			\left(\Ai(bE)\Bi(v)-\Bi(-bE)\Ai(v)\right)
+			\Bigl(\Ti(aL-bE)\Bi(u)-\Ai(u)\Bigr)\times\\
+			\Bigl(\Ti(bE)\Bi(v)-\Ai(v)\Bigr)
 		\end{split}& x \geq y
 	\end{cases}.
 \end{equation}
@@ -84,7 +86,7 @@ jelöléseket. A fent leírt három kritériumot teljesítő ansatz
 %\end{dmath}
 %Ez után már az $x$-$y$ szimmetriája jól látható a Green-függvénynek.
 \begin{equation}
-	C_0 = \frac{a^2}{F}\frac{\pi}{\Ai(-bE)\Bi(aL-bE)-\Ai(aL-bE)\Bi(-bE)}
+	C_0 = \frac{a^2}{F}\frac{\pi}{\Ti(-bE)-\Ti(aL-bE)}
 \end{equation}
 %bevezetésével a Green függvény egyszerűbb alakra hozható,
 %\begin{equation}
@@ -101,11 +103,12 @@ jelöléseket. A fent leírt három kritériumot teljesítő ansatz
 %	\end{cases}
 %\end{equation} 
 
-A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
-\begin{equation}
-	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
-	\label{green:greensum}
-\end{equation}
+%A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
+%\begin{equation}
+%	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
+%	\label{green:greensum}
+%\end{equation}
+
 Így ha $E$ kielégíti \aref{box_energiaszintek_egyenlet}. egyenletet, akkor a rezolvensnek és ezért a Green-függénynek is pólusa kell hogy legyen. Ezt a $C_1$ szingularitásán lehet a leg könnyebben belátni. Ha $C_1$ szinguláris, az összes többi $C$ együttható is, és így a Green-függvény is. \Aref{box_energiaszintek_egyenlet}. egyenlet szerint a $\frac{C_3}{C_1}$ számlálójának és nevezőének ,ásodik tagjai egyenlőek. Első tagjuk bármely $E$ esetén egyenlő, így  hányadosuk $1$, valamint \aref{box_energiaszintek_egyenlet}. egyenlet esetén $\frac{C_2}{C_1} = \frac{C_4}{C_3}$. Ezeknek a következtében mind $\frac{C_3}{C_1} - 1$, mind $\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}$ $0$-val egyenlő, így a $C_1$-re vonatkozó kifejezés nevezője $0$. Ezek a $\frac{1}{E_n - E}$ típusú pólusok \aref{green:greensum}. egyenletből.
 
-Egy érdekes matematikai eredmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztem \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E_k-E$-vel és a megfelelő normálási faktorral, ami Airy függvények szorzatának $0$ és $L$ közötti integrálj, valamint $E_k$-t \aref{box_energiaszintek_egyenlet}. transzcendens egyenlet határozza meg. A Green-függvényre vonatkozó differenciálegyenlet nélkül az összeg elvégzése reménytelennek látszana.
+Egy érdekes matematikai következmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztem \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E_k-E$-vel és a megfelelő normálási faktorral, ami Airy függvények szorzatának $0$ és $L$ közötti integrálj, valamint $E_k$-t \aref{box_energiaszintek_egyenlet}. transzcendens egyenlet határozza meg. A Green-függvényre vonatkozó differenciálegyenlet nélkül az összeg elvégzése reménytelennek látszana.

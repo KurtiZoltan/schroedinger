@@ -11,15 +11,15 @@ def char_eq(E, L):
 
 def semiclassic(E, L, n):
     if E > L:
-        f = 2/3*(np.power(E, 3/2) - np.power(E - L, 3/2)) - n*np.pi
+        f = 2/3*(np.power(E, 3/2) - np.power(E - L, 3/2)) - (n + 1) * np.pi
         fp = np.sqrt(E) - np.sqrt(E - L)
     else:
-        f = 2 / 3 * np.power(E, 3 / 2) - n * np.pi
+        f = 2 / 3 * np.power(E, 3 / 2) - (n + 3/4) * np.pi
         fp = np.sqrt(E)
     return f, fp
 
 def infsquare(E, L, n):
-    f = E - (np.pi * n / L)**2
+    f = E - (np.pi * (n + 1) / L)**2
     fp = E / E
     return f, fp
 
@@ -41,7 +41,7 @@ def wave_fun(x, E):
 def band(n, l0, l1):
     L = np.linspace(l0, l1, 100)
     E0 = np.array([])
-    Estart = np.pi**2 / L[0]**2 * n**2
+    Estart = np.pi**2 / L[0]**2 * (n+1)**2
     dl = L[1] - L[0]
     for l in L:
         temp = (optimize.root_scalar(f=char_eq, args=l, x0=Estart, fprime=True)).root
@@ -52,9 +52,9 @@ def band(n, l0, l1):
 
 def compare(n, l0, l1, appr):
     band(n, l0, l1)
-    L = np.linspace(l0, l1, 100)
+    L = np.linspace(l0, l1, 3000)
     E0 = np.array([])
-    Estart = np.pi ** 2 / L[0] ** 2 * n ** 2
+    Estart = np.pi ** 2 / L[0] ** 2 * (n+1) ** 2
     dl = L[1] - L[0]
     for l in L:
         temp = (optimize.root_scalar(f=appr, args=(l, n), x0=Estart, fprime=True)).root
@@ -64,10 +64,10 @@ def compare(n, l0, l1, appr):
     return
 
 plt.figure(figsize=[4, 3])
-for i in range(1, 20):
+for i in range(13):
     band(i, 0.5, 5)
 plt.xlim((0.5, 5))
-plt.ylim((0, 100))
+plt.ylim((0, 80))
 plt.xlabel("$aL$")
 plt.ylabel("$bE$")
 plt.grid()
@@ -76,10 +76,10 @@ plt.savefig("../figs/" + "energiaszintek.pdf")
 plt.show()
 
 plt.figure(figsize=[4, 3])
-for i in range(1, 9):
+for i in range(0, 6):
     compare(i, 0.5, 5, semiclassic)
-plt.xlim((0.5, 5))
-plt.ylim((0, 30))
+plt.xlim((1, 5))
+plt.ylim((0, 15))
 plt.xlabel("$aL$")
 plt.ylabel("$bE$")
 plt.grid()
@@ -89,9 +89,9 @@ plt.savefig("../figs/" + "energiaszintkozelites.pdf")
 plt.show()
 
 plt.figure(figsize=[4, 3])
-for i in range(1, 20):
-    compare(i, 0.5, 5, infsquare)
-plt.xlim((0.5, 5))
+for i in range(0, 15):
+    compare(i, 0.5, 3, infsquare)
+plt.xlim((0.5, 3))
 plt.ylim((0, 100))
 plt.xlabel("$aL$")
 plt.ylabel("$bE$")
