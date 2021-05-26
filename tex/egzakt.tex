@@ -27,6 +27,7 @@ amely azt jelenti, hogy az $x < y$ tartományban, illetve $y < x$ tartományban 
 \Aref{green:deltaeq}. egyenlet $x$ szerinti integrálja $y$ körüli $\epsilon$ sugarú környezetében az $\epsilon \to 0^+$ határesetben
 \begin{equation}
 	\lim_{\epsilon \to 0^+}\left.\frac{\partial}{\partial x}G\left(x,y;E \right)\right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = \frac{2m}{\hbar^2}.
+	\label{egzakt:jump}
 \end{equation}
 Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = y - \epsilon}^{x = y + \epsilon} = 1$ az előírt határesetben. Mivel $G(x,y;E)$-ről feltesszük, hogy folytonos, a bal oldal integrálja is folytonos, leszámítva a deriváltakat tartalmazó tagokat. A határeset elvégzése közben a deriváltakat nem tartalmazó tagok így kiesnek. \Aref{green:deltaeq}. egyenlet $\int_{y-\epsilon}^{y+\epsilon}dx^\prime \int_{y-\epsilon}^{x^\prime} \,dx$ integrálja az $\epsilon \to 0^+$ határesetben
 \begin{equation}
@@ -35,23 +36,6 @@ Itt a jobb oldal integrálja $\left. \theta\left(x - y\right) \right\rvert_{x = 
 \end{equation}
 folytonossági feltételt adja. A jobb oldal integrálja $\left. \left(x - y\right) \theta\left(x - y\right) \right\rvert_{x=y-\epsilon}^{x=y+\epsilon}$, ami a határesetben $0$. Az $\left(Fx - E\right)G\left(x,y;E\right)$ integrálja is $0$ a határesetben, az előző integrálhoz hasonló módon.
 
-
-%\Aref{green:xy}. és \aref{green:yx}. egyenlet behelyettesítése meghatározza a $C$ együtthatókra vonatkozó egyenleteket:
-%\begin{equation}
-%	\frac{C_2}{C_1} = -\Ti\left(-bE\right)
-%	\label{green:Cbegin}
-%\end{equation}
-%\begin{equation}
-%	\frac{C_4}{C_3} = -\Ti\left(aL - bE\right)
-%\end{equation}
-%\begin{equation}
-%	\frac{C_3}{C_1} = \frac{\Ti\left(ay - bE\right) - \Ti\left(-bE\right)}{\Ti\left(ay - bE\right) - \Ti\left(aL - bE\right)}
-%\end{equation}
-%TODO: $b$ lecserélése $bE$-re az előző részekben.
-%\begin{equation}
-%	C_1 = -\frac{2m}{a\hbar^2}\frac{1}{\left( \left(\frac{C_3}{C_1}-1\right)\Aip\left(ay - bE\right) + \left(\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}\right) \Bip\left(ay - bE\right) \right)}
-%	\label{green:Cend}
-%\end{equation}
 Valós energiákra $G(x,y;E)=G(y,x;E)^*$. Ezt a szimmetria tulajdonságot fel lehet használni a Green-függvényre adott ansatz pontosítására az $x<y$ és $y<x$ $x$-$y$ csere szimmetriájának megkövetelésével. Ez automatikusan kielégíti \aeqref{green:continuity} egyenletet. A tartomány peremén a homogén megoldás eltűnését megkövetelve \aeqref{green:01} és \aeqref{green:02} teljesül. Érdemes bevezetni a
 \begin{equation}
 	u = ax-bE,
@@ -65,50 +49,56 @@ jelöléseket. A fent leírt három kritériumot és szimmetria tulajdonságot t
 	\begin{cases}
 		\begin{split}
 			\Bigl(\Ti(aL-bE)\Bi(v)-\Ai(v)\Bigr)\times\\
-			\Bigl(\Ti(bE)\Bi(u)-\Ai(u)\Bigr)
+			\Bigl(\Ti(-bE)\Bi(u)-\Ai(u)\Bigr)
 		\end{split}& x \leq y\\
 		\begin{split}
 			\Bigl(\Ti(aL-bE)\Bi(u)-\Ai(u)\Bigr)\times\\
-			\Bigl(\Ti(bE)\Bi(v)-\Ai(v)\Bigr)
+			\Bigl(\Ti(-bE)\Bi(v)-\Ai(v)\Bigr)
 		\end{split}& x \geq y
 	\end{cases}.
+	\label{egzakt:ansatz}
 \end{equation}
-%\begin{equation}
-%	C_1 = -\frac{a^2}{F}\frac{1}{\left( \left(\frac{C_3}{C_1}-1\right)\Aip\left(ay - bE\right) + \left(\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}\right) \Bip\left(ay - bE\right) \right)}
-%\end{equation}
-%\Aref{green:Cbegin}-\ref{green:Cend}, \ref{green:xy}. és \aref{green:yx}. egyenletek explicit, analitikus módon előállítják a $G\left( x, y; E \right)$ Green-függvényt. Valós energiákra $G\left(x, y; E\right) = G\left(y, x; E\right)^*´$. Ebből következik, hogy a Green-függvény $x<y$ eset $y$ függése kiemelhető lesz, és megegyezik az $x>y$ eset $x$ függésével. Ezek szerint $\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)$ kiemelhető a $C_1$ együtthatóból,
-%\begin{equation}
-%	C_1 = \frac{a^2}{F}\frac{\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)}{\left(\Ti\left(-bE\right)-\Ti\left(aL-bE\right)\right)\left(\Bi\left(-bE\right)\Aip\left(-bE\right)-\Ai\left(-bE\right)\Bip\left(-bE\right)\right)}.
-%\end{equation}
-%Az algebrai átalakításokon túl fel kellett használni, hogy $\Ai\left(ay-bE\right)\Bip\left(ay-bE\right)-\Bi\left(y-bE\right)\Aip\left(ay-bE\right)$ $y$-tól független konstans tehát $y=0$ helyettesíthető bele. Ez onnan látható, hogy $y$ szerinti deriváltja $0$,
-%\begin{dmath}
-%	\left(\Ai\left(ay-bE\right)\Bip\left(ay-bE\right)-\Bi\left(ay-bE\right)\Aip\left(ay-bE\right)\right)^\prime = a\Ai^\prime\left(ay-bE\right)\Bi^\prime\left(ay-bE\right) + a\Ai\left(ay-bE\right)\Bi^{\prime\prime}\left(ay-bE\right) - a\Bi^\prime\left(ay-bE\right)\Ai^\prime\left(ay-bE\right) - a\Bi\left(ay-bE\right)\Ai^{\prime\prime}\left(ay-bE\right) = a\Ai\left(ay-bE\right)\left(ay-bE\right)\Bi\left(ay-bE\right) - a\Bi\left(ay-bE\right)\left(ay-bE\right)\Ai\left(ay-bE\right) = 0.
-%\end{dmath}
-%Ez után már az $x$-$y$ szimmetriája jól látható a Green-függvénynek.
+A $C_0(E)$ együtthatót úgy kell megválasztani, hogy \aeqref{egzakt:jump} egyenlet teljesüljön. \Aeqref{egzakt:jump} egyenletbe behelyettesítve \aeqref{egzakt:ansatz} egyenlet, és osztva $C_0(E)$-vel,
+\begin{dmath}
+	\frac{1}{C_0(E)}\frac{2m}{\hbar^2}=\frac{1}{C_0(E)}\lim_{\epsilon \to 0^+}\left.\frac{\partial G(x,y;E)}{\partial x}\right\rvert_{x=y-\epsilon}^{x=y+\epsilon}=a\lim_{\epsilon \to 0^+}\Bigl(-\Ti(aL-bE)\Bip(u)\Ai(v)-\Ti(-bE)\Aip(u)\Bi(v)+\Ti(aL-bE)\Bi(v)\Aip(u)+\Ti(-bE)\Ai(v)\Bip(u)\Bigr)=a\Bigl(\Ti(-bE)-\Ti(aL-bE)\Bigr)\Bigl(\Ai(v)\Bip(v)-\Aip(v)\Bi(v)\Bigr)=a\frac{\Ti(-bE)-\Ti(aL-bE)}{\pi}.
+	\label{egzakt:c0calc}
+\end{dmath}
+A második egyenlőségnél kihasználtuk, hogy a $\Bi(v)\Bip(u)$-t és $\Ai(v)\Aip(u)$-t tartalmazó tagok kiesnek. A harmadik egyenlőségnél a határérérték kiértékelhető, az $\epsilon\to 0^+$ határesetben $u\to v$, így szorzat alakba írható az összeg. Végül a negyedik sorban a Wronski-determinánst használtuk fel, \eqref{airy:wronski} egyenletnek megfelelően. Az $a$ definíciója szerint $\frac{2m}{\hbar^2}=\frac{a^3}{F}$, így \eqref{egzakt:c0calc} átrendezésével
 \begin{equation}
-	C_0 = \frac{a^2}{F}\frac{\pi}{\Ti(-bE)-\Ti(aL-bE)}
+	C_0(E) = \frac{a^2}{F}\frac{\pi}{\Ti(-bE)-\Ti(aL-bE)}.
 \end{equation}
-%bevezetésével a Green függvény egyszerűbb alakra hozható,
-%\begin{equation}
-%	G\left(x,y;E\right) = C_0\times
-%	\begin{cases}
-%		\begin{split}
-%			\left(\Ai\left(ay-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ay-bE\right)\right)\times\\
-%			\left(\Ai\left(ax-bE\right)-\Ti\left(-bE\right)\Bi\left(ax-bE\right)\right)
-%		\end{split} & x\leq y\\
-%		\begin{split}
-%			\left(\Ai\left(ay-bE\right)-\Ti\left(-bE\right)\Bi\left(ay-bE\right)\right)\times\;\;\;\;\;\;\;\;\\
-%			\left(\Ai\left(ax-bE\right)-\Ti\left(aL-bE\right)\Bi\left(ax-bE\right)\right)
-%		\end{split}& x>y\\
-%	\end{cases}
-%\end{equation} 
+Összesítve az eredményeket, a rendszer energiafüggő Green-függvénye
+\begin{equation}
+	G\left(x,y;E\right) = \frac{a^2}{F}\frac{\pi}{\Ti(-bE)-\Ti(aL-bE)}\times
+	\begin{cases}
+		\begin{split}
+			\Bigl(\Ti(aL-bE)\Bi(v)-\Ai(v)\Bigr)\times\\
+			\Bigl(\Ti(-bE)\Bi(u)-\Ai(u)\Bigr)
+		\end{split}& x \leq y\\
+		\begin{split}
+			\Bigl(\Ti(aL-bE)\Bi(u)-\Ai(u)\Bigr)\times\\
+			\Bigl(\Ti(-bE)\Bi(v)-\Ai(v)\Bigr)
+		\end{split}& x \geq y
+	\end{cases}
+	\label{egzakt:greenfunction}
+\end{equation}
 
-%A rezolvens operátornak pólusai vannak a rendszer $E_k$ sajátenergiáinál:
-%\begin{equation}
-%	\op{G}\left(E\right) = \sum_n \frac{\Ket{n}\Bra{n}}{E_n - E}
-%	\label{green:greensum}
-%\end{equation}
+\Aref{egzakt:1dgreens}. és \aref{egzakt:2dgreen}. ábra \aeqref{egzakt:greenfunction} Green-függvényt ábrázolja. A doboz mérete $aL=10$, és az energia, ahol a Green-függvény ki van értékelve $bE=5$.
 
-Így ha $E$ kielégíti \aref{box_energiaszintek_egyenlet}. egyenletet, akkor a rezolvensnek és ezért a Green-függénynek is pólusa kell hogy legyen. Ezt a $C_1$ szingularitásán lehet a leg könnyebben belátni. Ha $C_1$ szinguláris, az összes többi $C$ együttható is, és így a Green-függvény is. \Aref{box_energiaszintek_egyenlet}. egyenlet szerint a $\frac{C_3}{C_1}$ számlálójának és nevezőének ,ásodik tagjai egyenlőek. Első tagjuk bármely $E$ esetén egyenlő, így  hányadosuk $1$, valamint \aref{box_energiaszintek_egyenlet}. egyenlet esetén $\frac{C_2}{C_1} = \frac{C_4}{C_3}$. Ezeknek a következtében mind $\frac{C_3}{C_1} - 1$, mind $\frac{C_4}{C_3}\frac{C_3}{C_1} - \frac{C_2}{C_1}$ $0$-val egyenlő, így a $C_1$-re vonatkozó kifejezés nevezője $0$. Ezek a $\frac{1}{E_n - E}$ típusú pólusok \aref{green:greensum}. egyenletből.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./figs/1dgreens.pdf}
+	\caption[Egy dimenziós Green-függvény]{}
+	\label{egzakt:1dgreens}
+\end{figure}
 
-Egy érdekes matematikai következmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztem \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E_k-E$-vel és a megfelelő normálási faktorral, ami Airy függvények szorzatának $0$ és $L$ közötti integrálj, valamint $E_k$-t \aref{box_energiaszintek_egyenlet}. transzcendens egyenlet határozza meg. A Green-függvényre vonatkozó differenciálegyenlet nélkül az összeg elvégzése reménytelennek látszana.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{./figs/2dgreen.png}
+	\caption[Két dimenziós Green-függvény]{}
+	\label{egzakt:2dgreen}
+\end{figure}
+
+\Aeqref{green:greensum} egyenletnek megfelelően a Green-függvénynek pólusai vannak $E=E_n$-ben. Ezt \aeqref{egzakt:greenfunction} egyértelmen mutatja, mivel a nevezőjében \aeqref{box_energiaszintek_egyenlet} $0$-ra rendezett egyenlet bal oldala szerepel. Ennek az egyenletnek a gykei határozták meg az $E_k$ sajátenergiákat.
+
+Egy érdekes matematikai következmény, hogy a Green-függvényre vonatkozó differenciál egyenlet megoldásával elvégeztük \aref{green:greensum}. egyenlet összegzését. Ez az összeg az Airy függvények szorzatának összege lenne, osztva $E-E_k$-val és a megfelelő $N_k$ normálási faktorral ahol $E_k$-t \aeqref{box_energiaszintek_egyenlet} transzcendens egyenlet határoz meg. A Green-függvényre vonatkozó differenciálegyenlet ismerete nélkül az összeg elvégzése reménytelennek látszana.

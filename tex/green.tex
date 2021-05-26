@@ -11,6 +11,7 @@ A frekvenciatér beli Green-függvény a Hamilton operátor rezolvenseként defi
 A projektor felbontással rendelkező operátorok függvényei felírhatóak összeg alakban is, ez a Green-operátor esetében
 \begin{equation}
 	\op{G}(E)=\sum_n \frac{\Ket{n}\Bra{n}}{E-E_n}.
+	\label{green:greensum}
 \end{equation}
 
 Több féle időfüggő Green-függvény van, ezek mind az időfüggő Schrödinger-egyenlet differenciálegyenletek elméletéből ismert Green-függvények, csupán a határfeltételekben különböznek. Amennyiben a Hamilton-operátor időfüggetlen,
@@ -19,7 +20,7 @@ Több féle időfüggő Green-függvény van, ezek mind az időfüggő Schrödin
 \end{equation}
 Mivel $G(x,y;E)$-nek valós $E$ mentén pólusai vannak, az integrál elvégzéséhez további előírásokra van szükség. A pólusok kerülési iránya határozza meg, hogy retardált vagy avanzsált Green-függvényt kapunk. A pólusok kerülési irányában különböző Green-függvények közötti különbség előállíthatóak a $\op{G}(E)e^{-\frac{i}{\hbar}Et}$ pólusai körül vett komplex $E$ kontúrintegrálokkal. Ezen kontúrintegráloknak az eredménye a reziduumtétel szerint viszont nem más, mint a hullámfüggvénynek a pólushoz tartozó sajátállapotra vett projekciójának időfejlesztő operátora,
 \begin{equation}
-	\frac{1}{2\pi\hbar i}\int_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt},
+	\frac{1}{2\pi\hbar i}\oint_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt},
 	\label{green:residuum}
 \end{equation}
 ahol $C_n$ pozitív irányítású $\epsilon$ sugarú kör az $n$. pólus, azaz az $n$. sajátenergia körül. Ez tetszőleges állapotra hattatva megoldja az időfüggő Schrödinger-egyenletet, ezért lehet különböző kerülési irányokkal előírt Fourier szerű integrál időfüggő Green-függvény.
@@ -34,7 +35,7 @@ ez a típusú Green-függvény a múltban $0$ az időbeli lecsengés miatt. Egy 
 \end{equation}
 ez a Green-függvény az előzőhöz hasonló logika alapján $t>0$ esetén $0$. \Aeqref{green:residuum} egyenlet alapján e két Green-függvény különbsége előállítja az időfejlesztő operátor magját,
 \begin{equation}
-	\op{G}_A(t)-\op{G}_R(t)=\sum_n\frac{1}{2\pi\hbar}\int_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=i\sum_n\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt}=i\op{U}(t).
+	\op{G}_A(t)-\op{G}_R(t)=\sum_n\frac{1}{2\pi\hbar}\oint_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=i\sum_n\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt}=i\op{U}(t).
 \end{equation}
 A továbbiakban az egy dimenziós homogén tér Green-függvényével foglalkozunk.
 
