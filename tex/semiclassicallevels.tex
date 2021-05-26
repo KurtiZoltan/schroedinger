@@ -8,19 +8,28 @@ A második eset amikor $E > FL$, ekkor a fordulópontok $0$-ban és $L$-ben vann
 	\left(n+1\right)h=\oint p\,dq=2\int_0^{L}\sqrt{2m\left(E-Fx\right)}\,dx=\frac{4\sqrt{2m}}{3F}\left(E^{3/2}-\left(E-FL\right)^{3/2}\right).
 	\label{semiclassicallevels:e2}
 \end{equation}
-Előfordulhat, hogy valamely $n$-re egyszerre van \eqref{semiclassicallevels:e1} és \eqref{semiclassicallevels:e2} egyszerre van megoldása, ahol $E$ a megfelelő tartományba esik. Ez azt jelenti, hogy a szemiklasszikus közelítés hibáján belül nem lehet meghatározni, hogy a valódi energiszint $FL$ felett, vagy alatt van. \Aref{semiclassicallevels:allapotszam}. ábra szemlélteti a szemiklasszikus és egzakt állapotszámok viszonyát.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=1]{./figs/allapotszam.pdf}
-	\caption[Szemiklasszikus állapotszám]{A szemiklasszikus és egzakt energiaszintek összevetése. A kék vonal az egzakt energiák által meghatározott állapotszám. A narancssárga vonal pedig \aeqref{semiclassicallevels:e1} és \aeqref{semiclassicallevels:e2} egyenletekből kifejezett $n$ az energia függvényében, $E$ és $FL$ relációjának megfelelően.}
-	\label{semiclassicallevels:allapotszam}
-\end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/energiaszintkozelites.pdf}
 	\caption[Szemiklasszikus energiaszintek]{Az ábra a szemiklasszikus energiaszinteket hasonlítja össze az egzakt energiaszintekkel. Ez az ábra is a $bE$ és $aL$ közötti relációt ábrázolja. A szemiklasszikus közelítés nagy kvantumszámok illetve $E \gg FL$ esetén pontos. Utóbbi oka, hogy ebben az esetben a potenciál elhanyagolható, és a potenciál nélküli végtelen potenciálgödör energiaszintjeit pedig a szemiklasszikus közelítés egzaktul megadja.}
 	\label{semiclassicallevels:kozelites}
 \end{figure}
+Előfordulhat, hogy valamely $n$-re egyszerre van \eqref{semiclassicallevels:e1} és \eqref{semiclassicallevels:e2} egyszerre van megoldása, ahol $E$ a megfelelő tartományba esik. Ez azt jelenti, hogy a szemiklasszikus közelítés hibáján belül nem lehet meghatározni, hogy a valódi energiszint $FL$ felett, vagy alatt van. \Aref{semiclassicallevels:kozelites}. ábra az $E$-$L$ diagrammon szemlélteti a szemiklasszikus köelítés pontosságát. Két különböző esetben is pontos a szemiklasszikus közelítés. Nagy kvantumszámok esetében általánosságban is igaz, hogy pontos a szemiklasszikus közelítés. Ezen felül $E\gg FL$ esetében is pontos, ennek oka, hogy ilyenkor a lineáris potenciál elhanyagolható, viszont az így kapott problémát, a végtelen potenciálgödröt, a szemiklasszikus közelítés egzaktul írja le. \Aref{semiclassicallevels:allapotszam}. ábra szemlélteti a szemiklasszikus és egzakt állapotszámok viszonyát. A szemiklasszikus energiaszintekre vonatkozó egyenleteket minden esetben kézenfekvő az állapotok számának meghatározására használni, hiszen az egyenlet alapból $n$-re van rendezve a Maslov-indextől eltekintve. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./figs/allapotszam.pdf}
+	\caption[Szemiklasszikus állapotszám]{A szemiklasszikus és egzakt energiaszintek összevetése. A kék vonal az egzakt energiák által meghatározott állapotszám. A narancssárga vonal pedig \aeqref{semiclassicallevels:e1} és \aeqref{semiclassicallevels:e2} egyenletekből kifejezett $n$ az energia függvényében, $E$ és $FL$ relációjának megfelelően.}
+	\label{semiclassicallevels:allapotszam}
+\end{figure}
+Amennyiben $E \gg FL$ \aeqref{semiclassicallevels:e2} egyenleten a különbség az $(aE)^{3/2}$ függvény deriváltjának segítségével helyettesíthető,
+\begin{equation}
+	(n+1)h \approx =2\sqrt{2m}E^{1/2}L.
+\end{equation}
+Átrendezve az egyenletet energiára a megszokott végtelen potenciálgödör energiaszintjeit kapjuk,
+\begin{equation}
+	E_n \approx \frac{(n+1)^2h^2}{8mL^2}.
+\end{equation}
+Ezeket az energiaszinteket \aref{semiclassicallevels:squarewell}. ábra összeveti az $E$-$L$ diagrammon az egzakt energiaszintekkel.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/infsquareenergia.pdf}
