@@ -14,4 +14,4 @@ plt.plot(x[np.abs(x-y)<0.01], I[np.abs(x-y)<0.01],"o")
 plt.grid()
 plt.show()
 
-print(np.sum(I)*(x[1]-x[0]))
+print(np.sum(I)*(x[1]-x[0])) # should be ~1

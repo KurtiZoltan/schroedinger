@@ -3,11 +3,12 @@
 \pdfpageheight 11.6in
 \linespread{1.3}
 \usepackage{anysize}
-\marginsize{3.5cm}{2.5cm}{2.5cm}{2.5cm}
+\marginsize{2.5cm}{2.5cm}{2.5cm}{2.5cm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[magyar]{babel}
+\usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage{graphicx}
@@ -21,6 +22,9 @@
 \DeclareMathOperator{\Aip}{Ai^\prime}
 \DeclareMathOperator{\Bip}{Bi^\prime}
 \DeclareMathOperator{\Ti}{Ti}
+\DeclareMathOperator{\sgn}{sgn}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
 \newcommand{\op}[1]{\hat{#1}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
