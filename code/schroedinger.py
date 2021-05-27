@@ -2,7 +2,6 @@ import numpy as np
 from scipy import special, optimize, integrate
 import pickle
 from os import path
-
 from plot import * 
 
 class d1schroedinger:
