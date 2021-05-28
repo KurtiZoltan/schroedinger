@@ -17,7 +17,7 @@ Emin = 0.1 * np.power(10, 2/3)
 Emax = 2 * np.power(10, 2/3)
 Eimagmax = 1.1 * np.power(10, 2/3)
 Eimagmin = -0.5 * np.power(10, 2/3)
-width = 100
+width = 500
 N = 50
 #n = 10
 numEnergies = 10
@@ -79,29 +79,64 @@ def convergenceImproved(E):
     popt, pcov = curve_fit(normguess, steps, norms/norms[0])
     return -popt[0]
 
-for i in range(E.shape[0]):
-    print(f"{i / E.shape[0] * 100:.1f}%", end="\r")
-    for j in range(E.shape[1]):
-        conv[i, j] = convergence(E[i, j])
-        convImproved[i, j] = convergenceImproved(E[i, j])
+# for i in range(E.shape[0]):
+#     print(f"{i / E.shape[0] * 100:.1f}%", end="\r")
+#     for j in range(E.shape[1]):
+#         conv[i, j] = convergence(E[i, j])
+#         convImproved[i, j] = convergenceImproved(E[i, j])
 
-#np.savetxt("../cache/convImproved4.txt", convImproved)
-#np.savetxt("../cache/conv4.txt", conv)
-#conv = np.loadtxt("../cache/conv4.txt")
-#convImproved = np.loadtxt("../cache/convImproved4.txt")
+#np.savetxt("../cache/convImproved.txt", convImproved)
+#np.savetxt("../cache/conv.txt", conv)
+conv = np.loadtxt("../cache/conv300.txt")
+convImproved = np.loadtxt("../cache/convImproved300.txt")
 
-# conv[conv < 1] = 0
-# conv[conv >= 1] = (conv[conv >= 1] - 1) / (np.max(conv[conv >= 1]) - 1) + 1
-# convImproved[convImproved < 1] = 0
-# convImproved[convImproved >= 1] = (convImproved[convImproved >= 1] - 1) / (np.max(convImproved[convImproved >= 1]) - 1) + 1
+conv[conv < 0] = -np.max(conv)/10
+#conv[conv <= 0] = (conv[conv >= 1] - 1) / (np.max(conv[conv >= 1]) - 1) + 1
+convImproved[convImproved < 0] = -np.max(convImproved)/10
+#convImproved[convImproved >= 1] = (convImproved[convImproved >= 1] - 1) / (np.max(convImproved[convImproved >= 1]) - 1) + 1
 
-phi = np.linspace(0, 2*np.pi, 3000)
-fig, axs = plt.subplots(2, 1)
-im1 = axs[0].imshow(conv, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
-fig.colorbar(im1, ax=axs[0])
-im2 = axs[1].imshow(convImproved, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax),cmap=plt.get_cmap("magma"))
-fig.colorbar(im2, ax=axs[1])
+cutoff = 9
+if cutoff > 0:
+    conv = conv[:-cutoff]
+    convImproved = convImproved[:-cutoff]
+    Eimagmax = np.max(Eimag[:-cutoff])
+
+# phi = np.linspace(0, 2*np.pi, 3000)
+# fig, axs = plt.subplots(2, 1)
+# im1 = axs[0].imshow(conv, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
+# fig.colorbar(im1, ax=axs[0])
+# im2 = axs[1].imshow(convImproved, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax),cmap=plt.get_cmap("magma"))
+# fig.colorbar(im2, ax=axs[1])
+# r = test.F * test.L / 2
+# for E, realE in zip(Es, test.Es):
+#     if Emin < E + test.F * test.L / 2 and E + test.F * test.L / 2 < Emax:
+#         plt.plot(E + test.F * test.L / 2, 0, "rx", alpha=1)
+#     if Emin < realE and realE < Emax:
+#         plt.plot(realE, 0, "yx", alpha=1)
+#     x = r * np.cos(phi) + E + test.F * test.L / 2
+#     y = r * np.sin(phi)
+#     xinside = x[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
+#     yinside = y[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
+#     axs[1].plot(xinside, yinside, "r", alpha=0.4)
+# axs[0].set_xlabel("$\\mathrm{Re}(bE)$")
+# axs[0].set_ylabel("$\\mathrm{Im}(bE)$")
+# axs[1].set_xlabel("$\\mathrm{Re}(bE)$")
+# axs[1].set_ylabel("$\\mathrm{Im}(bE)$")
+# plt.savefig("../figs/convergence4.pdf")
+# plt.show()
+
+plt.figure(figsize=(4,3))
+plt.imshow(conv, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
+plt.xlabel("$\\mathrm{Re}(bE)$")
+plt.ylabel("$\\mathrm{Im}(bE)$")
+plt.colorbar()
+plt.savefig("../figs/convergenceOriginal.pdf")
+plt.show()
+
+plt.figure(figsize=(4,3))
+plt.imshow(convImproved, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
 r = test.F * test.L / 2
+phi = np.linspace(0, 2*np.pi, 3000)
 for E, realE in zip(Es, test.Es):
     if Emin < E + test.F * test.L / 2 and E + test.F * test.L / 2 < Emax:
         plt.plot(E + test.F * test.L / 2, 0, "rx", alpha=1)
@@ -111,5 +146,9 @@ for E, realE in zip(Es, test.Es):
     y = r * np.sin(phi)
     xinside = x[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
     yinside = y[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
-    axs[1].plot(xinside, yinside, "r", alpha=0.4)
+    plt.plot(xinside, yinside, "r", alpha=0.4)
+plt.xlabel("$\\mathrm{Re}(bE)$")
+plt.ylabel("$\\mathrm{Im}(bE)$")
+plt.colorbar()
+plt.savefig("../figs/convergenceImproved.pdf")
 plt.show()
