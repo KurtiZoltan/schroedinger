@@ -101,32 +101,8 @@ if cutoff > 0:
     convImproved = convImproved[:-cutoff]
     Eimagmax = np.max(Eimag[:-cutoff])
 
-# phi = np.linspace(0, 2*np.pi, 3000)
-# fig, axs = plt.subplots(2, 1)
-# im1 = axs[0].imshow(conv, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
-# fig.colorbar(im1, ax=axs[0])
-# im2 = axs[1].imshow(convImproved, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax),cmap=plt.get_cmap("magma"))
-# fig.colorbar(im2, ax=axs[1])
-# r = test.F * test.L / 2
-# for E, realE in zip(Es, test.Es):
-#     if Emin < E + test.F * test.L / 2 and E + test.F * test.L / 2 < Emax:
-#         plt.plot(E + test.F * test.L / 2, 0, "rx", alpha=1)
-#     if Emin < realE and realE < Emax:
-#         plt.plot(realE, 0, "yx", alpha=1)
-#     x = r * np.cos(phi) + E + test.F * test.L / 2
-#     y = r * np.sin(phi)
-#     xinside = x[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
-#     yinside = y[(Emin < x) * (x < Emax) * (Eimagmin < y) * (y < Eimagmax)]
-#     axs[1].plot(xinside, yinside, "r", alpha=0.4)
-# axs[0].set_xlabel("$\\mathrm{Re}(bE)$")
-# axs[0].set_ylabel("$\\mathrm{Im}(bE)$")
-# axs[1].set_xlabel("$\\mathrm{Re}(bE)$")
-# axs[1].set_ylabel("$\\mathrm{Im}(bE)$")
-# plt.savefig("../figs/convergence4.pdf")
-# plt.show()
-
 plt.figure(figsize=(4,3))
-plt.imshow(conv, origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
+plt.imshow(conv        , origin="lower", aspect="equal", extent=(Emin, Emax, Eimagmin, Eimagmax), cmap=plt.get_cmap("magma"))
 plt.xlabel("$\\mathrm{Re}(bE)$")
 plt.ylabel("$\\mathrm{Im}(bE)$")
 plt.colorbar()
