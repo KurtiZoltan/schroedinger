@@ -67,7 +67,7 @@ class d1schroedinger:
     
     def G0(self, x, y, E):
         k = np.sqrt(E)
-        prefactor = -1 / k / np.sin(k * self.__L)
+        prefactor = 1 / k / np.sin(k * self.__L)
         G1 = np.sin(k*x) * np.sin(k*(y-self.__L)) * (x < y)
         G2 = np.sin(k*y) * np.sin(k*(x-self.__L)) * (1 - (x < y))
         return prefactor * (G1 + G2)
@@ -88,17 +88,6 @@ class d1schroedinger:
         # G1 = (c1 * ai3 + c2 * bi3) * (x < y)
         # G2 = (c3 * ai3 + c4 * bi3) * (1 - (x < y))
         # return G1 + G2
-        F3sqrt = np.power(self.__F, 1/3)
-        ai1, ai1p, bi1, bi1p = special.airy(-E / F3sqrt**2)
-        ai2, ai2p, bi2, bi2p = special.airy((self.__F * self.__L - E) / F3sqrt**2)
-        ai3, ai3p, bi3, bi3p = special.airy(x * F3sqrt - E / F3sqrt**2)
-        ai4, ai4p, bi4, bi4p = special.airy(y * F3sqrt - E / F3sqrt**2)
-        c0 = 1 / F3sqrt * np.pi / (ai1/bi1 - ai2/bi2)
-        G1 = c0 * (ai4 - ai2/bi2 * bi4) * (ai3 - ai1/bi1 * bi3) * (x < y)
-        G2 = c0 * (ai4 - ai1/bi1 * bi4) * (ai3 - ai2/bi2 * bi3) * (1 - (x < y))
-        return G1 + G2
-    
-    def Galt(self, x, y, E):
         F3sqrt = np.power(self.__F, 1/3)
         ai1, ai1p, bi1, bi1p = special.airy(-E / F3sqrt**2)
         ai2, ai2p, bi2, bi2p = special.airy((self.__F * self.__L - E) / F3sqrt**2)

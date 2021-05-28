@@ -1,15 +1,13 @@
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
-import plotly.graph_objects as go
 from schroedinger import *
 from plot import *
 
-test = d1schroedinger(F=0.1)
+test = d1schroedinger(F=0.1*10, L=15/np.power(10,1/3))
 
-E = 1.4+0.9j
-n = 100
+E = 6.5+4j
+n = 50
 
-N = 200
+N = 1000
 x = np.linspace(0, test.L, N)
 y = np.linspace(0, test.L, N)
 x, y = np.meshgrid(x, y, indexing="ij")
@@ -20,15 +18,15 @@ VG02 = (test.F * x - test.F*test.L/2) * G02 / (N-2) * test.L
 
 G1 = G01
 G2 = G02
-plt.imshow(np.real(G2), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
+plt.imshow(np.abs(G2), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
 plt.colorbar()
 plt.title("free G2")
 plt.show()
 for i in range(n):
     Gprev1 = G1
     Gprev2 = G2
-    G1 = G01 - G1 @ VG01
-    G2 = G02 - G2 @ VG02
+    G1 = G01 + G1 @ VG01
+    G2 = G02 + G2 @ VG02
     if i % 20 == 0:
         plt.imshow(np.abs(G2 - Gprev2), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
         plt.colorbar()
@@ -46,7 +44,7 @@ plt.colorbar()
 plt.title("perturbed G diff")
 plt.show()
 
-realG = test.Galt(x, y, E)
+realG = test.G(x, y, E)
 plt.imshow(np.abs(realG), aspect="equal", origin="lower", extent=(0, test.L, 0, test.L))
 plt.colorbar()
 plt.title("explicit formula")

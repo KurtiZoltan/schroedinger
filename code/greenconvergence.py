@@ -1,10 +1,9 @@
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
-import plotly.graph_objects as go
+from scipy.optimize import curve_fit
 from schroedinger import *
 from plot import *
 
-test = d1schroedinger(F=0.1)
+test = d1schroedinger(L=7)
 
 # Emin = 0.1
 # Emax = 10
@@ -14,13 +13,13 @@ test = d1schroedinger(F=0.1)
 # N = 50 # N^2 number of points in discretization
 # numEnergies = 20
 
-Emin = 0.1
-Emax = 2
-Eimagmax = 1.1
-Eimagmin = -0.5
-width = 1000
+Emin = 0.1 * np.power(10, 2/3)
+Emax = 2 * np.power(10, 2/3)
+Eimagmax = 1.1 * np.power(10, 2/3)
+Eimagmin = -0.5 * np.power(10, 2/3)
+width = 100
 N = 50
-n = 10
+#n = 10
 numEnergies = 10
 
 Es = np.pi**2 / test.L**2 * np.arange(1, numEnergies+1) ** 2
@@ -33,55 +32,63 @@ E = Ereal + 1j*Eimag
 conv = np.empty(E.shape, dtype=float)
 convImproved = np.empty(E.shape, dtype=float)
 x = np.linspace(0, test.L, N)
+dx = x[1] - x[0]
 y = np.linspace(0, test.L, N)
 x, y = np.meshgrid(x, y, indexing="ij")
+
+def normguess(steps, alpha, remainder):
+    return np.exp(steps*alpha) + remainder
 
 def convergence(E):
     G0 = test.G0(x, y, E)
     VG0 = test.F * x * G0 / N * test.L
+    realG = test.G(x, y, E)
     G = G0
-    norm0 = np.linalg.norm(G0 @ VG0, ord=2)
-    iterations = 0
-    while True:
-        iterations += 1
+    norm0 = dx * np.linalg.norm(G0 @ VG0, ord=2)
+    norms = np.array([norm0])
+    steps = np.array([0])
+    for i in range(20):
         Gprev = G
-        G = G0 - G @ VG0
-        norm1 = np.linalg.norm(G - Gprev, ord=2)
-        if norm1 / norm0 < 1 / 3:
-            return iterations
-        if norm1 / norm0 > 3:
-            return 0
-        if iterations == 50:
-            return 0
+        G = G0 + G @ VG0
+        norm = dx * np.linalg.norm(G - realG, ord=2)
+        norms = np.append(norms, norm)
+        steps = np.append(steps, i+1)
+        if norm/norm0 + norm0/norm > 5:
+            break
+    
+    popt, pcov = curve_fit(normguess, steps, norms/norms[0])
+    return -popt[0]
 
 def convergenceImproved(E):
     G0 = test.G0(x, y, E - test.F * test.L / 2)
     VG0 = (test.F * x - test.F * test.L / 2) * G0 / N * test.L
+    realG = test.G(x, y, E)
     G = G0
-    norm0 = np.linalg.norm(G0 @ VG0, ord=2)
-    iterations = 0
-    while True:
-        iterations += 1
+    norm0 = dx * np.linalg.norm(G0 @ VG0, ord=2)
+    norms = np.array([norm0])
+    steps = np.array([0])
+    for i in range(20):
         Gprev = G
-        G = G0 - G @ VG0
-        norm1 = np.linalg.norm(G - Gprev, ord=2)
-        if norm1 / norm0 < 1 / 3:
-            return iterations
-        if norm1 / norm0 > 3:
-            return 0
-        if iterations == 50:
-            return 0
-'''
+        G = G0 + G @ VG0
+        norm = dx * np.linalg.norm(G - realG, ord=2)
+        norms = np.append(norms, norm)
+        steps = np.append(steps, i+1)
+        if norm/norm0 + norm0/norm > 5:
+            break
+    
+    popt, pcov = curve_fit(normguess, steps, norms/norms[0])
+    return -popt[0]
+
 for i in range(E.shape[0]):
     print(f"{i / E.shape[0] * 100:.1f}%", end="\r")
     for j in range(E.shape[1]):
         conv[i, j] = convergence(E[i, j])
         convImproved[i, j] = convergenceImproved(E[i, j])
-'''
+
 #np.savetxt("../cache/convImproved4.txt", convImproved)
 #np.savetxt("../cache/conv4.txt", conv)
-conv = np.loadtxt("../cache/conv4.txt")
-convImproved = np.loadtxt("../cache/convImproved4.txt")
+#conv = np.loadtxt("../cache/conv4.txt")
+#convImproved = np.loadtxt("../cache/convImproved4.txt")
 
 # conv[conv < 1] = 0
 # conv[conv >= 1] = (conv[conv >= 1] - 1) / (np.max(conv[conv >= 1]) - 1) + 1
