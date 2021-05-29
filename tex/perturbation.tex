@@ -24,7 +24,7 @@ a $\op{G}_n$-ekre \aeqref{green:pertmaster} egyenlethez hasonló rekurziós öss
 \end{equation}
 Ha $\norm{\op{V}\op{G}_0\left(E\right)} < 1$ akkor a $\op{G}_n$ sorozat konvergál. Operátor normának a Hilbert-tér normája által indukált normát vesszük, így az operátorok konvergenciája kompatibilis a Hilbert-tér beli konvergenciával.
 \begin{equation}
-	\norm{\op{A}}=\sup \Set{\left\lvert \op{A}\Ket{\phi} \right\rvert \texttt{, ahol} \Braket{\phi|\phi}=1}.
+	\norm{\op{A}}=\sup \Set{\left\lvert \op{A}\Ket{\phi} \right\rvert \text{, ahol} \Braket{\phi|\phi}=1}.
 \end{equation}
 A sor határértéke \aeqref{perturbation:rekurzió} miatt kielégíti \aeqref{green:pertmaster} egyenletet. Így konvergencia esetén
 \begin{equation}
@@ -43,32 +43,39 @@ ahol $E$-hez a komplex síkon a legközelebbi sajátérték $E_k$. Ezek segíts�
 A Hamilton-operátort eredetileg
 \begin{equation}
 	\begin{aligned}
-		\op{H}=&\frac{\op{p}^2}{2m}+F\op{x}=\op{H}_0+\op{V}_1\\
-		\op{H}_0=&\frac{\op{p}^2}{2m}\\
-		\op{V}_1=&F\op{x}
+		\op{H}=&\frac{\op{p}^2}{2m}+F\op{x}=\op{H}_1+\op{V}_1\\
+		\op{H}_1=&\frac{\op{p}^2}{2m}\\
+		\op{V}_1=&F\op{x}\\
+		\op{G}_1(E)&=\frac{1}{E-\op{H}_1}
 	\end{aligned}
 \end{equation}
 részekre bontottuk. $\op{G}_0$ a $\op{H}_0$ operátor Green-függvénye. Ebben ha az esetben a $\op{G}_0$ pólusaitól legalább $FL$ távolságban, azaz $\rvert E-E_k\lvert>FL$, a komplex energia síkban a sor garantáltan konvergál, mert
 \begin{equation}
-	\norm{\op{G}_0(E)V_1}<\norm{\op{G}_0}\norm{(E)V_1}=\frac{FL}{\rvert E-E_k\lvert}<1.
+	\norm{\op{G}_1(E)V_1}<\norm{\op{G}_1(E)}\norm{V_1}=\frac{FL}{\rvert E-E_k\lvert}<1.
 \end{equation}
 Vizsgálunk egy módosított felontást is,
 \begin{equation}
 	\begin{aligned}
-		\op{H}=&\frac{\op{p}^2}{2m}+F\op{x}=\op{H}_0+\frac{FL}{2}+\op{V}_2\\
-		\op{H}_0=&\frac{\op{p}^2}{2m}\\
-		\op{V}_2=&F\op{x}-\frac{FL}{2}.
-	\end{aligned}
+		\op{H}=&\frac{\op{p}^2}{2m}+\frac{FL}{2}+F\op{x}-\frac{FL}{2}=\op{H}_2+\op{V}_2\\
+		\op{H}_2=&\frac{\op{p}^2}{2m}+\frac{FL}{2}\\
+		\op{V}_2=&F\op{x}-\frac{FL}{2}\\
+		\op{G}_2(E)&=\frac{1}{E-\op{H}_2}
+	\end{aligned}.
 \end{equation}
-A perturbációszámítás során így a perturbálatlan operátor szerepét a $\op{H}_0+\frac{FL}{2}$ operátor tölti be. Ennek a Green-függvénye
+A perturbációszámítás során így a perturbálatlan operátor szerepét a $\frac{\op{p}^2}{2m}+\frac{FL}{2}$ operátor tölti be.
+Ebben az esetben a garantált konvergencia tartomány nagyobb, az $\left\lvert E-E_k-\frac{FL}{2}\right\rvert > \frac{FL}{2}$ reláció telesülése esetén a perturbációs sor garantáltan konvergál,
 \begin{equation}
-	\frac{1}{E-\left(\op{H}_0+\frac{FL}{2}\right)}=\op{G}_0(E-\frac{FL}{2}),
+	\norm{\op{V}_2\op{G}_2(E)}<\norm{\op{V}_2}\norm{\op{G}_2(E)}=\frac{\frac{FL}{2}}{\left\lvert E-E_k-\frac{FL}{2}\right\rvert}<1.
 \end{equation}
-könnyen kifejezhető az eredeti eset Green-függvényével.
+A második sorhoz tartozó perturbálatlan Green-függvény
+\begin{equation}
+	\op{G}_2(E)=\frac{1}{E-\left(\frac{\op{p}^2}{2m}+\frac{FL}{2}\right)}=\op{G}_1\left(E-\frac{FL}{2}\right),
+\end{equation}
+könnyen kifejezhető az eredeti eset perturbálatlan $\op{G}_1$ Green-függvényével.
 
 A $\frac{\op{p}^2}{2m}$ Green-függvénye a $[0,L]$ tartományban \aref{egzakt}. fejezethez hasonlóan meghatározható,
 \begin{equation}
-	G_0\left(x,y;E\right) = -\frac{\hbar}{\sqrt{2m}}\frac{1}{\sin\left(kL\right)}\times
+	G_1\left(x,y;E\right) = -\frac{\hbar}{\sqrt{2m}}\frac{1}{\sin\left(kL\right)}\times
 	\begin{cases}
 		\sin\left(k\left(y-L\right)\right)\sin\left(kx\right) & x\leq y\\
 		\sin\left(k\left(x-L\right)\right)\sin\left(ky\right) & x\geq y\\
@@ -78,14 +85,38 @@ A $\frac{\op{p}^2}{2m}$ Green-függvénye a $[0,L]$ tartományban \aref{egzakt}.
 	k = \frac{\sqrt{2mE}}{\hbar}.
 \end{equation}
 
+A $G_0(x,y;E)$ diszkretizálásával lehetővé válik a perturbációs sor numerikus kiértékelése. A $[0,L]$ tartományból $N$ egyenletes eloszlású pontot választva, az operátorok közelíthetőek $N\times N$ mátrixokkal, és az operátorok szorzata a közelítő mátrixok szorzatával,
+\begin{equation}
+	\begin{aligned}
+		x_k&=\frac{kL}{N-1}\\
+		\op{A}&\rightarrow A_{kl}=\Braket{x_k|\op{A}|x_l}\\
+		\op{A}\op{B}&\rightarrow (AB)_{kl}=\frac{L}{N-1}\sum_{m=0}^{N-1}A_{km}B_{ml}
+	\end{aligned},
+\end{equation}
+az indexek $0,1,\dots N-1$ értékűek lehetnek. Szükség van még a operátor norma közelítésére is. A standard $\ell^2$ mátrixnorma megszorozva $\frac{L}{N-1}$-el megfelelő. A skálázási faktorra azért van szükség, mert az operátorok szorzatának közelítésében a mátrix szorzat is skálázva van. A két különböző perturbáció és a különböző $N$ esetek konvergenciája numerikusan vizsgálható,
+\begin{equation}
+	(V_1G_1(E))_{kl}=Fx_kG_1(x_k,y_l,E)
+\end{equation}
+az első perturbációs sorban felmerülő $\op{V}\op{G}_0(E)$ mátrix közelítése,
+\begin{equation}
+	\left(V_2G_2(E)\right)_{kl}=F\left(x_k-\frac{L}{2}\right)G_1\left(x_k,y_l;E-\frac{FL}{2}\right)
+\end{equation}
+pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ operátor mátrix közelítése. Minden eszköz adott, hogy a $\norm{\op{G}_n(E)}-\op{G}(E)$ sorozatot a diszkretizáció segítségével numerikusan vizsgáljuk. Az eredményeket \aref{perturbation:covergencerate}. ábra mutatja. Látható, hogy adott finomságú diszkretizáció esetén a második perturbációs sor, ami a $V(x)=Fx-\frac{FL}{2}$ potenciálhoz tartozik, gyorsabban közelít az egzakt Green-függvényhez. A gyorsabb konvergencián túl amikor a numerikusan kiértékelt sor stacionáriussá válik a lépésszám függvényében, a kapott eredmény közelebb van az egzakt Green-függvényhez. Ez a különbség, amelyik tetszőleges lépésszám után is megmarad, a diszkretizáció finomságával jó közelítéssel fordítottan arányos, az ábrán a felbontás duplázása a különbség normájának logaritmusát egy állandó értékkel csökkentette.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergencerate.pdf}
-	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{ye, awesome}
+	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{}
+	\label{perturbation:covergencerate}
 \end{figure}
+Mivel \aref{perturbation:covergencerate}. ábrán a lépésszám függvényében a különbség normája exponenciálisan csökken amíg el nem ér egy a diszkretizáció finomságától függő minimális hibát, a konvergencia vagy divergencia sebességét meg lehet becsülni a lépések függvényében a normákra illesztett exponenciális függvény kitevőjével,
+\begin{equation}
+	d(n) = d(0)\exp(-\alpha n)+r,
+	\label{perturbation:fit}
+\end{equation}
+ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál, $d$ pedig a egzakt eredménytől való eltérés operátor normája. A maradék tagot $r$ modellezi, ez az $r$ tag lesz közelítőleg fordítottan arányas $N$-nel. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergenceOriginal.pdf}
 	\includegraphics[scale=1]{./figs/convergenceImproved.pdf}
-	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik, a norma harmadolásához szükséges lépések számát megadva. A piros körökön kívüli tartomány a ?? formula által garantált konvergencia tartományát jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
+	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik az $\alpha$ paraméterrel \aeqref{perturbation:fit} egyenletből. A piros körökön kívüli tartomány a ?? formula által garantált konvergencia tartományát jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
 \end{figure}
