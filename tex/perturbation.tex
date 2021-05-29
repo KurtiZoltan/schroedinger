@@ -24,7 +24,7 @@ a $\op{G}_n$-ekre \aeqref{green:pertmaster} egyenlethez hasonló rekurziós öss
 \end{equation}
 Ha $\norm{\op{V}\op{G}_0\left(E\right)} < 1$ akkor a $\op{G}_n$ sorozat konvergál. Operátor normának a Hilbert-tér normája által indukált normát vesszük, így az operátorok konvergenciája kompatibilis a Hilbert-tér beli konvergenciával.
 \begin{equation}
-	\norm{\op{A}}=\sup \Set{\left\lvert \op{A}\Ket{\phi} \right\rvert \text{, ahol} \Braket{\phi|\phi}=1}.
+	\norm{\op{A}}=\sup \Set{\sqrt{\Braket{\phi|\op{A}^\dagger \op{A}|\phi}} \text{, ahol} \Braket{\phi|\phi}=1}.
 \end{equation}
 A sor határértéke \aeqref{perturbation:rekurzió} miatt kielégíti \aeqref{green:pertmaster} egyenletet. Így konvergencia esetén
 \begin{equation}
@@ -66,6 +66,7 @@ A perturbációszámítás során így a perturbálatlan operátor szerepét a $
 Ebben az esetben a garantált konvergencia tartomány nagyobb, az $\left\lvert E-E_k-\frac{FL}{2}\right\rvert > \frac{FL}{2}$ reláció telesülése esetén a perturbációs sor garantáltan konvergál,
 \begin{equation}
 	\norm{\op{V}_2\op{G}_2(E)}<\norm{\op{V}_2}\norm{\op{G}_2(E)}=\frac{\frac{FL}{2}}{\left\lvert E-E_k-\frac{FL}{2}\right\rvert}<1.
+	\label{perturbation:convradius}
 \end{equation}
 A második sorhoz tartozó perturbálatlan Green-függvény
 \begin{equation}
@@ -105,7 +106,7 @@ pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ ope
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergencerate.pdf}
-	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{}
+	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{test}
 	\label{perturbation:covergencerate}
 \end{figure}
 Mivel \aref{perturbation:covergencerate}. ábrán a lépésszám függvényében a különbség normája exponenciálisan csökken amíg el nem ér egy a diszkretizáció finomságától függő minimális hibát, a konvergencia vagy divergencia sebességét meg lehet becsülni a lépések függvényében a normákra illesztett exponenciális függvény kitevőjével,
@@ -118,5 +119,13 @@ ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál
 	\centering
 	\includegraphics[scale=1]{./figs/convergenceOriginal.pdf}
 	\includegraphics[scale=1]{./figs/convergenceImproved.pdf}
-	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik az $\alpha$ paraméterrel \aeqref{perturbation:fit} egyenletből. A piros körökön kívüli tartomány a ?? formula által garantált konvergencia tartományát jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
+	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. Mind a két ábrán a doboz mérete $aL=7$. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik az $\alpha$ paraméterrel \aeqref{perturbation:fit} egyenletből. A piros körökön kívüli tartomány \aeqref{perturbation:convradius} formula által garantált konvergencia tartományt jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
+	\label{perturbation:convergencerange}
 \end{figure}
+\Aref{perturbation:convergencerange}. ábra jól mutatja, hogy a második perturbációs sor gyorsabban, és nagyobb tartományban konvergál. A két perturbációs sor között a különbség csupán annyi, hogy a perturbáló tag egy triviális részét, az egység operátorral arányosat, a perturbálatlan Hamilton-operátorhoz csoportosítjuk a perturáló operátorból, ezzel csökkentve a $\op{V}\op{G}(E)$ normáját \aeqref{} egyenleten.
+
+
+
+
+
+

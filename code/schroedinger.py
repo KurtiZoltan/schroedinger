@@ -229,7 +229,7 @@ class d2schroedinger:
             res = np.zeros((0))
         filename =  (str(np.sum(np.abs(res))) + str(Fx) + str(Fy) + str(Lx) + str(Ly) + str(numPoints) + name + ".2dcache").replace(" ", "")
         directory = "../cache/"
-        if path.isfile(directory + filename):
+        if False:#path.isfile(directory + filename):
             with open(directory + filename, "rb") as infile:
                 self.loadFromFile(directory + filename)
         else:
@@ -259,10 +259,10 @@ class d2schroedinger:
                 
                 eWaveFunSum = np.sum(np.abs(self.__c0s)**2)
                 print(self.__name + f"Sum of probabilities: {eWaveFunSum:f}")
-                if eWaveFunSum > 0.99:
+                if eWaveFunSum > 0.999:
                     break
                 n += 1
-        self.saveToFile(directory + filename)
+        #self.saveToFile(directory + filename)
         
     @property
     def Es(self):
