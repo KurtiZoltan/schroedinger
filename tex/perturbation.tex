@@ -29,6 +29,7 @@ Ha $\norm{\op{V}\op{G}_0\left(E\right)} < 1$ akkor a $\op{G}_n$ sorozat konverg�
 A sor határértéke \aeqref{perturbation:rekurzió} miatt kielégíti \aeqref{green:pertmaster} egyenletet. Így konvergencia esetén
 \begin{equation}
 	\op{G}\left(E\right) = \op{G}_0\left(E\right)\sum_{n=0}^\infty\left(\op{V}\op{G}_0\left(E\right)\right)^n.
+	\label{perturbation:series}
 \end{equation}
 Ez azt jelenti, hogy ha egy operátornak van projektor felbontása, akkor a normája a legnagyobb sajátérték abszolút értéke lesz, vagy általános esetben a sajátértékek szuprémuma. Ez hasznos jelen esetben is, mivel így meg tudjuk határozni az $\op{V}=a\op{x}+b$ operátor normáját. Ennek az operátornak a sajátfüggvényei a $\delta(x-x_0)$ függvények, így a sajátértékek maximuma a $[0,L]$ tartományban
 \begin{equation}
@@ -106,7 +107,7 @@ pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ ope
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergencerate.pdf}
-	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{test}
+	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{Az ábra a $\op{G}_n$ sorozat és az egzakt $\op{G}$ operátor távolságát vizsgálja. A doboz mérete $aL=7$, és az energia $bE=6.5+4i$. A függőleges tengely logaritmikus, hogy a exponenciális csökkenés könnyen látható legyen. Mind az eredeti, $V=Fx$, és módosított, $V=Fx-\frac{FL}{2}$, perturbáló potenciálból származtatott sor konvergenciája ábrázolva van különböző finomságú diszkretizációk, azaz $N$ esetén.}
 	\label{perturbation:covergencerate}
 \end{figure}
 Mivel \aref{perturbation:covergencerate}. ábrán a lépésszám függvényében a különbség normája exponenciálisan csökken amíg el nem ér egy a diszkretizáció finomságától függő minimális hibát, a konvergencia vagy divergencia sebességét meg lehet becsülni a lépések függvényében a normákra illesztett exponenciális függvény kitevőjével,
@@ -122,7 +123,7 @@ ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál
 	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. Mind a két ábrán a doboz mérete $aL=7$. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik az $\alpha$ paraméterrel \aeqref{perturbation:fit} egyenletből. A piros körökön kívüli tartomány \aeqref{perturbation:convradius} formula által garantált konvergencia tartományt jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
 	\label{perturbation:convergencerange}
 \end{figure}
-\Aref{perturbation:convergencerange}. ábra jól mutatja, hogy a második perturbációs sor gyorsabban, és nagyobb tartományban konvergál. A két perturbációs sor között a különbség csupán annyi, hogy a perturbáló tag egy triviális részét, az egység operátorral arányosat, a perturbálatlan Hamilton-operátorhoz csoportosítjuk a perturáló operátorból, ezzel csökkentve a $\op{V}\op{G}(E)$ normáját \aeqref{} egyenleten.
+\Aref{perturbation:convergencerange}. ábra jól mutatja, hogy a második perturbációs sor gyorsabban, és nagyobb tartományban konvergál. A két perturbációs sor között a különbség csupán annyi, hogy a perturbáló tag egy triviális részét, az egység operátorral arányosat, a perturbálatlan Hamilton-operátorhoz csoportosítjuk a perturáló operátorból, ezzel csökkentve a $\op{V}\op{G}_0(E)$ normáját \aeqref{perturbation:series} egyenletben.
 
 
 

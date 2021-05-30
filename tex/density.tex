@@ -13,7 +13,7 @@ Ezeket a formulákat numerikus módon közelítőleg ki lehet értékelni kicsi,
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/dosfromgreen.pdf}
-	\caption[Állapotsűrűség]{\Aref{green:densityeq}. képlet alapján számolt állapotsűrűség. A kék függvényt $\epsilon = 10^{-3}/b$, a narancssárga görbét pedig $\epsilon = 10^{-2}/b$ helyettesítéssel kaptuk. Látható, hogy $\epsilon$ csökkentésével a tüskék egyre keskenyebbek, és egyre magasabbak lesznek.}
+	\caption[Állapotsűrűség]{\Aref{green:densityeq}. képlet alapján számolt állapotsűrűség. A kék függvényt $b\epsilon = 0.1$, a narancssárga görbét pedig $b\epsilon = 0.01$ helyettesítéssel kaptuk. Látható, hogy $\epsilon$ csökkentésével a tüskék egyre keskenyebbek, és egyre magasabbak lesznek.}
 	\label{green:állapotsűrség}
 \end{figure}
 Ennek a közelítésnek egy jó tulajdonsága, hogy a formula származtatásához a jól ismert
@@ -24,7 +24,7 @@ formulát lehet használni. Ennek a formulának a levezetése során a $\delta(x
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/numberofstatesfromgreen.pdf}
-	\caption[Állapotok száma]{\Aref{green:állapotsűrség}. ábrán bemutatott függvények integrálja látható ezen az ábrán. Mind a két függvény ugrása közelítőleg $1$, ami at jelenti, hogy \aref{green:állapotsűrség}. ábrán látható tüskék alatti terület jó közelítéssel $1$. Az $\epsilon$ csökkentése a lépcsőfüggvényhez közelíti az integrált függvényt, ami egyezik az elvárásokkal.}
+	\caption[Állapotok száma]{\Aref{green:állapotsűrség}. ábrán bemutatott függvények integrálja látható ezen az ábrán. Mind a két függvény ugrása közelítőleg $1$, ami at jelenti, hogy \aref{green:állapotsűrség}. ábrán látható tüskék alatti terület jó közelítéssel $1$. Az $\epsilon$ csökkentése a lépcsőfüggvényhez közelíti az integrált függvényt, ami egyezik az elvárásokkal és \aeqref{green:densityeq} egyenlettel.}
 \end{figure}
 \Aeqref{limits:semiinfinite} Green-függvényhez tartozó állapotsűrűség kvalitatíve nem különbözik az előző számítás menetétől és eredményétől, hiszen az előzőhöz hasonlóan csak diszkrét sajátenergiák vannak, ezeknek csupán az értékük különböző.
 
