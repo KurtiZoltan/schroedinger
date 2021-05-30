@@ -2,7 +2,7 @@ A két falú doboz Green-függvényéből megfelelő határesetekben előállít
 
 Az $L\to\infty$ határeset könnyen elvégezhető. \Aeqref{airy:ai+approx} és \aeqref{airy:bi+approx} egyenletek szerint $\Ti(aL-bE)$ gyorsan $0$-hoz tart. Ezt az eredményt felhasználva az $x=0$-ban fallal bezárt részecske Green-függvénye $=Fx$ potenciálban
 \begin{equation}
-	G_{egy fal}\left(x,y;E\right) = -\frac{a^2}{F}\frac{\pi}{\Ti(-bE)}\times
+	G_{\text{egy fal}}\left(x,y;E\right) = -\frac{a^2}{F}\frac{\pi}{\Ti(-bE)}\times
 	\begin{cases}
 		\Ai(v)\Bigl(\Ti(-bE)\Bi(u)-\Ai(u)\Bigr)& x \leq y\\
 		\Ai(u)\Bigl(\Ti(-bE)\Bi(v)-\Ai(v)\Bigr)& x \geq y
@@ -40,7 +40,7 @@ A sorok közötti lépésekhez felhasználtuk a $(x+a)^\alpha\approx x^\alpha + 
 \end{equation}
 Ez az eredmény kellett ahhoz, hogy \aeqref{limits:transitiontonowall} átmenet alapján meghatározzuk a fal nélküli lineáris $V=Fx$ potenciálhoz tartozó Green-függényt. Ha $\Im(E)>0$
 \begin{dmath}
-	G_{nincs fal}(x,y;E)=\lim_{d\to\infty}G_{egy fal}(x+d,y+d;E+Fd)=\frac{\pi a^2}{F}\times
+	G_{\text{nincs fal}}(x,y;E)=\lim_{d\to\infty}G_{\text{egy fal}}(x+d,y+d;E+Fd)=\frac{\pi a^2}{F}\times
 	\begin{cases}
 		\Ai(v)\Bigl(\Bi(u)-i\Ai(u)\Bigr)&x\leq y\\
 		\Ai(u)\Bigl(\Bi(v)-i\Ai(v)\Bigr)&x\geq y
@@ -49,7 +49,7 @@ Ez az eredmény kellett ahhoz, hogy \aeqref{limits:transitiontonowall} átmenet 
 \end{dmath}
 Ha $\Im(E)<0$, akkor \aeqref{limits:ti} egyenlet $-i$ a limeszben, így
 \begin{dmath}
-	G_{nincs fal}(x,y;E)=\lim_{d\to\infty}G_{egy fal}(x+d,y+d;E+Fd)=\frac{\pi a^2}{F}\times
+	G_{\text{nincs fal}}(x,y;E)=\lim_{d\to\infty}G_{\text{egy fal}}(x+d,y+d;E+Fd)=\frac{\pi a^2}{F}\times
 	\begin{cases}
 		\Ai(v)\Bigl(\Bi(u)+i\Ai(u)\Bigr)&x\leq y\\
 		\Ai(u)\Bigl(\Bi(v)+i\Ai(v)\Bigr)&x\geq y
