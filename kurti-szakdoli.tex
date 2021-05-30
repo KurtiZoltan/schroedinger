@@ -81,6 +81,14 @@
 \numberwithin{table}{section}
 \addtolength{\marginparwidth}{50pt}
 
+\thispagestyle{empty}
+\pdfbookmark[1]{Nyilatkozat}{nyilatkozat}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.15]{./figs/nyilatkozat.jpg}
+\end{figure}
+\newpage
+
 \pdfbookmark[1]{Címlap}{cim}
 \pagenumbering{roman}
 \input{tex/cimlap.tex}
@@ -91,7 +99,7 @@
 \tableofcontents
 %\newpage
 \listoffigures
-\listoftables
+%\listoftables
 \newpage
 \pagenumbering{arabic}
 \phantomsection

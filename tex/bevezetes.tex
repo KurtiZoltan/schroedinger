@@ -1,10 +1,34 @@
-\subsection*{Probléma leírása}
-nem méréselmélet, gyakorlati jelentőség, eddigi tárgyalások, Bi hiánya
-\subsection*{Airy függvények}
-egyéb helyen felbukkan a fizikában
-\subsection*{Szemiklasszika}
-gyakorlati jelentősége, kvantummechanika klasszikus mechanika közötti pedagógiai kapcsolat
-\subsection*{Green-függvények}
-gyakorlati jelentőség, perturbáció megválasztható
-\subsection*{Schrödinger-egyenlet animáció}
-kóddal vizualizáció
+%nem méréselmélet
+A dolgozat címében a méréselméleti utalás ellenére a dolgozatban nem foglalkozunk méréselméleti kérdésekkel. A cím csupán a dobozba zárt macska (feltételezhetően homogén gravitációs térben) és a dobozba zárt és homogén térbe helyezett kvantum részecske hasonlóságára utal.
+
+%a fizikai rendszer
+A dolgozatban tárgyalt rendszer egy belső szabadsági fokokkal nem rendelkező résecske vizsgálata homogén erőtérben, különböző határfeltételekkel. A központi probléma a zárt doboznak megfelelő határfeltétel, egy vagy három dimenzióban. Egy dimenzióban vizsgáljuk az alulról zárt, felülről nyitott dobozt, (úgyevezett "quantum bouncer" \cite{vankov2009quantum}, \cite{doi:10.1119/1.10024}, \cite{doi:10.1119/1.16673}), valamint a falak nélküli csupán a lineáris potenciálnak alávetett részecskét \cite[137-138.o.]{Vallee:2010:AFA}.
+
+%az irodalom, hiányzik belőle a felülről zárt eset, Bi
+Az irodalomban több helyen megtalálható a "quantum bouncer" ahogy ezt előzőleg említettük, valamint \cite{Landau1981Quantum}, \cite{Griffiths2004Introduction} és \cite{Sakurai:1167961} (utóbbi a a $V=k\lvert x \rvert$ potenciált vizsgálja, ami triviális kiterjesztése a "quantum bouncer" problémának a Dirichlet-határfeltételen kívül a Neumann-határfeltétellel kapott állapotok megengedésével) tankönyvekben is, külön elnevezés nélkül. Ezekben a forrásokban mind csak az $\Ai$ Airy-függvény merül fel, a $\Bi$ esetleges fizikai jelentőségéről nincs szó, a végtelen beli exponenciális növekedés miatt nem vizsgálják. Az $\Ai$ függvény természetesen felmerül minden szemiklasszikus közelítéssel foglalkozó tankönyvben, hiszen az analitikus fordulópontokban a szemiklasszikus megoldásokat az $\Ai$ függvény aszimptotikája illeszti össze. A \cite{doi:10.1007/s12043-001-0081-1} cikkben felmerül a $\Bi$ függvény is, mivel a véges potenciálgödröt vizsgálják és ebben az esetben csak az egyik tartományból lehet kizárni a $\Bi$ függvényt a végtelenben való növekedése miatt. A dolgozatban részletesebben kidolgozzuk ezt a problémát a végtelen mély potenciálgödör esetét. Érdemes megjegyezni hogy az említett rendszerek Green-függvényeiben felmerül a $\Bi$ Airy-függvény, még a falak nélküli esetben is. Az irodalom ismeretében nagy pedagógiai jelentése van a $\Bi$ Airy-függvények vizsgálata a kvantummechanikában, hiszen a lineáris potenciál a szabad részecske után az egyik legegyszerűbb rendszer. Klasszikus mechanikában is a szabad részecske tárgyalása után gyakran az egyenletesen gyorsuló részecske tárgyalása következik, így a kvantummechanika bevezetése szempontjából kritikus, hogy a klasszikus mechanika második példáját alaposan tárgyalják a tankönyvek.
+
+%a fizikai jelentősége a problémánk
+
+
+%dolgozat menetének leírésa
+A dolgozat első részét a három dimenziós dobozba zárt részecske tárgyalásával kezdjük, tetszőleges irányú homogén erőtérben, és három egy dimenziós egyenletre redukáljuk a Schrödinger-egyenletet. A dolgozat további részében főleg az egy dimenziós problémát vizsgáljuk. Az Airy-függvények alapvető matematikai tulajdonságainak bemutatása után analitikus megoldást mutatunk az egy dimenziós zárt doboz esetére. Az energiaszintekre vonatkozó transzcendens egyenletet leszámítva a sajátfüggvényekre és normálási faktoraikra explicit analitikus képleteket vezetünk le. Röviden tárgyaljuk a falak nélküli esetet, és a hozzá tartozó sajátállaptok normálását és teljességi relációját.
+A dolgozat második részében a szemiklasszikus közelítést vizsgáljuk. Összevetjük a semiklasszikus és egyéb közelítésekkel kapott energiaszinteket az egzakt implicit egyenletből kapott energiákkal, és megadjuk a Airy-függvények aszimptotikus viselkedését a szemiklasszikus közelítés alapján.
+A dolgozat harmadik részében az egy dimenziós eset Green-függvényét vizsgáljuk. Explicit analitikus képletet vezetünk le a zárt doboz esetére. Ezen kGreen-függvény határeseteiként levezetjük az egy fallal határolt, és a fal nélküli rendszer Green-függvényét. Utóbbi esetében a határeset a Green-függvény diszkrét pólusai vágássá alakulnak a komplex energiasíkon. Végül a Green-függvények perturbációs sorát vizsgáljuk numerikusan, a zárt doboz Green-függvényén szemléltetjük, hogy a perturbációs tag triviális változtatása, az egység operátor számszorosának levonása, drámaian javíthatja a perturbációs sor konvergencia tartományát és sebességét valamint numerikus módszerek esetén a pontosságát is. Végül a függelékben bemutatjuk a Schrödinger-egyenlet időfejlődését ábrázoló kód működését.
+
+
+
+
+
+
+
+
+%\subsection*{Probléma leírása}
+%nem méréselmélet, gyakorlati jelentőség, eddigi tárgyalások, Bi hiánya
+%\subsection*{Airy függvények}
+%egyéb helyen felbukkan a fizikában
+%\subsection*{Szemiklasszika}
+%gyakorlati jelentősége, kvantummechanika klasszikus mechanika közötti pedagógiai kapcsolat
+%\subsection*{Green-függvények}
+%gyakorlati jelentőség, perturbáció megválasztható
+%\subsection*{Schrödinger-egyenlet animáció}
+%kóddal vizualizáció
