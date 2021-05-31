@@ -48,7 +48,6 @@ def convergence(E):
     norms = np.array([norm0])
     steps = np.array([0])
     for i in range(20):
-        Gprev = G
         G = G0 + G @ VG0
         norm = dx * np.linalg.norm(G - realG, ord=2)
         norms = np.append(norms, norm)

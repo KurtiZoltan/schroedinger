@@ -11,7 +11,7 @@ animTime = 120
 FPS = 30
 timeSpeed = 0.5
 
-save = True
+save = False
 
 def gauss(x):
     return np.exp(-1/2 * ((x - x0)/(d))**2 + 1j*k*x)

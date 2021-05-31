@@ -31,7 +31,7 @@ FPS = 30
 timeSpeed = 0.5
 
 name = 'final2d.mp4'
-save = True
+save = False
 
 def gauss(x, y):
     return np.exp(-((x - x0)**2 + (y - y0)**2)/(2*d**2) + 1j*(kx*x + ky*y))
