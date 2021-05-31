@@ -1,5 +1,8 @@
 Az összes számításhoz és ábra készítéséhez használt kód elérhető a \url{https://github.com/KurtiZoltan/schroedinger/tree/master/code} oldalon, Python nyelven. Továbbiakban néhány érdekesebb kódrészletet és eredményt mutatunk be.
+\subsection{A hullámfüggvény időfejlődése}
+A program célja az első részben meghatározott egyenleteknek megfelelően a sajátállapotok előállítása, a kezdeti állapot felbontása egy bizonyos előre meghatározott pontosságig, majd \aeqref{3dbox:timeevolution} egyenlet egydimenziós és kétdimenziós változatának a kiértékelése.
 
+Az első függvény, \texttt{__init__}, a \texttt{d1schroedinger} osztály konstruktora. A célja, hogy létrehozzon egy objektumot, ami tartalmazza a a doboz méretét, az erőtér nagyságát, a kezdőállapot hullámfüggvényét, és egyéb a numerikus számításokoz szükséges adatokat. A fizikailag lényeges számítás a 18. sorban kezdődik. A program meghatározza a soron következő sajátenergia értékét, majd meghatározza a sajátállapothoz tartozó normálási faktort. A \texttt{cacheBasisFun} a későbbi számítások felgyorsítása érdekében eltárolja a sajátfüggvény diszkretizált verzióját. A \texttt{basisCoeff} függvény meghatározza a kezdőállapot és $n$. bázisfüggvény skalárszorzatát, így lépésenként előállítva azt a sajjátfüggvények lineáris kombinációjaként. A ciklusból a kilépési feltétel, hogy az energia sajátbázisban vett együtthatók abszolútértékeinek négyzetének összege meghalada a $0.9999$ számot. Ez garantálja, hogy a legnagyobb jelentőségű sajátfüggvényeket a számítás figyelembe veszi, hiszen a maradék együtthatók abszolútértékeinek négyzetösszege csupán $10^{-4}$. Amennyiben ez nem teljesül, a program megnöveli $n$ értékét $1$-gyel, és megismétli a számításokat a következő energiaszintre.
 \begin{lstlisting}[language=Python]
 def __init__(self, psi0 = None, F = 1.0, L = 15.0, numPoints = 200, name = "1D: "):
     self.__name = name
@@ -29,7 +32,7 @@ def __init__(self, psi0 = None, F = 1.0, L = 15.0, numPoints = 200, name = "1D: 
                 break
             n += 1
 \end{lstlisting}
-
+A \texttt{charEq} függvény a rendszer karakterisztikus egyenletének az implementációja, \aref{vegesf:aibilevels} egyenlet alapján. A későbbiekben a gyökkereső algoritmus igényli a függvény deriváltját is a gyorsabb konvergencia érdekében, így azt is kiszámítjuk.
 \begin{lstlisting}[language=Python]
 def charEq(self, E, L = None):
     if L == None:
@@ -45,7 +48,7 @@ def charEq(self, E, L = None):
     fp = -(bi1p*ai2 + bi1*ai2p - (ai1p*bi2 + ai1*bi2p))
     return f, fp
 \end{lstlisting}
-
+A karakterisztikus egyenlet gyökének megkeresésével egyetlen komplikáció van: hogyan lehet biztosítani, hogy amikor az $n$. sajátenergiát keressük, valóban az $n$. gyököt kapuk-e meg? A választ könnyű megadni abban az esetben ha, $FL$ jóval kisebb az alapállapoti energiánál. Ebben az esetben megfelelő megoldás, hogy a karakterisztikus egyenlet gyökét a $\frac{(n+1)^2\pi^2\hbar^2}{2mL^2}$ kiinduló pontból keressük, mert garantált, hogy a valódi gyök közel lesz a tippünkhöz \eqref{semiclassicallevels:squarewell} miatt. Tehát a módszer az, hogy először megkeressük az $n$. gyököt kis $L$ esetére. Ez után lépésenként növeljük $L$ értékét, míg végül el nem éri az eredeti problémában felmerülő értéket. Minden lépésben a gyökkereséshez a kezdőértéket az előző lépésben talált gyök alapján határozzuk meg. Ez biztosítja, hogy a program szemléletesen  \aref{box_energiaszintek_abra}. ábra $n$. sávján halad végig.
 \begin{lstlisting}[language=Python]
 def eLevel(self, n):
     '''
@@ -71,7 +74,7 @@ def eLevel(self, n):
             self.__Es = np.append(self.__Es, E)
     return
 \end{lstlisting}
-
+Az \texttt{unormWaveFun} csupán \aeqref{vegesf:psik} egyenlet implementációja. A 10. sorban a \texttt{mask} tömbnek van viszonylag érdekesebb szerepe. A numerikusan meghatározott energiaszinteknek nyilvánvalóan van kis hibája. Ez a kis numerikus hiba nagy jelentőséggel bír azoknak a sajátállapotoknak az esetében, ahol a $\Bi$ komponens együtthatója majdnem $0$. Az energia kis hibája aránylag nagy mértékben változtatja meg a $\Bi$ együtthatójának értékét, így az $x=L$ tartományban a numerikusan meghatározott hullámfüggvényt használhatatlanná teszi az exponenciálisan növekvő $\Bi$ függvény. A \texttt{mask} tömb értéke $0$ azon indexek esetén, amiknek megfelelő $x$ koordináta túl messze van a klasszikus fordulóponttól. Utolsó lépésként ezekben a pontokban a hullámfüggvény értékét $0$-ra állítjuk. Ez a probléma más függvényeknél is felmerül a megoldás ott is hasonló lesz.
 \begin{lstlisting}[language=Python]
 def unormWaveFun(self, x, n):
     '''
@@ -85,7 +88,7 @@ def unormWaveFun(self, x, n):
     mask = np.array(E / F3sqrt ** 2 - F3sqrt * x > -10).astype(float)
     return (bi1 * ai2 - ai1 * bi2) * mask
 \end{lstlisting}
-
+ \Aeqref{}
 \begin{lstlisting}[language=Python]
 def waveFunNorm(self, n):
     '''
@@ -131,7 +134,7 @@ def timeEvolution(self, t = 0):
         ret += self.__c0s[n] * np.exp(-1j * self.__Es[n]*t) * self.__cachedBasisFun[n, :]
     return ret
 \end{lstlisting}
-
+\subsection{A Green-függvéy}
 \begin{lstlisting}[language=Python]
 def G(self, x, y, E):
     F3sqrt = np.power(self.__F, 1/3)
