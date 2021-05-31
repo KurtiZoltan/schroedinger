@@ -125,6 +125,7 @@ A kétdimenziós esetben ezekhez a függvényekhez hasonló algoritmusok szerepe
 
 Az animációk során egy másodperc $\frac{1}{2}\hbar b$ időnek felel meg a kvantumrendszerben. Az egydimenziós rendszer szélessége $aL=15$, az erőtér nagysága $F=0.1$. A kezdőállapot a normálási faktortól eltekintve $\psi_0(x)\propto \exp\left(-(ax-5)^2+2iax\right)$ Az időfejlestett hullámfüggvény abszolútérték négyzetét a \url{https://youtu.be/1wEaF9aBrQg} linken lehet megtekinteni. A kétdimenziós doboz oldalhosszai $aL_xaL_y=10$. A függőleges erő $F_y=1$, míg a vízszintes erő $F_x=10^{-5}$. A vízszintes erő komponensét kicsi de véges értékre állítva nem kell külön függvényeket írni az $F=0$ esetre, viszont a végső animáció megkülönböztethetetlen lesz az $F=0$ esettől. A kezdőállapot megint csak egy egy Gauss-görbe lesz, megszorozva egy síkhullámmal, hogy a kezdeti momentum várható értéke ne $0$ legyen. $\psi_0(x,y)\propto\exp\left(-\frac{(ax-5)^2+(ay-5)^2}{8}+ia(0.75x+1.5y)\right)$. A részecske megtalálási valószínűségének időfejlődése megtekinthető a \url{https://youtu.be/R9Pdt4NSKuc} linken.
 \subsection{A Green-függvéy}
+A \texttt{G} függvény \aeqref{egzakt:greenfunction} egyenlet implementációja. 
 \begin{lstlisting}[language=Python]
 def G(self, x, y, E):
     F3sqrt = np.power(self.__F, 1/3)
@@ -137,9 +138,10 @@ def G(self, x, y, E):
     G2 = c0 * (ai4 - ai1/bi1 * bi4) * (ai3 - ai2/bi2 * bi3) * (1 - (x < y))
     return G1 + G2
 \end{lstlisting}
-
+A \texttt{convergence} algoritmus határozta meg \aref{perturbation:convergencerange}. ábra piexeleinek a színét. Először kiszámoljuk a gyors iterációt segítő előre meghatározható mennyiséget, a $\op{V}\op{G}_0$ diszkretizált reprezentációját. A for ciklusban \aeqref{perturbation:rekurzió} rekurziós össefüggést iterálja az algoritmus, legfeljebb 20 alkalommal. Ha a norma nagy mértékben lecsökken, vagy megnő, az algoritmus szintén kilép a for ciklusból. A 20. sorban a függvény a kapott normákra illeszti \aeqref{perturbation:fit} alakú függvényt. Az $\alpha$ a függvény végeredménye, ami alapján az ábrát színeztük.
 \begin{lstlisting}[language=Python]
-test = d1schroedinger(L=7)
+def normguess(steps, alpha, remainder):
+    return np.exp(steps*alpha) + remainder
 
 def convergence(E):
     G0 = test.G0(x, y, E)
@@ -160,3 +162,32 @@ def convergence(E):
     popt, pcov = curve_fit(normguess, steps, norms/norms[0])
     return -popt[0]
 \end{lstlisting}
+Végül leellenőriztük, hogy \aeqref{egzakt:greenfunction} valóban kielégíti-e \aeqref{green:deltaeq} egyenletet. Az alábbi kódrészlet numerikusan közelíti az $E-\op{H}$ hatását a Green-függvényre. Az eredmény \aref{numeric:checkgreen}. ábrán látható. A kapott függvényt numerkusan integrálva a 18. sorban a kapott eredmény $1.00000084$, ami azt mutatja hogy a kapott eredmény valóban a Dirac-delta függvényt közelíti.
+\begin{lstlisting}[language=Python]
+test = d1schroedinger(L=10)
+
+E = 5
+r = 10
+
+x = np.linspace(0, test.L, 10000)
+y = test.L/2
+G = test.G(x,y,E)
+I = E*G+np.gradient(np.gradient(G, x[1]-x[0]), x[1]-x[0])-test.F*x*G
+plt.figure(figsize=(4,3))
+plt.plot(x[np.abs(x-y)<r], I[np.abs(x-y)<r], label="$\hat{H}_xG(x,y;E)$")
+plt.grid()
+plt.xlabel("$ax$")
+plt.legend()
+plt.savefig("../figs/checkgreen.pdf")
+plt.show()
+
+print(np.sum(I)*(x[1]-x[0]))
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./figs/checkgreen.pdf}
+	\includegraphics[scale=1]{./figs/checkgreen2.pdf}
+	\label{numeric:checkgreen}
+	\caption[Green-függvény numerikus ellenőrzése]{Numerikus ellenőrzése \aeqref{green:deltaeq} egyenletnek. A várt eredmény $\delta(x-L/2)$.}
+\end{figure}
