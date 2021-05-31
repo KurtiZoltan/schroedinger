@@ -4,12 +4,12 @@ Falak hiányában a Schrödinger-egyenlet továbbra is \eqref{3dbox:1deq}, azonb
 	\lim_{x\to\infty}\psi(x) = 0.
 	\label{nowall:boundary}
 \end{equation}
-Mivel itt folytonos spektrumról van szó, az eddigi normálás helyett az állapotokat Dirac-deltára kell normálni. Ebben a feladatban az energia és energia sajátállapot között egy az egyhez megfeleltetés van, ellenben a jól ismert szabad részecske esetével. Ennek oka, hogy itt $x\to\infty$-ből nem jönnek részecskék. Ennek következtében az a sajátállapotokat $\Ket{E}$ egyértelmen jelöli.
+Mivel itt folytonos spektrumról van szó, az eddigi normálás helyett az állapotokat Dirac-deltára kell normálni. Ebben a feladatban az energia és energia sajátállapot között egy az egyhez megfeleltetés van, ellenben a jól ismert szabad részecske esetével. Ennek oka, hogy itt $x\to\infty$-ből nem jönnek részecskék. Ennek következtében az a sajátállapotokat $\Ket{E}$ egyértelműen jelöli.
 \Aeqref{nowall:boundary} feltétel azt jelenti, hogy az Airy-függvények közül a $\Bi(ax-bE)$ nem szerepel a lineáris kominációban, a megoldás tisztán az $\Ai(ax-bE)$ függvény lesz,
 \begin{equation}
 	\Braket{x|E}=N\Ai(ax-bE).
 \end{equation}
-A szórásállapotokra vonatkozó normálási feltétel
+A delokalizált állapotokra vonatkozó normálási feltétel
 \begin{equation}
 	\Braket{E|E^\prime}=\delta(E-E^\prime).
 \end{equation}
@@ -28,13 +28,13 @@ A teljességi reláció is leellenőrizhető \aeqref{airy:delta} egyenlet alapj�
 	\int_{-\infty}^\infty dE\,\Ket{E}\Bra{E}=ab\int_{-\infty}^\infty dE\int_{-\infty}^\infty dx\int_{-\infty}^\infty dy\,\Ai(ax-bE)\Ai(ay-bE)\Ket{x}\Bra{y}=\int_{-\infty}^\infty dx\int_{-\infty}^\infty dy\,\delta(x-y)\Ket{x}\Bra{y}=\op{I}.
 	\label{nowall:comleteness}
 \end{dmath}
-\Aeqref{nowall:orthog} egyenlet a $\op{H}$ operátor hermitikusságából következik, hiszen a hermitikus operátorok sajátállapotai ortogonálisak egymásra. \Aeqref{nowall:comleteness} teljességi reláció is arra utal, hogy az összes fizikai sajátállapotot megtaláltuk a csupán $\Ai(x)$ függvényt tartalmazó állapotok keresésével. Ha hiányozna valamely fizikai állapot, akkor nem lehetne a megtalált sajátfüggvények lineáris kombinációjaként tetszőleges hullámfüggvényt előállítani, és így a teljességi reláció nem teljesülne.
+\Aeqref{nowall:orthog} egyenlet a $\op{H}$ operátor hermitikusságából következik, hiszen a hermitikus operátorok különböző sajátértékekhez tartozó sajátállapotai ortogonálisak egymásra. \Aeqref{nowall:comleteness} teljességi reláció pedig azt jelenti, hogy az összes fizikai sajátállapotot megtaláltuk a csupán $\Ai(x)$ függvényt tartalmazó állapotok keresésével. Ha hiányozna valamely fizikai állapot, akkor nem lehetne a megtalált sajátfüggvények lineáris kombinációjaként tetszőleges hullámfüggvényt előállítani, és így a teljességi reláció nem teljesülne.
 
 Érdemes a fizikai intuícióval összevetni az Airy-függvény Fourier-transzformáltját. Az Airy-függény Fourier transzformáltja
 \begin{equation}
 	\int_{-\infty}^\infty\Ai(x)e^{-ikx}\,dx=e^{ik^3/3}.
 \end{equation}
-Ez azt jelenti, hogy az impulzus térben a hullámfüggvény
+Ez azt jelenti, hogy az impulzustérben a hullámfüggvény
 \begin{equation}
 	\psi_E(p)=\frac{1}{\sqrt{2\pi F\hbar}}\exp\left(i\left(\frac{1}{3}\left(\frac{p}{a\hbar}\right)^3-\frac{pE}{F\hbar}\right)\right),
 \end{equation}
@@ -45,7 +45,7 @@ Az impulzus hullámfüggvény amplitúdója nem függ az impulzustól! Ez nem me
 \begin{equation}
 	p(t)=-Ft+p_0,
 \end{equation}
-tehát minden részecske egy kis $dp$ tartományban $dp/F$ időt tölt, adott impulzushoz tartozó részecskesűrűség értéke független az impulzustól. Ennek a klasszikus fizika beli megállapításnak a megfelelője, hogy $\lvert\psi_E(p)\rvert^2$ $p$-től független.
+tehát minden részecske egy $dp$ tartományban $dp/F$ időt tölt, adott impulzushoz tartozó részecskesűrűség értéke független az impulzustól. Ennek a klasszikus fizika beli megállapításnak a megfelelője, hogy $\lvert\psi_E(p)\rvert^2$ $p$-től független.
 
 
 
