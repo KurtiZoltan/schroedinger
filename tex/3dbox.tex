@@ -1,6 +1,10 @@
-A rendszer egy téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = \text{const}$. A potenciál így $V(x, y, z) = -F_xx-F_yy-F_zz$. A rendszer időfüggő Schrödinger-egyenlete
+A dolgozat kiinduló pontja a téglatest alakú dobozba zárt részecske. A doboz mérete $L_x$, $L_y$ és $L_z$. A dobozban homogén erőtér hat a részecskére, azaz $\boldsymbol{F} = \text{const}$. A potenciál így
 \begin{equation}
-	i\hbar\frac{\partial \psi(x, y, z, t)}{\partial t} = -\frac{\hbar^2}{2m} \Laplace \psi(x, y, z, t) + V(x, y, z)\psi(x, y, z, t).
+	V(x, y, z) = -F_xx-F_yy-F_zz.
+\end{equation}
+A rendszer időfüggő Schrödinger-egyenlete
+\begin{equation}
+	i\hbar\frac{\partial \psi(x, y, z, t)}{\partial t} = -\frac{\hbar^2}{2m} \Laplace \psi(x, y, z, t) + V(x, y, z)\,\psi(x, y, z, t).
 	\label{3dbox:3dscheq}
 \end{equation}
 Az egyenlet kezdőfeltétele egy kezdeti állapot $t_0$-ban, $\psi(x, y, z, t_0) = \psi_0(x, y, z)$, az egyenlet határfeltételei pedig a hullámfüggvény határokon való eltűnése, $0=\left.\psi\right|_{x=0}=\left.\psi\right|_{x=L_x}=\left.\psi\right|_{y=0}=\left.\psi\right|_{y=L_y}=\left.\psi\right|_{z=0}=\left.\psi\right|_{z=L_z}$. Mivel ez a potenciál lineáris $x$, $y$ és $z$-ben, a Schrödinger-egyenlet szeparálható a
@@ -8,12 +12,12 @@ Az egyenlet kezdőfeltétele egy kezdeti állapot $t_0$-ban, $\psi(x, y, z, t_0)
 	\psi_{klm}(x, y, z, t) = e^{-\frac{iE_{klm}}{\hbar}t}\psi^{(1)}_k(x)\psi^{(2)}_l(y)\psi^{(3)}_m(z)
 	\label{3dox:3dansatz}
 \end{equation}
-próbafüggvénnyel. A $\psi^{(i)}_n$ függvényekre így az egy dimenziós stacionárius Schrödinger-egyenlet vonatkozik. A $\psi^{(i)}$-re vonatkozó egyenlet 
+próbafüggvénnyel. A $\psi^{(i)}_n$ függvényekre így az egydimenziós stacionárius Schrödinger-egyenlet vonatkozik. A $\psi^{(i)}$-re vonatkozó egyenlet 
 \begin{equation}
 	-\frac{\hbar^2}{2m}\frac{d^2\psi^{(i)}_k(x_i)}{dx_i^2} + F_ix_i\psi^{(i)}_k(x) = E^{(i)}_k\psi^{(i)}_k(x_i),
 	\label{3dbox:1deq}
 \end{equation}
-a határfeltételek $\left.\psi^{(i)}_k\right|_{x_i=0}=\left.\psi^{(i)}_k\right|_{x_i=L_i}=0$. Az $E_{klm}$ energia a három egy dimenziós stacionárius Schrödinger-egyenlet sajátenergiáinak összege,
+a határfeltételek $\left.\psi^{(i)}_k\right|_{x_i=0}=\left.\psi^{(i)}_k\right|_{x_i=L_i}=0$. Az $E_{klm}$ energia a három egydimenziós stacionárius Schrödinger-egyenlet sajátértékeinek összege,
 \begin{equation}
 	E_{klm} = E^{(1)}_k+E^{(2)}_l+E^{(3)}_m.
 \end{equation}

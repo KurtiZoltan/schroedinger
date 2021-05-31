@@ -1,0 +1,5 @@
+Kvantum részecske homogén térben falak között: "dobozba zárt Schrödinger macskája"
+
+Kvantummechanikai iskolapélda a homogén térbe helyezett egydimenziós részecske. Ezt három dimenzióra kiterjesztve és két fal közé zárva keressük az energia sajátállapotokat. Az aszimptotikus függvényalakok segítségével előállítjuk a magasan gerjesztett állapotok energiáit. Numerikusan szemléltetjük fizikailag érdekes kezdőállapotok időfejlődését. Vizsgáljuk a rezolvenst és az állapotsűrűséget, valamint a Green-függvény perturbációs sorának konvergencia optimalizálásának lehetőségét.
+
+Schrödinger-egyenlet, Green-függvény, perturbációszámítás, Bohr-Sommerfeld kvantálás, analitikus Green-függvény, egzakt Green-függvény, perturbáció konvergenciája, Schröödinger egyenlet animációja

@@ -50,6 +50,7 @@
 \DeclareMathOperator{\Aip}{Ai^\prime}
 \DeclareMathOperator{\Bip}{Bi^\prime}
 \DeclareMathOperator{\Ti}{Ti}
+\DeclareMathOperator{\ctg}{ctg}
 \DeclareMathOperator{\sgn}{sgn}
 %\DeclareMathOperator{\max}{max}
 \let\Im\relax
@@ -86,7 +87,7 @@
 \pdfbookmark[1]{Nyilatkozat}{nyilatkozat}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.15]{./figs/nyilatkozat.jpg}
+	\includegraphics[scale=0.15, angle=-90]{./figs/nyilatkozat.jpg}
 \end{figure}
 \newpage
 %------------------------------------------------------------------------------------------------
@@ -109,13 +110,13 @@
 	\input{tex/bevezetes.tex}
 \section{A dobozba zárt részecske homogén térben}
 	\input
-	\subsection{Három dimenzióban}
+	\subsection{Háromdimenziós eset}
 		\input{tex/3dbox.tex}
-	\subsection{Egy dimenzióban}
+	\subsection{Egydimenziós eset}
 			\input{tex/1d.tex}
 		\subsubsection{$F=0$ eset}
 			\input{tex/free.tex}
-		\subsubsection{Airy függvények}
+		\subsubsection{Az Airy függvények alapvető matematikai tulajdonságainak bemutatása}
 			\input{tex/airy.tex}
 		\subsubsection{Véges $F$ eset}
 			\input{tex/vegesf.tex}
@@ -129,15 +130,15 @@
 		\input{tex/quantumApprox.tex}
 	\subsection{Airy függvények aszimptotikája}
 		\input{tex/asymptotics.tex}
-\section{Homogén tér Green-függvénye}
+\section{A homogén tér Green-függvénye}
 	\input{tex/green.tex}
-	\subsection{Egzakt Green-függvény}
+	\subsection{Egzakt Green-függvény levezetése}
 		\input{tex/egzakt.tex}
-	\subsection{Green-függvény határesetei}
+	\subsection{A Green-függvény határesetei}
 		\input{tex/limits.tex}
-	\subsection{Állapotsűrűség}
+	\subsection{Állapotsűrűség a Green-függvény alapján}
 		\input{tex/density.tex}
-	\subsection{Perturbációszámítás}
+	\subsection{Perturbációszámítás optimalizálása}
 		\input{tex/perturbation.tex}
 \section{Összegzés}
 	\input{tex/osszegzes.tex}
