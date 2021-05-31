@@ -110,12 +110,6 @@ pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ ope
 	\caption[A Green-függvény perturbációs sorának konvergencia sebessége]{Az ábra a $\op{G}_n$ sorozat és az egzakt $\op{G}$ operátor távolságát vizsgálja. A doboz mérete $aL=7$, és az energia $bE=6.5+4i$. A függőleges tengely logaritmikus, hogy a exponenciális csökkenés könnyen látható legyen. Mind az eredeti, $V=Fx$, és módosított, $V=Fx-\frac{FL}{2}$, perturbáló potenciálból származtatott sor konvergenciája ábrázolva van különböző finomságú diszkretizációk, azaz $N$ esetén.}
 	\label{perturbation:covergencerate}
 \end{figure}
-Mivel \aref{perturbation:covergencerate}. ábrán a lépésszám függvényében a különbség normája exponenciálisan csökken amíg el nem ér egy a diszkretizáció finomságától függő minimális hibát, a konvergencia vagy divergencia sebességét meg lehet becsülni a lépések függvényében a normákra illesztett exponenciális függvény kitevőjével,
-\begin{equation}
-	d(n) = d(0)\exp(-\alpha n)+r,
-	\label{perturbation:fit}
-\end{equation}
-ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál, $d$ pedig a egzakt eredménytől való eltérés operátor normája. A maradék tagot $r$ modellezi, ez az $r$ tag lesz közelítőleg fordítottan arányas $N$-nel. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergenceOriginal.pdf}
@@ -123,6 +117,13 @@ ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál
 	\caption[A Green-függvény perturbációs sorának konvergenciatartománya]{Ez az ábra a két perturbációs sor konvergenciáját hasonlítja össze a komplex energia síkon. Mind a két ábrán a doboz mérete $aL=7$. A felső ábra a $V=Fx$ perturbáló potenciálnak, míg az alsó a $V = Fx-FL/2$ perturbáció szerinti sornak felel meg. A fekete tartományok divergenciát jelölnek, míg a többi szín a sorfejtés tagjainak csökkenési sebességét jellemzik az $\alpha$ paraméterrel \aeqref{perturbation:fit} egyenletből. A piros körökön kívüli tartomány \aeqref{perturbation:convradius} formula által garantált konvergencia tartományt jelöli. A piros x-ek a $\hat{G}_0$ pólusait, a sárga x-ek pedig az egzakt $\hat{G}$ operátor pólusait jelölik.}
 	\label{perturbation:convergencerange}
 \end{figure}
+Mivel \aref{perturbation:covergencerate}. ábrán a lépésszám függvényében a különbség normája exponenciálisan csökken amíg el nem ér egy a diszkretizáció finomságától függő minimális hibát, a konvergencia vagy divergencia sebességét meg lehet becsülni a lépések függvényében a normákra illesztett exponenciális függvény kitevőjével,
+\begin{equation}
+	d(n) = d(0)\exp(-\alpha n)+r,
+	\label{perturbation:fit}
+\end{equation}
+ahol $\alpha$ jelentése a konvergencia sebessége, ha negatív, a sor divergál, $d$ pedig a egzakt eredménytől való eltérés operátor normája. A maradék tagot $r$ modellezi, ez az $r$ tag lesz közelítőleg fordítottan arányas $N$-nel.
+
 \Aref{perturbation:convergencerange}. ábra jól mutatja, hogy a második perturbációs sor gyorsabban, és nagyobb tartományban konvergál. A két perturbációs sor között a különbség csupán annyi, hogy a perturbáló tag egy triviális részét, az egység operátorral arányosat, a perturbálatlan Hamilton-operátorhoz csoportosítjuk a perturáló operátorból, ezzel csökkentve a $\op{V}\op{G}_0(E)$ normáját \aeqref{perturbation:series} egyenletben.
 
 
