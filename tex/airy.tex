@@ -1,40 +1,40 @@
 \label{airy}
-Az Airy egyenlet
+Ez a rész több különböző forrás, \cite{beals_wong_2010}, \cite{Albright_1977} és \cite{Vallee:2010:AFA} releváns eredményeinek rövid összegzése. Az Airy egyenlet
 \begin{equation}
 	\frac{d^2y}{dx^2} - xy = 0,
 	\label{airy:airyeq}
 \end{equation}
-ennek az egyenletnek a megfelelő kezdőfeltételekhez illesztett megoldásai az úgynevezett Airy-függvények, $\Ai(x)$ és $\Bi(x)$.
+ennek az egyenletnek a megoldásai az Airy-függvények $\Ai(x)$ és $\Bi(x)$ lineáris kombinációi.
 
 Az Airy-függvények szorosan kapcsolódnak a Bessel-függvényekhez. Ez jelentős mind az aszimptotikus alakjuk meghatározásához, mind a függvények numerikus kiértékeléséhez. A megoldást
 \begin{equation}
 	y(x) = x^{\frac{1}{2}}v\left(\frac{2}{3}x^{\frac{3}{2}}\right)
 \end{equation}
-alakban keresve a $x \geq 0$ tartományban a $v(x)$-re vonatkozó egyenlet a módosított Bessel-egyenlet $t=\frac{2}{3}x^{\frac{3}{2}}$ bevezetésével.
+alakban keresve a $x \geq 0$ tartományban a $v(x)$-re vonatkozó egyenlet a módosított Bessel-egyenlet $t=\frac{2}{3}x^{\frac{3}{2}}$ bevezetésével,
 \begin{equation}
-	t^2\frac{d^2v(t)}{dt^2} + t\frac{dv(t)}{dt} - \left(t^2 + \frac{1}{9}\right)v(t) = 0
+	t^2\frac{d^2v(t)}{dt^2} + t\frac{dv(t)}{dt} - \left(t^2 + \frac{1}{9}\right)v(t) = 0.
 \end{equation}
-Leolvasható, hogy $\nu^2 = \frac{1}{9}$, azaz a $v(x)$-re vonatkozó egyenlet megoldásai az $I_{\frac{1}{3}}(x)$ és $I_{-\frac{1}{3}}(x)$ módosított Bessel-függvények lineáris kombinációi.
-A két hagyományosan választott lineáris kombinációk a következőek:
+A módosított Bessel-egyenlet nek van egy $\nu$ paramétere, a fenti egyenlet $\nu^2 = \frac{1}{9}$ esetnek felel meg. A $v(t)$-re vonatkozó egyenlet megoldásai az $I_{\frac{1}{3}}(t)$ és $I_{-\frac{1}{3}}(t)$ módosított Bessel-függvények lineáris kombinációi.
+A két hagyományosan választott független lineáris kombinációk a
 \begin{equation}
-	\Ai(x) = \frac{\sqrt{x}}{3}\left(I_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)-I_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right)
+	\Ai(x) = \frac{\sqrt{x}}{3}\left(I_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)-I_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right),
 	\label{airy:ai+}
 \end{equation}
 \begin{equation}
 	\Bi(x) = \sqrt{\frac{x}{3}}\left(I_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)+I_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right).
 	\label{airy:ai+}
 \end{equation}
-$x \leq 0$ tartományban
+Az $x \leq 0$ tartományban hasonló,
 \begin{equation}
 	y(x) = (-x)^{\frac{1}{2}}v\left(\frac{2}{3}(-x)^{\frac{3}{2}}\right)
 \end{equation}
-alakban keresve a megoldást a $v(x)$-re kapott egyenlet a Bessel-egyenlet, megint $\nu^2 = \frac{1}{9}$.
+alakban keresve a megoldást a $v(t)$-re kapott egyenlet ($t=\frac{2}{3}(-x)^{\frac{3}{2}}$) a Bessel-egyenlet, megint $\nu^2 = \frac{1}{9}$,
 \begin{equation}
-	t^2\frac{d^2v(t)}{dt^2} + t\frac{dv(t)}{dt} + \left(t^2 - \frac{1}{9}\right)v(t) = 0
+	t^2\frac{d^2v(t)}{dt^2} + t\frac{dv(t)}{dt} + \left(t^2 - \frac{1}{9}\right)v(t) = 0.
 \end{equation}
-Az $x=0$ pontban megkövetelt analitikusságnak megfelelően $x \geq 0$ esetén
+Az $x=0$ pontban megkövetelt analitikusságnak megfelelően $x \geq 0$ esetén a választott lineáris kombinációk a
 \begin{equation}
-	\Ai(-x) = \frac{\sqrt{x}}{3}\left(J_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)-J_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right)
+	\Ai(-x) = \frac{\sqrt{x}}{3}\left(J_{-\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)-J_{\frac{1}{3}}\left(\frac{2}{3}x^{\frac{3}{2}}\right)\right),
 	\label{airy:ai-}
 \end{equation}
 \begin{equation}
@@ -51,9 +51,9 @@ ahol $J_\nu(x)$ a Bessel-függvények.
 \begin{equation}
 	\Ti(x) = \frac{\Ai(x)}{\Bi(x)}
 \end{equation}
-függvényt.
+Airy-tangens függvényt.
 
-Az $x \to \infty$ aszimptotikus alakok megkaphatóak a Bessel-függvények aszimptotikus alakjából: 
+Az aszimptotikus alakok megkaphatóak a Bessel-függvények aszimptotikus alakjából, 
 \begin{equation}
 	\Ai\left(-x\right) = \frac{1}{\sqrt{\pi}x^{1/4}}\cos\left(\frac{2}{3}x^{3/2} - \frac{\pi}{4}\right) + \mathcal{O}\left(x^{-5/4}\right),
 	\label{airy:ai-approx}
@@ -76,7 +76,7 @@ A $\Ti(x)$ definíciójába behelyettesítve \eqref{airy:ai-approx} és \eqref{a
 	\label{airy:tiapprox}
 \end{equation}
 
-Az állapotok normájának kiszámításához szükség van az Airy-függvények szorzatának integráljára. \cite{Albright_1977} (A.16) szerint
+Az állapotok normájának kiszámításához szükség van az Airy-függvények szorzatának integráljára. \cite[A.16]{Albright_1977} szerint
 \begin{equation}
 	\int y^2\;dx = xy^2 - {y^\prime}^2,
 	\label{airy:normintegral}

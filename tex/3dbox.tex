@@ -26,7 +26,7 @@ a határfeltételek $\left.\psi^{(i)}_k\right|_{x_i=0}=\left.\psi^{(i)}_k\right|
 	\psi(x,y,z,t) = \sum_{klm}C_{klm}\psi_{klm}(x,y,z,t).
 	\label{3dbox:timeevolution}
 \end{equation}
-$C_{klm}$ együtthatók meghatározásához a szokásos hely reprezentáció beli skalárszorzást kell használni,
+$C_{klm}$ együtthatók meghatározásához a szokásos helyreprezentáció beli skalárszorzást kell használni,
 \begin{equation}
 	C_{klm} = \frac{1}{N_{klm}}\int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,\psi_{klm}(x, y, z, t=0)^*\psi_0(x, y, z),
 	\label{3dbox:ceq}
@@ -35,18 +35,12 @@ $C_{klm}$ együtthatók meghatározásához a szokásos hely reprezentáció bel
 	N_{klm} = \int_0^{L_x}dx\int_0^{L_y}dy\int_0^{L_z}dz\,|\psi_{klm}(x,y,z,t=0)|^2.
 	\label{3dbox:3norm}
 \end{equation}
-\Aeqref{3dbox:ceq} egyenlet nem egyszerűsíthető tovább általános $\psi_0$ esetén, viszont \aeqref{3dbox:3norm} igen. Mivel $\psi_{klm}$ szorzat alakú, nem kell a tripla integrált elvégezni, elég csak három egyszeres integrál szorzatát kiszámítani. Ez numerikus számításokban jelentős.
+\Aeqref{3dbox:ceq} egyenlet nem egyszerűsíthető tovább általános $\psi_0$ esetén, viszont \aeqref{3dbox:3norm} igen. Mivel $\psi_{klm}$ szorzat alakú, nem kell a tripla integrált elvégezni, elég csak három egyszeres integrál szorzatát kiszámítani.
 \begin{equation}
-	N_{klm} = N^{(x)}_kN^{(y)}_lN^{(z)}_m,
+	N_{klm} = N^{(1)}_kN^{(2)}_lN^{(3)}_m,
 \end{equation}
-ahol az egyes $N$ tagok az egy dimenziós sajátfüggvények normájaként vannak definiálva.
+ahol az egyes $N^{(i)}$ tagok az egy dimenziós sajátfüggvények normájaként vannak definiálva,
 \begin{equation}
 	N^{(i)}_k = \int_0^{L_i}dx_i\,\left|\psi^{(i)}_k(x_i)\right|^2.
 \end{equation}
-A továbbiakban az egy dimenziós probléma részleteit vizsgáljuk.
-
-%    TODO: ÁBRA AZ EGYSZER FÜGGŐLEGES ESET ENERGIÁIRÓL, esetleg szintén L függvényében.
-%    
-%    TODO: ábra 2D -quantum chaos in billiards-
-%    
-%    TODO: 2D (3D?) videó link időfelődésről
+A továbbiakban az egydimenziós probléma részleteit vizsgáljuk.

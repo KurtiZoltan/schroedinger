@@ -1,4 +1,4 @@
-\Aeqref{airy:airyeq} egyenlet \eqref{3dbox:1deq} alakúra hozható a
+Visszatérve a fizikai probléma tárgyalására \Aeqref{airy:airyeq} egyenlet \eqref{3dbox:1deq} alakúra hozható a
 \begin{equation}
 	x = ax^\prime - bE,
 \end{equation}
@@ -7,14 +7,14 @@
 \end{equation}
 helyettesítésekkel. A helyettesítés után $\frac{d}{dx} = \frac{1}{a}\frac{d}{dx^\prime}$, és \aeqref{airy:airyeq} alakja
 \begin{equation}
-	\frac{d^2y(ax-bE)}{{dx^\prime}^2} - \left(a^3x - a^2bE\right)y(ax-bE) = 0.
+	\frac{d^2y(ax^\prime-bE)}{{dx^\prime}^2} - \left(a^3x^\prime - a^2bE\right)y(ax^\prime-bE) = 0.
 \end{equation}
 Ezt az egyenletet összevetve \eqref{3dbox:1deq} egyenlettel $a$ és $b$ értéke leolvasható,
 \begin{equation}
-	a = \sqrt[3]{\frac{2mF}{\hbar^2}},
-\end{equation}
-\begin{equation}
-	b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}.
+	\begin{aligned}
+		a = \sqrt[3]{\frac{2mF}{\hbar^2}},\\
+		b = \sqrt[3]{\frac{2m}{\hbar^2F^2}}.
+	\end{aligned}
 \end{equation}
 Az egy dimenziós időfüggetlen Schrödinger-egyenlet megoldása
 \begin{equation}
@@ -37,7 +37,7 @@ Felhasználva a $\Ti(x)$ függvényt, az egyenlet kompakt és jól közelíthet�
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/energiaszintek.pdf}
-	\caption[Egzakt energiaszintek]{Egzakt energia szintek, $bE$ és $aL$ közötti relációval ábrázolva. Az ába jobb alsó sarkán látható, hogy $E \ll FL$ esetén az energiaszintek $L$-től függetlenek lesznek, mivel a félvégtelen tér beli homogén tér energiaszintjeit közelítik.}
+	\caption[Egzakt energiaszintek]{Egzakt energiaszintek, $bE$ és $aL$ közötti relációval ábrázolva. Az ábra jobb alsó sarkán látható, hogy $E \ll FL$ esetén az energiaszintek $L$-től függetlenek lesznek, mivel a félvégtelen tér beli homogén tér energiaszintjeit közelítik.}
 	\label{box_energiaszintek_abra}
 \end{figure}
 Amikor $FL \ll \frac{\pi^2\hbar^2}{2mL^2}$, a potenciál jól közelíthető konstans potenciállal, mivel az alapállapot energiájához képest is elhanyagolható a lineáris potenciál eltérése a konstans potenciáltól. Eben a esetben $E \propto n^2$. $E \ll FL$ esetben az energiaszintek jó közelítéssel konstanssá válnak. Ennek az oka, hogy $\lim_{L \to \infty}\psi(x) = \alpha \Ai\left(ax-b\right)$, mert a $\Bi\left(x\right)$ exponenciálisan növekszik nagy $x$-ek esetén. Ebben az eseten az energiaszinteket a $\Ai(-bE) = 0$ egyenlet határozza meg. Ezeket az aszimptotikus viselkedéseket \aref{box_energiaszintek_abra}. ábra jól mutatja, később a Szemiklasszikus közelítés vizsgálata során részletesebben tárgyaljuk.
@@ -51,7 +51,7 @@ sajátállapotokhoz tartozó normálás analitikusan meghatározható. Mivel $\p
 	N_k = \int_0^Ldx\,\left|\psi_k(x)\right|^2 = \left.\left(x-\frac{bE_k}{a}\right)\psi_k(x)^2 - \frac{1}{a^3}\psi_k^\prime(x)^2\right|_{x=0}^{x=L} = \frac{1}{a\pi^2}-\frac{1}{a}\Bigl(\Bi(-bE)\Aip(aL-bE)-\Ai(-bE)\Bip(aL-bE)\Bigr)^2.
 	\label{vegesf:nk}
 \end{dmath}
-A $\psi_k$-t tartalmazó tagok kiesnek a határokon, mert a határfeltételeknek megfelelően $\psi_k=0$ $x=0$ és $x=L$-ben. A maradék tag $x=0$-beli értéke $\frac{1}{\pi^2}$ az Airy-függvények Wronski-determinánsa \eqref{airy:wronski} miatt. \Aref{vegesf:eigenstates}. ábra az első néhány sajátállapotot szemlélteti,  $1$-re normálva az $N_k$ együtthatók segítségével.
+A $\psi_k$-t tartalmazó tagok kiesnek a határokon, mert a határfeltételeknek megfelelően $\psi_k=0$ $x=0$ és $x=L$-ben. A maradéktag $x=0$-beli értéke $\frac{1}{\pi^2}$ az Airy-függvények Wronski-determinánsa \eqref{airy:wronski} miatt. \Aref{vegesf:eigenstates}. ábra az első néhány sajátállapotot szemlélteti,  $1$-re normálva az $N_k$ együtthatók segítségével.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/allapotok.pdf}
