@@ -6,14 +6,14 @@ A perturbációszámításhoz a Hamilton operátort két részre bontjuk,
 \end{equation}
 A $\op{H}_0$ operátorhoz tartozó rezolvens operátor $\op{G}_0\left(E\right)$. Mind $\op{H}$ és mind $\op{H}_0$ kifejezhetőek a rezolvenseikkel, ha ezeket behelyettesítjük a fenti egyenletbe, implicit egyenletet kapunk $\op{G}\left(E\right)$-re nézve,
 \begin{equation}
-	-\op{G}^{-1}\left(E\right) - E = -\op{G}_0^{-1}\left(E\right) - E + \op{V}.
+	-\op{G}^{-1}\left(E\right) + E = -\op{G}_0^{-1}\left(E\right) + E + \op{V}.
 \end{equation}
 Ezt kisebb átalakítások után fel lehet használni perturbációszámításra. Az egyenletet balról $\op{G}_0\left(E\right)$-vel, jobbról $\op{G}\left(E\right)$-vel szorozzuk, így
 \begin{equation}
 	\op{G}\left(E\right) = \op{G}_0\left(E\right) + \op{G}_0\left(E\right)\op{V}\op{G}\left(E\right)
 	\label{green:pertmaster}
 \end{equation}
-eredményhez jutunk. Megfelelően definiálva $\op{G}_n\left(E\right)$ operátorokat,
+eredményhez jutunk, ami a Dysonegyenletnek felel meg. Megfelelően definiálva $\op{G}_n\left(E\right)$ operátorokat,
 \begin{equation}
 	\op{G}_n\left(E\right) = \op{G}_0\left(E\right)\sum_{k=0}^n\left(\op{V}\op{G}_0\left(E\right)\right)^k,
 \end{equation}
@@ -37,7 +37,7 @@ Ez azt jelenti, hogy ha egy operátornak van projektor felbontása, akkor a norm
 \end{equation}
 \Aeqref{green:greensum} egyenlet alapján $\op{G}(E)$ normája is meghatározható, az összeg nevezői közül kiválasztva a legkisebb abszolút értékűt,
 \begin{equation}
-	\norm{\op{G}(E)}=\frac{1}{E-E_k},
+	\norm{\op{G}(E)}=\frac{1}{\lvert E-E_k\rvert},
 \end{equation}
 ahol $E$-hez a komplex síkon a legközelebbi sajátérték $E_k$. Ezek segítségével felső korlátot lehet adni a $\norm{\op{G}_1\op{V}}$-re.
 
@@ -47,12 +47,12 @@ A Hamilton-operátort eredetileg
 		\op{H}=&\frac{\op{p}^2}{2m}+F\op{x}=\op{H}_1+\op{V}_1\\
 		\op{H}_1=&\frac{\op{p}^2}{2m}\\
 		\op{V}_1=&F\op{x}\\
-		\op{G}_1(E)&=\frac{1}{E-\op{H}_1}
+		\op{G}_{01}(E)&=\frac{1}{E-\op{H}_1}
 	\end{aligned}
 \end{equation}
-részekre bontottuk. $\op{G}_0$ a $\op{H}_0$ operátor Green-függvénye. Ebben ha az esetben a $\op{G}_0$ pólusaitól legalább $FL$ távolságban, azaz $\rvert E-E_k\lvert>FL$, a komplex energia síkban a sor garantáltan konvergál, mert
+részekre bontottuk. Ebben ha az esetben a $\op{G}_{01}$ pólusaitól legalább $FL$ távolságban, azaz $\rvert E-E_k\lvert>FL$, a komplex energia síkban a sor garantáltan konvergál, mert
 \begin{equation}
-	\norm{\op{G}_1(E)V_1}<\norm{\op{G}_1(E)}\norm{V_1}=\frac{FL}{\rvert E-E_k\lvert}<1.
+	\norm{\op{G}_{01}(E)V_1}<\norm{\op{G}_{01}(E)}\norm{\op{V}_1}=\frac{FL}{\rvert E-E_k\lvert}<1.
 \end{equation}
 Vizsgálunk egy módosított felontást is,
 \begin{equation}
@@ -60,18 +60,18 @@ Vizsgálunk egy módosított felontást is,
 		\op{H}=&\frac{\op{p}^2}{2m}+\frac{FL}{2}+F\op{x}-\frac{FL}{2}=\op{H}_2+\op{V}_2\\
 		\op{H}_2=&\frac{\op{p}^2}{2m}+\frac{FL}{2}\\
 		\op{V}_2=&F\op{x}-\frac{FL}{2}\\
-		\op{G}_2(E)&=\frac{1}{E-\op{H}_2}
+		\op{G}_{02}(E)&=\frac{1}{E-\op{H}_2}
 	\end{aligned}.
 \end{equation}
 A perturbációszámítás során így a perturbálatlan operátor szerepét a $\frac{\op{p}^2}{2m}+\frac{FL}{2}$ operátor tölti be.
-Ebben az esetben a garantált konvergencia tartomány nagyobb, az $\left\lvert E-E_k-\frac{FL}{2}\right\rvert > \frac{FL}{2}$ reláció telesülése esetén a perturbációs sor garantáltan konvergál,
+Ebben az esetben a garantált konvergencia tartomány nagyobb, az $\left\lvert E-E_k-\frac{FL}{2}\right\rvert > \frac{FL}{2}$ reláció teljesülése esetén a perturbációs sor garantáltan konvergál,
 \begin{equation}
-	\norm{\op{V}_2\op{G}_2(E)}<\norm{\op{V}_2}\norm{\op{G}_2(E)}=\frac{\frac{FL}{2}}{\left\lvert E-E_k-\frac{FL}{2}\right\rvert}<1.
+	\norm{\op{V}_{02}\op{G}_2(E)}<\norm{\op{V}_2}\norm{\op{G}_{02}(E)}=\frac{\frac{FL}{2}}{\left\lvert E-E_k-\frac{FL}{2}\right\rvert}<1.
 	\label{perturbation:convradius}
 \end{equation}
 A második sorhoz tartozó perturbálatlan Green-függvény
 \begin{equation}
-	\op{G}_2(E)=\frac{1}{E-\left(\frac{\op{p}^2}{2m}+\frac{FL}{2}\right)}=\op{G}_1\left(E-\frac{FL}{2}\right),
+	\op{G}_{02}(E)=\frac{1}{E-\left(\frac{\op{p}^2}{2m}+\frac{FL}{2}\right)}=\op{G}_{01}\left(E-\frac{FL}{2}\right),
 \end{equation}
 könnyen kifejezhető az eredeti eset perturbálatlan $\op{G}_1$ Green-függvényével.
 
@@ -87,7 +87,7 @@ A $\frac{\op{p}^2}{2m}$ Green-függvénye a $[0,L]$ tartományban \aref{egzakt}.
 	k = \frac{\sqrt{2mE}}{\hbar}.
 \end{equation}
 
-A $G_0(x,y;E)$ diszkretizálásával lehetővé válik a perturbációs sor numerikus kiértékelése. A $[0,L]$ tartományból $N$ egyenletes eloszlású pontot választva, az operátorok közelíthetőek $N\times N$ mátrixokkal, és az operátorok szorzata a közelítő mátrixok szorzatával,
+A $G_01(x,y;E)$ diszkretizálásával lehetővé válik a perturbációs sor numerikus kiértékelése. A $[0,L]$ tartományból $N$ egyenletes eloszlású pontot választva, az operátorok közelíthetőek $N\times N$ mátrixokkal, és az operátorok szorzata a közelítő mátrixok szorzatával,
 \begin{equation}
 	\begin{aligned}
 		x_k&=\frac{kL}{N-1}\\
@@ -103,7 +103,7 @@ az első perturbációs sorban felmerülő $\op{V}\op{G}_0(E)$ mátrix közelít
 \begin{equation}
 	\left(V_2G_2(E)\right)_{kl}=F\left(x_k-\frac{L}{2}\right)G_1\left(x_k,y_l;E-\frac{FL}{2}\right)
 \end{equation}
-pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ operátor mátrix közelítése. Minden eszköz adott, hogy a $\norm{\op{G}_n(E)}-\op{G}(E)$ sorozatot a diszkretizáció segítségével numerikusan vizsgáljuk. Az eredményeket \aref{perturbation:covergencerate}. ábra mutatja. Látható, hogy adott finomságú diszkretizáció esetén a második perturbációs sor, ami a $V(x)=Fx-\frac{FL}{2}$ potenciálhoz tartozik, gyorsabban közelít az egzakt Green-függvényhez. A gyorsabb konvergencián túl amikor a numerikusan kiértékelt sor stacionáriussá válik a lépésszám függvényében, a kapott eredmény közelebb van az egzakt Green-függvényhez. Ez a különbség, amelyik tetszőleges lépésszám után is megmarad, a diszkretizáció finomságával jó közelítéssel fordítottan arányos, az ábrán a felbontás duplázása a különbség normájának logaritmusát egy állandó értékkel csökkentette.
+pedig a módosított perturbációs sorban felmerülő $\op{V}_2\op{G}_2(E)$ operátor mátrix közelítése. Minden eszköz adott, hogy a $\norm{\op{G}_n(E)-\op{G}(E)}$ sorozatot a diszkretizáció segítségével numerikusan vizsgáljuk. Az eredményeket \aref{perturbation:covergencerate}. ábra mutatja. Látható, hogy adott finomságú diszkretizáció esetén a második perturbációs sor, ami a $V(x)=Fx-\frac{FL}{2}$ potenciálhoz tartozik, gyorsabban közelít az egzakt Green-függvényhez. A gyorsabb konvergencián túl amikor a numerikusan kiértékelt sor stacionáriussá válik a lépésszám függvényében, a kapott eredmény közelebb van az egzakt Green-függvényhez. Ez a különbség, amelyik tetszőleges lépésszám után is megmarad, a diszkretizáció finomságával jó közelítéssel fordítottan arányos, az ábrán a felbontás duplázása a különbség normájának logaritmusát egy állandó értékkel csökkentette.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/convergencerate.pdf}

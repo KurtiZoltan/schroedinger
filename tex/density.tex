@@ -7,7 +7,7 @@ Ahogy azt a Green-függvények bevezetésénél említettük, alkalmasak a (lok�
 	\rho(x,E)=-\frac{1}{\pi}\lim_{\epsilon\to 0^+}\Im G(x,x,E+i\epsilon).
 	\label{green:localdensityeq}
 \end{equation}
-Az állapotsűrűség $\rho(E)\,dE$ az állapotok száma egy $dE$ energiatartományban. $\rho(x,E)\,dE\,dx$ pedig a megtalálási valószínűséggel súlyozott állapotok száma $dx$ intervallumban $dE$ energiatartományban, az úgynevezett lokális állapotsűrűség.
+Az állapotsűrűség, $\rho(E)\,dE$ az állapotok száma egy $dE$ energiatartományban. A lokális állapotsűrűség, $\rho(x,E)\,dE\,dx$ pedig a megtalálási valószínűséggel súlyozott állapotok száma $dx$ intervallumban $dE$ energiatartományban.
 
 Ezeket a formulákat numerikus módon közelítőleg ki lehet értékelni kicsi, de véges $\epsilon$ választásával, ezt szemlélteti \aref{green:állapotsűrség}. ábra.
 \begin{figure}[H]
@@ -20,7 +20,7 @@ Ennek a közelítésnek egy jó tulajdonsága, hogy a formula származtatásáho
 \begin{equation}
 	\frac{1}{x\pm i\epsilon} = \frac{1}{x}\mp i\pi\delta(x)
 \end{equation}
-formulát lehet használni. Ennek a formulának a levezetése során a $\delta(x)$ állandó területű, de egyre szűkebb Lorentz-görbék határértékeként bukkan fel. Ez azt jelenti, hogy véges $\epsilon$ esetén is a sajátenergiákhoz tartozó csúcsok alatti terület változatlan, az állapotsűrűség $E$ szerinti integrálja nagy $E$-k és véges $\epsilon$ esetén is pontos marad.
+képletet lehet használni. Ennek a levezetése során a $\delta(x)$ állandó területű, de egyre szűkebb Lorentz-görbék határértékeként bukkan fel. Ez azt jelenti, hogy véges $\epsilon$ esetén is a sajátértékekhez tartozó csúcsok alatti terület változatlan, az állapotsűrűség $E$ szerinti integrálja nagy $E$-k és véges $\epsilon$ esetén is pontos marad.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./figs/numberofstatesfromgreen.pdf}

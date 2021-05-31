@@ -1,6 +1,6 @@
-A Green-függvény a szilárdtest fizika egyik legtöbbet használt eszköze. A mérhető és egyéb jelentős egyensúlyi mennyiségek gyakran egyszerűen kifejezhetőek a Green-függvénnyel, mint például a (lokális) állapotsűrűség, imaginárius idő használatával pedig termodinamikai mennyiségek: egy részecske operátorok egyensúlyi várható értéke, bizonyos esetekben még két részecske operátorok várható értéke is.
+A Green-függvény számos fizikai témakör egyik legtöbbet használt eszköze. Többek közt ilyen a szilárdtest fizika, és részecske fizika. A mérhető és egyéb jelentős egyensúlyi mennyiségek gyakran egyszerűen kifejezhetőek a Green-függvénnyel, mint például a (lokális) állapotsűrűség, imaginárius idő használatával pedig termodinamikai mennyiségek: egy részecske operátorok egyensúlyi várható értéke, bizonyos esetekben még két részecske operátorok várható értéke is. Az általunk tárgyalt Green-függvényhez a többrészecske rendszerek leírásából az egyrészecske Green-függvény áll a legközelebb.
 
-A frekvenciatér beli Green-függvény a Hamilton operátor rezolvenseként definiálható. A rezolvens, avagy a Green operátor
+A frekvenciatér beli Green-operátor a Hamilton operátor rezolvenseként definiálható. A rezolvens, avagy a Green operátor
 \begin{equation}
     \op{G}\left( E \right) = \left(E-\op{H}\right)^{-1} = \frac{1}{E-\op{H}},
 \end{equation}
@@ -23,21 +23,25 @@ Mivel $G(x,y;E)$-nek valós $E$ mentén pólusai vannak, az integrál elvégzés
 	\frac{1}{2\pi\hbar i}\oint_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt},
 	\label{green:residuum}
 \end{equation}
-ahol $C_n$ pozitív irányítású $\epsilon$ sugarú kör az $n$. pólus, azaz az $n$. sajátenergia körül. Ez tetszőleges állapotra hattatva megoldja az időfüggő Schrödinger-egyenletet, ezért lehet különböző kerülési irányokkal előírt Fourier szerű integrál időfüggő Green-függvény.
+ahol $C_n$ pozitív irányítású $\epsilon$ sugarú kör az $n$. pólus, azaz az $n$. sajátérték körül. Ez tetszőleges állapotra hattatva megoldja az időfüggő Schrödinger-egyenletet, ezért lehetnek a különböző kerülési irányokkal előírt Fourier szerű integrálok mind időfüggő Green-függvények: csak a homogén megoldásban különböznek egymástól a pólusok kerülésétől függően.
 
-A retardált Green függvény kontúrra a pólusokat felülről, a pozitív képzetes résszel rendelkező irányban kerüli meg. Másképpen fogalmazva a kontúr a valós tengely, viszont a sajátenergiákat módosítva kell elvégezni az integrált, $E_n\to E_n-i\epsilon$, majd a számítás végén az $\epsilon\to 0^+$ határesetet venni. Ez fizikailag annak felel meg, hogy a sajátállapotoknak van időbeli lecsengése, $\epsilon$ időállandóval.
+A retardált Green függvény $C_A$ kontúrja a pólusokat felülről, a pozitív képzetes résszel rendelkező irányban kerüli meg. Másképpen fogalmazva a kontúr a valós tengely, viszont a sajátértékeket módosítva kell elvégezni az integrált, $E_n\to E_n-i\epsilon$, majd a számítás végén az $\epsilon\to 0^+$ határesetet venni. Ez fizikailag annak felel meg, hogy a sajátállapotoknak van időbeli lecsengése, $\epsilon$ időállandóval.
 \begin{equation}
-	G_R(x,y,t)=\frac{1}{2\pi\hbar}\lim_{\epsilon\to 0^+}\int_{-\infty}^{\infty}dE\,G(x,y;E+i\epsilon)e^{-\frac{i}{\hbar}Et},
+	G_R(x,y,t)=\frac{1}{2\pi\hbar}\int_{C_A}dE\,G(x,y;E)e^{-\frac{i}{\hbar}Et},
 \end{equation}
 ez a típusú Green-függvény a múltban $0$ az időbeli lecsengés miatt. Egy másik nevezetes Green-függvény az avanzsált Green-függvény,
 \begin{equation}
-	G_A(x,y,t)=\frac{1}{2\pi\hbar}\lim_{\epsilon\to 0^+}\int_{-\infty}^{\infty}dE\,G(x,y;E-i\epsilon)e^{-\frac{i}{\hbar}Et},
+	G_A(x,y,t)=\frac{1}{2\pi\hbar}\int_{C_B}dE\,G(x,y;E)e^{-\frac{i}{\hbar}Et},
 \end{equation}
-ez a Green-függvény az előzőhöz hasonló logika alapján $t>0$ esetén $0$. \Aeqref{green:residuum} egyenlet alapján e két Green-függvény különbsége előállítja az időfejlesztő operátor magját,
+$C_B$ kontúr negatív képzetes irányból kerüli a sajátértékeket. Ez a Green-függvény az előzőhöz hasonló logika alapján $t>0$ esetén $0$. \Aeqref{green:residuum} egyenlet alapján e két Green-függvény különbsége előállítja az időfejlesztő operátor magját,
 \begin{equation}
 	\op{G}_A(t)-\op{G}_R(t)=\sum_n\frac{1}{2\pi\hbar}\oint_{C_n}\op{G}(E)e^{-\frac{i}{\hbar}Et}=i\sum_n\Ket{n}\Bra{n}e^{-\frac{i}{\hbar}E_nt}=i\op{U}(t).
 \end{equation}
-Ez a kontúrintegrál szummázás helyett egy kibővített kontúrral szerepel \cite{pertergreen}-ban. A továbbiakban az egy dimenziós homogén tér Green-függvényével foglalkozunk.
+Ez a kontúrintegrál szummázás helyett egy kibővített kontúrral szerepel \cite{pertergreen}-ben, a reziduumtétel miatt egyenlő a kettő, mert
+\begin{equation}
+	\int_{C_A-C_B}dE\,=\sum_n\int_{C_n}dE.
+\end{equation}
+ A továbbiakban az egydimenziós homogén tér Green-függvényével foglalkozunk.
 
 
 
